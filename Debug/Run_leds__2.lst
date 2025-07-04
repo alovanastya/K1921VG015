@@ -6,55 +6,47 @@ EXEC_P, HAS_SYMS, D_PAGED
 start address 0x80000000
 
 Program Header:
-0x70000003 off    0x0003bed6 vaddr 0x00000000 paddr 0x00000000 align 2**0
+0x70000003 off    0x00034f03 vaddr 0x00000000 paddr 0x00000000 align 2**0
          filesz 0x00000041 memsz 0x00000000 flags r--
     LOAD off    0x00000000 vaddr 0x4003f000 paddr 0x4003f000 align 2**12
-         filesz 0x000000f4 memsz 0x00001000 flags rw-
+         filesz 0x000000d4 memsz 0x00001000 flags rw-
     LOAD off    0x00001000 vaddr 0x80000000 paddr 0x80000000 align 2**12
-         filesz 0x00001c18 memsz 0x00001c18 flags r-x
-    LOAD off    0x00003000 vaddr 0x40000000 paddr 0x80001c18 align 2**12
-         filesz 0x00000001 memsz 0x00000001 flags rw-
-    LOAD off    0x00003008 vaddr 0x40000008 paddr 0x80001c1c align 2**12
-         filesz 0x00000220 memsz 0x00000234 flags rw-
+         filesz 0x0000079a memsz 0x0000079a flags r-x
+    LOAD off    0x00002000 vaddr 0x40000000 paddr 0x8000079c align 2**12
+         filesz 0x00000080 memsz 0x00000090 flags rw-
    STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
          filesz 0x00000000 memsz 0x00000000 flags rw-
 
 Sections:
 Idx Name              Size      VMA       LMA       File off  Algn  Flags
-  0 .text.startup     00000108  80000000  80000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  0 .text.startup     00000102  80000000  80000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .text.crt         00000184  80000140  80000140  00001140  2**6  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .text             000016e8  800002c4  800002c4  000012c4  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  3 .tbss             00000000  800019ac  800019ac  00000000  2**2  ALLOC, THREAD_LOCAL
-  4 .rodata           00000255  800019ac  800019ac  000029ac  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .srodata          00000010  80001c08  80001c08  00002c08  2**3  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  6 .sdata            00000001  40000000  80001c18  00003000  2**2  CONTENTS, ALLOC, LOAD, DATA
-  7 .data             00000220  40000008  80001c1c  00003008  2**3  CONTENTS, ALLOC, LOAD, DATA
-  8 .sbss             00000014  40000228  80001e3c  00003228  2**2  ALLOC
-  9 .bss              00000000  4000023c  80001e50  00000000  2**2  ALLOC
- 10 .stack            00000800  4003f800  4003f800  00000800  2**0  ALLOC
- 11 .debug_info       0000a870  00000000  00000000  00003228  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_abbrev     00000b51  00000000  00000000  0000da98  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_loclists   0000076c  00000000  00000000  0000e5e9  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges    00000148  00000000  00000000  0000ed58  2**3  CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists   000000f5  00000000  00000000  0000eea0  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_line       00001d28  00000000  00000000  0000ef95  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_str        0002ae9a  00000000  00000000  00010cbd  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line_str   0000036d  00000000  00000000  0003bb57  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment          00000012  00000000  00000000  0003bec4  2**0  CONTENTS, READONLY
- 20 .riscv.attributes 00000041  00000000  00000000  0003bed6  2**0  CONTENTS, READONLY
- 21 .debug_frame      0000038c  00000000  00000000  0003bf18  2**2  CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_macro      0001133f  00000000  00000000  0003c2a4  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+  2 .text             000004d6  800002c4  800002c4  000012c4  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .tbss             00000000  8000079c  8000079c  00000000  2**2  ALLOC, THREAD_LOCAL
+  4 .data             00000080  40000000  8000079c  00002000  2**2  CONTENTS, ALLOC, LOAD, DATA
+  5 .sbss             00000010  40000080  8000081c  00002080  2**2  ALLOC
+  6 .bss              00000000  40000090  8000082c  00000000  2**2  ALLOC
+  7 .stack            00000800  4003f800  4003f800  00000800  2**0  ALLOC
+  8 .debug_info       00006af8  00000000  00000000  00002080  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_abbrev     00000728  00000000  00000000  00008b78  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_loclists   0000012e  00000000  00000000  000092a0  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_aranges    000000a8  00000000  00000000  000093d0  2**3  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_rnglists   00000079  00000000  00000000  00009478  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_line       00000d8c  00000000  00000000  000094f1  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_str        0002a931  00000000  00000000  0000a27d  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_line_str   00000343  00000000  00000000  00034bae  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .comment          00000012  00000000  00000000  00034ef1  2**0  CONTENTS, READONLY
+ 17 .riscv.attributes 00000041  00000000  00000000  00034f03  2**0  CONTENTS, READONLY
+ 18 .debug_frame      00000134  00000000  00000000  00034f44  2**2  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_macro      00009333  00000000  00000000  00035078  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 80000000 l    d  .text.startup	00000000 .text.startup
 80000140 l    d  .text.crt	00000000 .text.crt
 800002c4 l    d  .text	00000000 .text
-800019ac l    d  .tbss	00000000 .tbss
-800019ac l    d  .rodata	00000000 .rodata
-80001c08 l    d  .srodata	00000000 .srodata
-40000000 l    d  .sdata	00000000 .sdata
-40000008 l    d  .data	00000000 .data
-40000228 l    d  .sbss	00000000 .sbss
-4000023c l    d  .bss	00000000 .bss
+8000079c l    d  .tbss	00000000 .tbss
+40000000 l    d  .data	00000000 .data
+40000080 l    d  .sbss	00000000 .sbss
+40000090 l    d  .bss	00000000 .bss
 4003f800 l    d  .stack	00000000 .stack
 00000000 l    d  .debug_info	00000000 .debug_info
 00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
@@ -69,96 +61,61 @@ SYMBOL TABLE:
 00000000 l    d  .debug_frame	00000000 .debug_frame
 00000000 l    d  .debug_macro	00000000 .debug_macro
 00000000 l    df *ABS*	00000000 startup_k1921vg015.o
-800002c4 l     F .text	0000001a PLIC_SetIrqHandler
-40000088 l     O .data	00000080 mach_plic_handler
-40000008 l     O .data	00000080 supervisor_plic_handler
-800002de l     F .text	0000000c PLIC_SetPriority
-800002ea l     F .text	0000002a PLIC_IntEnable
-80000314 l     F .text	00000012 PLIC_ClaimIrq
-80000326 l     F .text	00000012 PLIC_ClaimComplete
-80000338 l     F .text	00000012 PLIC_SetThreshold
-8000034a l     F .text	0000002a PLIC_MachHandler
-80000374 l     F .text	00000008 PutChar
-8000037c l     F .text	00000018 PutString
-80000394 l     F .text	00000082 PutUnsignedInt
-80000416 l     F .text	000000d2 PutSignedInt
-800004e8 l     F .text	0000008a PutHexa
-80000572 l     F .text	00000166 vsnprintf
-800006d8 l     F .text	00000014 vsprintf
-800006ec l     F .text	000000dc SystemCoreClockUpdate
-40000238 l     O .sbss	00000004 SystemPll0Clock
-40000234 l     O .sbss	00000004 SystemPll1Clock
-40000230 l     O .sbss	00000004 SystemCoreClock
-800007c8 l     F .text	000000e6 ClkInit
-800008ae l     F .text	00000026 InterruptEnable
-800008d4 l     F .text	0000000c SystemInit
-800008e0 l     F .text	00000048 BSP_led_init
-80000928 l     F .text	00000054 TMR32_init
-8000097c l     F .text	00000048 TMR32_IRQHandler
-40000000 l     O .sdata	00000001 last_button_state.1
-40000228 l     O .sbss	00000001 d.0
-800009c4 l     F .text	0000006c retarget_init
-80000a30 l     F .text	00000016 retarget_put_char
-80000a46 l     F .text	0000000c PrintChar
-80000a52 l     F .text	00000032 fputc
-40000108 l     O .data	00000120 r
-80000a84 l     F .text	00000036 fputs
-80000aba l     F .text	00000064 vfprintf
-80000b1e l     F .text	00000016 vprintf
-80000b34 l     F .text	0000001e printf
-80000b52 l     F .text	00000062 periph_init
-800000b0 l     F .text.startup	00000058 plf_init_generic
-4000022c l     O .sbss	00000004 led_shift
+800002c4 l     F .text	00000012 PLIC_ClaimIrq
+800002d6 l     F .text	00000012 PLIC_ClaimComplete
+800002e8 l     F .text	00000012 PLIC_SetThreshold
+800002fa l     F .text	0000002e PLIC_MachHandler
+40000000 l     O .data	00000080 mach_plic_handler
+80000328 l     F .text	000000dc SystemCoreClockUpdate
+4000008c l     O .sbss	00000004 SystemPll0Clock
+40000088 l     O .sbss	00000004 SystemPll1Clock
+40000084 l     O .sbss	00000004 SystemCoreClock
+80000404 l     F .text	000000e6 ClkInit
+800004ea l     F .text	00000026 InterruptEnable
+80000510 l     F .text	0000000c SystemInit
+8000051c l     F .text	00000098 UART1_init
+800005b4 l     F .text	00000010 periph_init
+800000b0 l     F .text.startup	00000052 plf_init_generic
+40000080 l     O .sbss	00000004 led_shift
 00000000 l    df *ABS*	00000000 libc_a-memset.o
 00000000 l    df *ABS*	00000000 libc_a-memcpy.o
-00000000 l    df *ABS*	00000000 divdf3.o
-00000000 l    df *ABS*	00000000 fixdfsi.o
-00000000 l    df *ABS*	00000000 floatunsidf.o
-00000000 l    df *ABS*	00000000 _clzsi2.o
-00000f1d  w      .debug_info	00000000 .hidden printf.c.48218671
 00000800 g       *ABS*	00000000 STACK_SIZE
 40000780 g       *ABS*	00000000 __global_pointer$
 40040000 g       .stack	00000000 __TLS0_BASE__
 8000008c g       .text.startup	00000000 _hart_halt
-40000000 g       .sdata	00000000 __SDATA_BEGIN__
-00004773  w      .debug_info	00000000 .hidden main.c.240adfbd
-80000c90 g     F .text	000000ec memcpy
-40000001 g       .sdata	00000000 __sdata_target_end
-0000786a  w      .debug_info	00000000 .hidden retarget.c.9c45fa53
+40000000 g       .tbss	00000000 __SDATA_BEGIN__
+800006ae g     F .text	000000ec memcpy
+40000000 g       .tbss	00000000 __sdata_target_end
 4003f800 g       *ABS*	00000000 _heap_end
-4000023c g       .bss	00000000 __bss_end
+40000090 g       .bss	00000000 __bss_end
 800000a0  w      .text.startup	00000000 abort
-800018ce g     F .text	00000070 .hidden __floatunsidf
-40000228 g       .data	00000000 __data_target_end
-800017e8 g     F .text	000000e6 .hidden __fixdfsi
-40000240 g       *ABS*	00000000 _heap_start
-80000bb4 g     F .text	00000018 trap_handler
-8000193e g     F .text	0000006e .hidden __clzsi2
+40000080 g       .data	00000000 __data_target_end
+40000090 g       *ABS*	00000000 _heap_start
+800005c4 g     F .text	00000016 trap_handler
 80000000 g       *ABS*	00000000 __TEXT_INIT_START__
 80000000 g       .text.startup	00000000 _start
-80001c18 g       *ABS*	00000000 __sdata_source_start
-80000d7c g     F .text	00000a6c .hidden __divdf3
-00000b7f  w      .debug_info	00000000 .hidden plic.c.21d8f78f
-4000023c g       .bss	00000000 __BSS_END__
-00000108 g       *ABS*	00000000 __TEXT_INIT_SIZE__
+8000079c g       *ABS*	00000000 __sdata_source_start
+00000333  w      .debug_info	00000000 .hidden plic.c.21d8f78f
+40000090 g       .bss	00000000 __BSS_END__
+00000102 g       *ABS*	00000000 __TEXT_INIT_SIZE__
 800000a4  w      .text.startup	00000000 app_init
-40000228 g       .sbss	00000000 __bss_start
-80000be8 g     F .text	000000a8 memset
-80000bcc g     F .text	0000001c main
+40000080 g       .sbss	00000000 __bss_start
+80000606 g     F .text	000000a8 memset
+800005da g     F .text	0000002c main
 80000140  w    F .text.crt	0000014c trap_entry
-40000008 g       .data	00000000 __data_target_start
-800019ec g     O .rodata	00000100 .hidden __clz_tab
-40000000 g       .sdata	00000000 __sdata_target_start
-800000b0 g     F .text.startup	00000058 plf_init
-40000008 g       .data	00000000 __DATA_BEGIN__
-00001bf1  w      .debug_info	00000000 .hidden system_k1921vg015.c.08e00f8f
-40000228 g       .data	00000000 _edata
+40000000 g       .data	00000000 __data_target_start
+000033b1  w      .debug_info	00000000 .hidden main.c.fafdc48c
+40000000 g       .tbss	00000000 __sdata_target_start
+800000b0 g     F .text.startup	00000052 plf_init
+40000000 g       .data	00000000 __DATA_BEGIN__
+0000082f  w      .debug_info	00000000 .hidden system_k1921vg015.c.08e00f8f
+40000080 g       .data	00000000 _edata
 8000009c  w      .text.startup	00000000 exit
-800019ac g       .text	00000000 _tdata_start
-00001a93  w      .debug_info	00000000 .hidden sys_init.c.d9db5e6f
-800019ac g       .tbss	00000000 _tbss_end
+8000079c g       .text	00000000 _tdata_start
+000006d1  w      .debug_info	00000000 .hidden sys_init.c.d9db5e6f
+8000079c g       .tbss	00000000 _tbss_end
 00000000 g       *ABS*	00000000 __TLS_SIZE__
-80001c1c g       *ABS*	00000000 __data_source_start
+8000079c g       *ABS*	00000000 __data_source_start
 4003f800 g       .stack	00000000 __STACK_START__
 
 
@@ -181,7 +138,7 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.
 80000004:	380114b7          	lui	s1,0x38011
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.S:25
     sw      zero,8(s1) 
-80000008:	0004a423          	sw	zero,8(s1) # 38011008 <retarget.c.9c45fa53+0x3800979e>
+80000008:	0004a423          	sw	zero,8(s1) # 38011008 <main.c.fafdc48c+0x3800dc57>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.S:34
     init_regs_const 16, 31, 0
 #endif // !__riscv_32e
@@ -296,8 +253,8 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.
 #endif // PLF_SMP_SUPPORT
     ## start main
     load_addrword t0, main
-80000078:	800012b7          	lui	t0,0x80001
-8000007c:	bcc28293          	addi	t0,t0,-1076 # 80000bcc <main>
+80000078:	800002b7          	lui	t0,0x80000
+8000007c:	5da28293          	addi	t0,t0,1498 # 800005da <main>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.S:111
     load_addrword ra, exit
 80000080:	800000b7          	lui	ra,0x80000
@@ -368,45 +325,45 @@ void __init plf_init_generic(void)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:32
     // init BSS
     memset(__bss_start, 0, (size_t)(__bss_end - __bss_start));
-800000b4:	aa818613          	addi	a2,gp,-1368 # 40000228 <d.0>
-800000b8:	abc18793          	addi	a5,gp,-1348 # 4000023c <__BSS_END__>
+800000b4:	90018613          	addi	a2,gp,-1792 # 40000080 <led_shift>
+800000b8:	91018793          	addi	a5,gp,-1776 # 40000090 <__BSS_END__>
 800000bc:	40c78633          	sub	a2,a5,a2
 800000c0:	4581                	li	a1,0
-800000c2:	aa818513          	addi	a0,gp,-1368 # 40000228 <d.0>
-800000c6:	323000ef          	jal	80000be8 <memset>
+800000c2:	90018513          	addi	a0,gp,-1792 # 40000080 <led_shift>
+800000c6:	2381                	jal	80000606 <memset>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:36
 
     memcpy((void*)&__data_target_start,
            (const void*)&__data_source_start,
            (&__data_target_end - &__data_target_start));
-800000ca:	88818613          	addi	a2,gp,-1912 # 40000008 <supervisor_plic_handler>
+800000c8:	88018613          	addi	a2,gp,-1920 # 40000000 <mach_plic_handler>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:34
     memcpy((void*)&__data_target_start,
-800000ce:	aa818793          	addi	a5,gp,-1368 # 40000228 <d.0>
-800000d2:	40c78633          	sub	a2,a5,a2
-800000d6:	800025b7          	lui	a1,0x80002
-800000da:	c1c58593          	addi	a1,a1,-996 # 80001c1c <__data_source_start>
-800000de:	88818513          	addi	a0,gp,-1912 # 40000008 <supervisor_plic_handler>
-800000e2:	3af000ef          	jal	80000c90 <memcpy>
+800000cc:	90018793          	addi	a5,gp,-1792 # 40000080 <led_shift>
+800000d0:	40c78633          	sub	a2,a5,a2
+800000d4:	800005b7          	lui	a1,0x80000
+800000d8:	79c58593          	addi	a1,a1,1948 # 8000079c <__data_source_start>
+800000dc:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+800000e0:	23f9                	jal	800006ae <memcpy>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:40
 
     memcpy((void*)&__sdata_target_start,
               (const void*)&__sdata_source_start,
               (&__sdata_target_end - &__sdata_target_start));
-800000e6:	88018613          	addi	a2,gp,-1920 # 40000000 <last_button_state.1>
+800000e2:	88018613          	addi	a2,gp,-1920 # 40000000 <mach_plic_handler>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:38
     memcpy((void*)&__sdata_target_start,
-800000ea:	88118793          	addi	a5,gp,-1919 # 40000001 <__sdata_target_end>
-800000ee:	40c78633          	sub	a2,a5,a2
-800000f2:	800025b7          	lui	a1,0x80002
-800000f6:	c1858593          	addi	a1,a1,-1000 # 80001c18 <__sdata_source_start>
-800000fa:	88018513          	addi	a0,gp,-1920 # 40000000 <last_button_state.1>
-800000fe:	393000ef          	jal	80000c90 <memcpy>
+800000e6:	88018793          	addi	a5,gp,-1920 # 40000000 <mach_plic_handler>
+800000ea:	40c78633          	sub	a2,a5,a2
+800000ee:	800005b7          	lui	a1,0x80000
+800000f2:	79c58593          	addi	a1,a1,1948 # 8000079c <__data_source_start>
+800000f6:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+800000fa:	2b55                	jal	800006ae <memcpy>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/sys_init.c:41
 }
-80000102:	40b2                	lw	ra,12(sp)
-80000104:	0141                	addi	sp,sp,16
-80000106:	8082                	ret
+800000fc:	40b2                	lw	ra,12(sp)
+800000fe:	0141                	addi	sp,sp,16
+80000100:	8082                	ret
 
 Disassembly of section .text.crt:
 
@@ -481,8 +438,8 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.S:261
     ## call trap handler
     load_addrword t0, trap_handler
-800001f4:	800012b7          	lui	t0,0x80001
-800001f8:	bb428293          	addi	t0,t0,-1100 # 80000bb4 <trap_handler>
+800001f4:	800002b7          	lui	t0,0x80000
+800001f8:	5c428293          	addi	t0,t0,1476 # 800005c4 <trap_handler>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.S:262
     jalr t0
 800001fc:	000280e7          	jalr	t0
@@ -534,94 +491,7 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/startup_k1921vg015.
 
 Disassembly of section .text:
 
-800002c4 <PLIC_SetIrqHandler>:
-PLIC_SetIrqHandler():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:53
- * Set PLIC handler function for isr num
- */
-
-void PLIC_SetIrqHandler (uint8_t target, uint32_t isr_num, irqfunc* func)
-{
-    if(target == Plic_Mach_Target) {
-800002c4:	e519                	bnez	a0,800002d2 <PLIC_SetIrqHandler+0xe>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:54
-        mach_plic_handler[isr_num] = func;
-800002c6:	058a                	slli	a1,a1,0x2
-800002c8:	90818793          	addi	a5,gp,-1784 # 40000088 <mach_plic_handler>
-800002cc:	97ae                	add	a5,a5,a1
-800002ce:	c390                	sw	a2,0(a5)
-800002d0:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:56
-    } else {
-        supervisor_plic_handler[isr_num] = func;
-800002d2:	058a                	slli	a1,a1,0x2
-800002d4:	88818793          	addi	a5,gp,-1912 # 40000008 <supervisor_plic_handler>
-800002d8:	97ae                	add	a5,a5,a1
-800002da:	c390                	sw	a2,0(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:58
-    }
-}
-800002dc:	8082                	ret
-
-800002de <PLIC_SetPriority>:
-PLIC_SetPriority():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:65
- * Set PLIC irq priority
- */
-
-void PLIC_SetPriority (uint32_t isr_num, uint8_t pri)
-{
-    PLIC->PRI[isr_num] = pri;
-800002de:	050a                	slli	a0,a0,0x2
-800002e0:	0c0007b7          	lui	a5,0xc000
-800002e4:	97aa                	add	a5,a5,a0
-800002e6:	c38c                	sw	a1,0(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:66
-}
-800002e8:	8082                	ret
-
-800002ea <PLIC_IntEnable>:
-PLIC_IntEnable():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:87
-{
-	uint32_t value;
-
-	//read - modify - write operation
-
-    if(target == Plic_Mach_Target) {
-800002ea:	e911                	bnez	a0,800002fe <PLIC_IntEnable+0x14>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:88
-    	value  = PLIC->MIEM0;
-800002ec:	0c002737          	lui	a4,0xc002
-800002f0:	4314                	lw	a3,0(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:89
-    	value |= (1<<isr_num);
-800002f2:	4785                	li	a5,1
-800002f4:	00b797b3          	sll	a5,a5,a1
-800002f8:	8fd5                	or	a5,a5,a3
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:90
-    	PLIC->MIEM0 = value;
-800002fa:	c31c                	sw	a5,0(a4)
-800002fc:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:92
-    } else {
-    	value = PLIC->UIEM0;
-800002fe:	0c002737          	lui	a4,0xc002
-80000302:	08072683          	lw	a3,128(a4) # c002080 <retarget.c.9c45fa53+0xbffa816>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:93
-    	value |= (1<<isr_num);
-80000306:	4785                	li	a5,1
-80000308:	00b797b3          	sll	a5,a5,a1
-8000030c:	8fd5                	or	a5,a5,a3
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:94
-    	PLIC->UIEM0 = value;
-8000030e:	08f72023          	sw	a5,128(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:96
-    }
-}
-80000312:	8082                	ret
-
-80000314 <PLIC_ClaimIrq>:
+800002c4 <PLIC_ClaimIrq>:
 PLIC_ClaimIrq():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:125
  * Get current isr number
@@ -630,23 +500,23 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:125
 uint32_t PLIC_ClaimIrq (uint8_t target)
 {
 	if(target == Plic_Mach_Target) {
-80000314:	e509                	bnez	a0,8000031e <PLIC_ClaimIrq+0xa>
+800002c4:	e509                	bnez	a0,800002ce <PLIC_ClaimIrq+0xa>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:126
 		return (uint32_t)(PLIC->MICC);
-80000316:	0c2007b7          	lui	a5,0xc200
-8000031a:	43c8                	lw	a0,4(a5)
-8000031c:	8082                	ret
+800002c6:	0c2007b7          	lui	a5,0xc200
+800002ca:	43c8                	lw	a0,4(a5)
+800002cc:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:128
 	} else {
 		return (uint32_t)(PLIC->UICC);
-8000031e:	0c2017b7          	lui	a5,0xc201
-80000322:	43c8                	lw	a0,4(a5)
+800002ce:	0c2017b7          	lui	a5,0xc201
+800002d2:	43c8                	lw	a0,4(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:130
 	}
 }
-80000324:	8082                	ret
+800002d4:	8082                	ret
 
-80000326 <PLIC_ClaimComplete>:
+800002d6 <PLIC_ClaimComplete>:
 PLIC_ClaimComplete():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:138
  * Set current isr as completed
@@ -655,23 +525,23 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:138
 void PLIC_ClaimComplete (uint8_t target, uint32_t isrnum)
 {
 	if(target == Plic_Mach_Target) {
-80000326:	e509                	bnez	a0,80000330 <PLIC_ClaimComplete+0xa>
+800002d6:	e509                	bnez	a0,800002e0 <PLIC_ClaimComplete+0xa>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:139
 		PLIC->MICC = isrnum;
-80000328:	0c2007b7          	lui	a5,0xc200
-8000032c:	c3cc                	sw	a1,4(a5)
-8000032e:	8082                	ret
+800002d8:	0c2007b7          	lui	a5,0xc200
+800002dc:	c3cc                	sw	a1,4(a5)
+800002de:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:141
 	} else {
 		PLIC->UICC = isrnum;
-80000330:	0c2017b7          	lui	a5,0xc201
-80000334:	c3cc                	sw	a1,4(a5)
+800002e0:	0c2017b7          	lui	a5,0xc201
+800002e4:	c3cc                	sw	a1,4(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:143
 	}
 }
-80000336:	8082                	ret
+800002e6:	8082                	ret
 
-80000338 <PLIC_SetThreshold>:
+800002e8 <PLIC_SetThreshold>:
 PLIC_SetThreshold():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:150
 /*
@@ -680,814 +550,66 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:150
 
 void PLIC_SetThreshold(uint8_t target, uint32_t value) {
 	if(target == Plic_Mach_Target) {
-80000338:	e509                	bnez	a0,80000342 <PLIC_SetThreshold+0xa>
+800002e8:	e509                	bnez	a0,800002f2 <PLIC_SetThreshold+0xa>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:151
 		PLIC->MTHR = value;
-8000033a:	0c2007b7          	lui	a5,0xc200
-8000033e:	c38c                	sw	a1,0(a5)
-80000340:	8082                	ret
+800002ea:	0c2007b7          	lui	a5,0xc200
+800002ee:	c38c                	sw	a1,0(a5)
+800002f0:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:153
 	} else {
 		PLIC->UTHR = value;
-80000342:	0c2017b7          	lui	a5,0xc201
-80000346:	c38c                	sw	a1,0(a5)
+800002f2:	0c2017b7          	lui	a5,0xc201
+800002f6:	c38c                	sw	a1,0(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:155
 	}
 }
-80000348:	8082                	ret
+800002f8:	8082                	ret
 
-8000034a <PLIC_MachHandler>:
+800002fa <PLIC_MachHandler>:
 PLIC_MachHandler():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:158
 
 
 void PLIC_MachHandler(void) {
-8000034a:	1141                	addi	sp,sp,-16
-8000034c:	c606                	sw	ra,12(sp)
+800002fa:	1141                	addi	sp,sp,-16
+800002fc:	c606                	sw	ra,12(sp)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:161
 
 	// handle interrupt
 	uint32_t isr_num = PLIC_ClaimIrq(Plic_Mach_Target);
-8000034e:	4501                	li	a0,0
-80000350:	37d1                	jal	80000314 <PLIC_ClaimIrq>
+800002fe:	4501                	li	a0,0
+80000300:	37d1                	jal	800002c4 <PLIC_ClaimIrq>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:163
 	// check if handler exist
 	if(mach_plic_handler[isr_num] != NULL_IRQ) {
-80000352:	00251713          	slli	a4,a0,0x2
-80000356:	90818793          	addi	a5,gp,-1784 # 40000088 <mach_plic_handler>
-8000035a:	97ba                	add	a5,a5,a4
-8000035c:	439c                	lw	a5,0(a5)
-8000035e:	cb81                	beqz	a5,8000036e <PLIC_MachHandler+0x24>
-80000360:	c422                	sw	s0,8(sp)
-80000362:	842a                	mv	s0,a0
+80000302:	400007b7          	lui	a5,0x40000
+80000306:	00251713          	slli	a4,a0,0x2
+8000030a:	00078793          	mv	a5,a5
+8000030e:	97ba                	add	a5,a5,a4
+80000310:	439c                	lw	a5,0(a5)
+80000312:	cb81                	beqz	a5,80000322 <PLIC_MachHandler+0x28>
+80000314:	c422                	sw	s0,8(sp)
+80000316:	842a                	mv	s0,a0
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:165
 		// call isr handler
 		mach_plic_handler[isr_num]();
-80000364:	9782                	jalr	a5
+80000318:	9782                	jalr	a5
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:167
 		// set isr completes
 		PLIC_ClaimComplete(Plic_Mach_Target, isr_num);
-80000366:	85a2                	mv	a1,s0
-80000368:	4501                	li	a0,0
-8000036a:	3f75                	jal	80000326 <PLIC_ClaimComplete>
-8000036c:	4422                	lw	s0,8(sp)
+8000031a:	85a2                	mv	a1,s0
+8000031c:	4501                	li	a0,0
+8000031e:	3f65                	jal	800002d6 <PLIC_ClaimComplete>
+80000320:	4422                	lw	s0,8(sp)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:169
 	}
 }
-8000036e:	40b2                	lw	ra,12(sp)
-80000370:	0141                	addi	sp,sp,16
-80000372:	8082                	ret
+80000322:	40b2                	lw	ra,12(sp)
+80000324:	0141                	addi	sp,sp,16
+80000326:	8082                	ret
 
-80000374 <PutChar>:
-PutChar():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:41
- * @param  pStr	Storage string.
- * @param  c    Character to write.
- */
-signed int PutChar(char *pStr, char c)
-{
-    *pStr = c;
-80000374:	00b50023          	sb	a1,0(a0) # 2000 <system_k1921vg015.c.08e00f8f+0x40f>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:43
-    return 1;
-}
-80000378:	4505                	li	a0,1
-8000037a:	8082                	ret
-
-8000037c <PutString>:
-PutString():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:54
- * @param  pStr     Storage string.
- * @param  pSource  Source string.
- * @return  The size of the written
- */
-signed int PutString(char *pStr, const char *pSource)
-{
-8000037c:	87aa                	mv	a5,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:55
-    signed int num = 0;
-8000037e:	4501                	li	a0,0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:57
-
-    while (*pSource != 0) {
-80000380:	a031                	j	8000038c <PutString+0x10>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:59
-
-        *pStr++ = *pSource++;
-80000382:	0585                	addi	a1,a1,1
-80000384:	00e78023          	sb	a4,0(a5) # c201000 <retarget.c.9c45fa53+0xc1f9796>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:60
-        num++;
-80000388:	0505                	addi	a0,a0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:59
-        *pStr++ = *pSource++;
-8000038a:	0785                	addi	a5,a5,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:57
-    while (*pSource != 0) {
-8000038c:	00058703          	lb	a4,0(a1)
-80000390:	fb6d                	bnez	a4,80000382 <PutString+0x6>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:64
-    }
-
-    return num;
-}
-80000392:	8082                	ret
-
-80000394 <PutUnsignedInt>:
-PutUnsignedInt():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:81
-signed int PutUnsignedInt(
-    char *pStr,
-    char fill,
-    signed int width,
-    unsigned int value)
-{
-80000394:	1101                	addi	sp,sp,-32
-80000396:	ce06                	sw	ra,28(sp)
-80000398:	cc22                	sw	s0,24(sp)
-8000039a:	ca26                	sw	s1,20(sp)
-8000039c:	c84a                	sw	s2,16(sp)
-8000039e:	c64e                	sw	s3,12(sp)
-800003a0:	c452                	sw	s4,8(sp)
-800003a2:	842a                	mv	s0,a0
-800003a4:	89ae                	mv	s3,a1
-800003a6:	8a36                	mv	s4,a3
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:85
-    signed int num = 0;
-
-    /* Take current digit into account when calculating width */
-    width--;
-800003a8:	fff60493          	addi	s1,a2,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:88
-
-    /* Recursively write upper digits */
-    if ((value / 10) > 0) {
-800003ac:	47a5                	li	a5,9
-800003ae:	00d7e463          	bltu	a5,a3,800003b6 <PutUnsignedInt+0x22>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:82
-    signed int num = 0;
-800003b2:	4901                	li	s2,0
-800003b4:	a01d                	j	800003da <PutUnsignedInt+0x46>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:90
-
-        num = PutUnsignedInt(pStr, fill, width, value / 10);
-800003b6:	ccccd6b7          	lui	a3,0xccccd
-800003ba:	ccd68693          	addi	a3,a3,-819 # cccccccd <__data_source_start+0x4cccb0b1>
-800003be:	02da36b3          	mulhu	a3,s4,a3
-800003c2:	828d                	srli	a3,a3,0x3
-800003c4:	8626                	mv	a2,s1
-800003c6:	37f9                	jal	80000394 <PutUnsignedInt>
-800003c8:	892a                	mv	s2,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:91
-        pStr += num;
-800003ca:	942a                	add	s0,s0,a0
-800003cc:	a809                	j	800003de <PutUnsignedInt+0x4a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:99
-    /* Write filler characters */
-    else {
-
-        while (width > 0) {
-
-            PutChar(pStr, fill);
-800003ce:	85ce                	mv	a1,s3
-800003d0:	8522                	mv	a0,s0
-800003d2:	374d                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:100
-            pStr++;
-800003d4:	0405                	addi	s0,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:101
-            num++;
-800003d6:	0905                	addi	s2,s2,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:102
-            width--;
-800003d8:	14fd                	addi	s1,s1,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:97
-        while (width > 0) {
-800003da:	fe904ae3          	bgtz	s1,800003ce <PutUnsignedInt+0x3a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:107
-        }
-    }
-
-    /* Write lower digit */
-    num += PutChar(pStr, (value % 10) + '0');
-800003de:	ccccd5b7          	lui	a1,0xccccd
-800003e2:	ccd58593          	addi	a1,a1,-819 # cccccccd <__data_source_start+0x4cccb0b1>
-800003e6:	02ba35b3          	mulhu	a1,s4,a1
-800003ea:	818d                	srli	a1,a1,0x3
-800003ec:	00259793          	slli	a5,a1,0x2
-800003f0:	97ae                	add	a5,a5,a1
-800003f2:	0786                	slli	a5,a5,0x1
-800003f4:	40fa05b3          	sub	a1,s4,a5
-800003f8:	03058593          	addi	a1,a1,48
-800003fc:	05e2                	slli	a1,a1,0x18
-800003fe:	85e1                	srai	a1,a1,0x18
-80000400:	8522                	mv	a0,s0
-80000402:	3f8d                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:110
-
-    return num;
-}
-80000404:	954a                	add	a0,a0,s2
-80000406:	40f2                	lw	ra,28(sp)
-80000408:	4462                	lw	s0,24(sp)
-8000040a:	44d2                	lw	s1,20(sp)
-8000040c:	4942                	lw	s2,16(sp)
-8000040e:	49b2                	lw	s3,12(sp)
-80000410:	4a22                	lw	s4,8(sp)
-80000412:	6105                	addi	sp,sp,32
-80000414:	8082                	ret
-
-80000416 <PutSignedInt>:
-PutSignedInt():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:127
-signed int PutSignedInt(
-    char *pStr,
-    char fill,
-    signed int width,
-    signed int value)
-{
-80000416:	1101                	addi	sp,sp,-32
-80000418:	ce06                	sw	ra,28(sp)
-8000041a:	cc22                	sw	s0,24(sp)
-8000041c:	ca26                	sw	s1,20(sp)
-8000041e:	c84a                	sw	s2,16(sp)
-80000420:	c64e                	sw	s3,12(sp)
-80000422:	c452                	sw	s4,8(sp)
-80000424:	c256                	sw	s5,4(sp)
-80000426:	842a                	mv	s0,a0
-80000428:	89ae                	mv	s3,a1
-8000042a:	8a36                	mv	s4,a3
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:132
-    signed int num = 0;
-    unsigned int absolute;
-
-    /* Compute absolute value */
-    if (value < 0) {
-8000042c:	0606c463          	bltz	a3,80000494 <PutSignedInt+0x7e>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:138
-
-        absolute = -value;
-    }
-    else {
-
-        absolute = value;
-80000430:	8ab6                	mv	s5,a3
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:142
-    }
-
-    /* Take current digit into account when calculating width */
-    width--;
-80000432:	fff60493          	addi	s1,a2,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:145
-
-    /* Recursively write upper digits */
-    if ((absolute / 10) > 0) {
-80000436:	47a5                	li	a5,9
-80000438:	0957f063          	bgeu	a5,s5,800004b8 <PutSignedInt+0xa2>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:147
-
-        if (value < 0) {
-8000043c:	040a4f63          	bltz	s4,8000049a <PutSignedInt+0x84>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:153
-
-            num = PutSignedInt(pStr, fill, width, -(absolute / 10));
-        }
-        else {
-
-            num = PutSignedInt(pStr, fill, width, absolute / 10);
-80000440:	ccccd6b7          	lui	a3,0xccccd
-80000444:	ccd68693          	addi	a3,a3,-819 # cccccccd <__data_source_start+0x4cccb0b1>
-80000448:	02dab6b3          	mulhu	a3,s5,a3
-8000044c:	828d                	srli	a3,a3,0x3
-8000044e:	8626                	mv	a2,s1
-80000450:	85ce                	mv	a1,s3
-80000452:	8522                	mv	a0,s0
-80000454:	37c9                	jal	80000416 <PutSignedInt>
-80000456:	892a                	mv	s2,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:155
-        }
-        pStr += num;
-80000458:	944a                	add	s0,s0,s2
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:183
-            pStr++;
-        }
-    }
-
-    /* Write lower digit */
-    num += PutChar(pStr, (absolute % 10) + '0');
-8000045a:	ccccd5b7          	lui	a1,0xccccd
-8000045e:	ccd58593          	addi	a1,a1,-819 # cccccccd <__data_source_start+0x4cccb0b1>
-80000462:	02bab5b3          	mulhu	a1,s5,a1
-80000466:	818d                	srli	a1,a1,0x3
-80000468:	00259793          	slli	a5,a1,0x2
-8000046c:	97ae                	add	a5,a5,a1
-8000046e:	0786                	slli	a5,a5,0x1
-80000470:	40fa85b3          	sub	a1,s5,a5
-80000474:	03058593          	addi	a1,a1,48
-80000478:	05e2                	slli	a1,a1,0x18
-8000047a:	85e1                	srai	a1,a1,0x18
-8000047c:	8522                	mv	a0,s0
-8000047e:	3ddd                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:186
-
-    return num;
-}
-80000480:	954a                	add	a0,a0,s2
-80000482:	40f2                	lw	ra,28(sp)
-80000484:	4462                	lw	s0,24(sp)
-80000486:	44d2                	lw	s1,20(sp)
-80000488:	4942                	lw	s2,16(sp)
-8000048a:	49b2                	lw	s3,12(sp)
-8000048c:	4a22                	lw	s4,8(sp)
-8000048e:	4a92                	lw	s5,4(sp)
-80000490:	6105                	addi	sp,sp,32
-80000492:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:134
-        absolute = -value;
-80000494:	40d00ab3          	neg	s5,a3
-80000498:	bf69                	j	80000432 <PutSignedInt+0x1c>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:149
-            num = PutSignedInt(pStr, fill, width, -(absolute / 10));
-8000049a:	ccccd6b7          	lui	a3,0xccccd
-8000049e:	ccd68693          	addi	a3,a3,-819 # cccccccd <__data_source_start+0x4cccb0b1>
-800004a2:	02dab6b3          	mulhu	a3,s5,a3
-800004a6:	828d                	srli	a3,a3,0x3
-800004a8:	40d006b3          	neg	a3,a3
-800004ac:	8626                	mv	a2,s1
-800004ae:	85ce                	mv	a1,s3
-800004b0:	8522                	mv	a0,s0
-800004b2:	3795                	jal	80000416 <PutSignedInt>
-800004b4:	892a                	mv	s2,a0
-800004b6:	b74d                	j	80000458 <PutSignedInt+0x42>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:160
-        if (value < 0) {
-800004b8:	000a4463          	bltz	s4,800004c0 <PutSignedInt+0xaa>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:127
-{
-800004bc:	4901                	li	s2,0
-800004be:	a811                	j	800004d2 <PutSignedInt+0xbc>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:162
-            width--;
-800004c0:	ffe60493          	addi	s1,a2,-2
-800004c4:	bfe5                	j	800004bc <PutSignedInt+0xa6>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:168
-            PutChar(pStr, fill);
-800004c6:	85ce                	mv	a1,s3
-800004c8:	8522                	mv	a0,s0
-800004ca:	356d                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:169
-            pStr++;
-800004cc:	0405                	addi	s0,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:170
-            num++;
-800004ce:	0905                	addi	s2,s2,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:171
-            width--;
-800004d0:	14fd                	addi	s1,s1,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:166
-        while (width > 0) {
-800004d2:	fe904ae3          	bgtz	s1,800004c6 <PutSignedInt+0xb0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:175
-        if (value < 0) {
-800004d6:	f80a52e3          	bgez	s4,8000045a <PutSignedInt+0x44>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:177
-            num += PutChar(pStr, '-');
-800004da:	02d00593          	li	a1,45
-800004de:	8522                	mv	a0,s0
-800004e0:	3d51                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:177 (discriminator 1)
-800004e2:	992a                	add	s2,s2,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:178
-            pStr++;
-800004e4:	0405                	addi	s0,s0,1
-800004e6:	bf95                	j	8000045a <PutSignedInt+0x44>
-
-800004e8 <PutHexa>:
-PutHexa():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:207
-    char *pStr,
-    char fill,
-    signed int width,
-    unsigned char maj,
-    unsigned int value)
-{
-800004e8:	1101                	addi	sp,sp,-32
-800004ea:	ce06                	sw	ra,28(sp)
-800004ec:	cc22                	sw	s0,24(sp)
-800004ee:	ca26                	sw	s1,20(sp)
-800004f0:	c84a                	sw	s2,16(sp)
-800004f2:	c64e                	sw	s3,12(sp)
-800004f4:	c452                	sw	s4,8(sp)
-800004f6:	c256                	sw	s5,4(sp)
-800004f8:	842a                	mv	s0,a0
-800004fa:	89ae                	mv	s3,a1
-800004fc:	8ab6                	mv	s5,a3
-800004fe:	8a3a                	mv	s4,a4
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:211
-    signed int num = 0;
-
-    /* Decrement width */
-    width--;
-80000500:	fff60493          	addi	s1,a2,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:214
-
-    /* Recursively output upper digits */
-    if ((value >> 4) > 0) {
-80000504:	8311                	srli	a4,a4,0x4
-80000506:	e319                	bnez	a4,8000050c <PutHexa+0x24>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:208
-    signed int num = 0;
-80000508:	4901                	li	s2,0
-8000050a:	a821                	j	80000522 <PutHexa+0x3a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:216
-
-        num += PutHexa(pStr, fill, width, maj, value >> 4);
-8000050c:	8626                	mv	a2,s1
-8000050e:	3fe9                	jal	800004e8 <PutHexa>
-80000510:	892a                	mv	s2,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:217
-        pStr += num;
-80000512:	942a                	add	s0,s0,a0
-80000514:	a809                	j	80000526 <PutHexa+0x3e>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:224
-    /* Write filler chars */
-    else {
-
-        while (width > 0) {
-
-            PutChar(pStr, fill);
-80000516:	85ce                	mv	a1,s3
-80000518:	8522                	mv	a0,s0
-8000051a:	3da9                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:225
-            pStr++;
-8000051c:	0405                	addi	s0,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:226
-            num++;
-8000051e:	0905                	addi	s2,s2,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:227
-            width--;
-80000520:	14fd                	addi	s1,s1,-1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:222
-        while (width > 0) {
-80000522:	fe904ae3          	bgtz	s1,80000516 <PutHexa+0x2e>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:232
-        }
-    }
-
-    /* Write current digit */
-    if ((value & 0xF) < 10) {
-80000526:	00fa7793          	andi	a5,s4,15
-8000052a:	4725                	li	a4,9
-8000052c:	02f77563          	bgeu	a4,a5,80000556 <PutHexa+0x6e>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:236
-
-        PutChar(pStr, (value & 0xF) + '0');
-    }
-    else if (maj) {
-80000530:	020a8863          	beqz	s5,80000560 <PutHexa+0x78>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:238
-
-        PutChar(pStr, (value & 0xF) - 10 + 'A');
-80000534:	00fa7593          	andi	a1,s4,15
-80000538:	03758593          	addi	a1,a1,55
-8000053c:	8522                	mv	a0,s0
-8000053e:	3d1d                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:247
-        PutChar(pStr, (value & 0xF) - 10 + 'a');
-    }
-    num++;
-
-    return num;
-}
-80000540:	00190513          	addi	a0,s2,1
-80000544:	40f2                	lw	ra,28(sp)
-80000546:	4462                	lw	s0,24(sp)
-80000548:	44d2                	lw	s1,20(sp)
-8000054a:	4942                	lw	s2,16(sp)
-8000054c:	49b2                	lw	s3,12(sp)
-8000054e:	4a22                	lw	s4,8(sp)
-80000550:	4a92                	lw	s5,4(sp)
-80000552:	6105                	addi	sp,sp,32
-80000554:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:234
-        PutChar(pStr, (value & 0xF) + '0');
-80000556:	03078593          	addi	a1,a5,48
-8000055a:	8522                	mv	a0,s0
-8000055c:	3d21                	jal	80000374 <PutChar>
-8000055e:	b7cd                	j	80000540 <PutHexa+0x58>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:242
-        PutChar(pStr, (value & 0xF) - 10 + 'a');
-80000560:	00fa7593          	andi	a1,s4,15
-80000564:	05758593          	addi	a1,a1,87
-80000568:	05e2                	slli	a1,a1,0x18
-8000056a:	85e1                	srai	a1,a1,0x18
-8000056c:	8522                	mv	a0,s0
-8000056e:	3519                	jal	80000374 <PutChar>
-80000570:	bfc1                	j	80000540 <PutHexa+0x58>
-
-80000572 <vsnprintf>:
-vsnprintf():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:266
- * @param ap      Argument list.
- *
- * @return  The number of characters written.
- */
-signed int vsnprintf(char *pStr, size_t length, const char *pFormat, va_list ap)
-{
-80000572:	7179                	addi	sp,sp,-48
-80000574:	d606                	sw	ra,44(sp)
-80000576:	d226                	sw	s1,36(sp)
-80000578:	d04a                	sw	s2,32(sp)
-8000057a:	ce4e                	sw	s3,28(sp)
-8000057c:	892a                	mv	s2,a0
-8000057e:	89ae                	mv	s3,a1
-80000580:	c636                	sw	a3,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:273
-    unsigned char width;
-    signed int    num = 0;
-    signed int    size = 0;
-
-    /* Clear the string */
-    if (pStr) {
-80000582:	c119                	beqz	a0,80000588 <vsnprintf+0x16>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:275
-
-        *pStr = 0;
-80000584:	00050023          	sb	zero,0(a0)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:290
-            size++;
-        }
-        /* Escaped '%' */
-        else if (*(pFormat+1) == '%') {
-
-            *pStr++ = '%';
-80000588:	4481                	li	s1,0
-8000058a:	a821                	j	800005a2 <vsnprintf+0x30>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:288
-        else if (*(pFormat+1) == '%') {
-8000058c:	00160583          	lb	a1,1(a2)
-80000590:	02500793          	li	a5,37
-80000594:	02f59763          	bne	a1,a5,800005c2 <vsnprintf+0x50>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:290
-            *pStr++ = '%';
-80000598:	00f90023          	sb	a5,0(s2)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:291
-            pFormat += 2;
-8000059c:	0609                	addi	a2,a2,2
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:292
-            size++;
-8000059e:	0485                	addi	s1,s1,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:290
-            *pStr++ = '%';
-800005a0:	0905                	addi	s2,s2,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:279
-    while (*pFormat != 0 && size < length) {
-800005a2:	00060783          	lb	a5,0(a2)
-800005a6:	10078763          	beqz	a5,800006b4 <vsnprintf+0x142>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:279 (discriminator 1)
-800005aa:	1134f563          	bgeu	s1,s3,800006b4 <vsnprintf+0x142>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:282
-        if (*pFormat != '%') {
-800005ae:	02500713          	li	a4,37
-800005b2:	fce78de3          	beq	a5,a4,8000058c <vsnprintf+0x1a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:284
-            *pStr++ = *pFormat++;
-800005b6:	0605                	addi	a2,a2,1
-800005b8:	00f90023          	sb	a5,0(s2)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:285
-            size++;
-800005bc:	0485                	addi	s1,s1,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:284
-            *pStr++ = *pFormat++;
-800005be:	0905                	addi	s2,s2,1
-800005c0:	b7cd                	j	800005a2 <vsnprintf+0x30>
-800005c2:	d422                	sw	s0,40(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:299
-        /* Token delimiter */
-        else {
-
-            fill = ' ';
-            width = 0;
-            pFormat++;
-800005c4:	00160413          	addi	s0,a2,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:302
-
-            /* Parse filler */
-            if (*pFormat == '0') {
-800005c8:	03000793          	li	a5,48
-800005cc:	00f58663          	beq	a1,a5,800005d8 <vsnprintf+0x66>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:297
-            fill = ' ';
-800005d0:	02000593          	li	a1,32
-800005d4:	4601                	li	a2,0
-800005d6:	a005                	j	800005f6 <vsnprintf+0x84>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:305
-
-                fill = '0';
-                pFormat++;
-800005d8:	00260413          	addi	s0,a2,2
-800005dc:	bfe5                	j	800005d4 <vsnprintf+0x62>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:311
-            }
-
-            /* Parse width */
-            while ((*pFormat >= '0') && (*pFormat <= '9')) {
-
-                width = (width*10) + *pFormat-'0';
-800005de:	00261713          	slli	a4,a2,0x2
-800005e2:	9732                	add	a4,a4,a2
-800005e4:	0706                	slli	a4,a4,0x1
-800005e6:	97ba                	add	a5,a5,a4
-800005e8:	0ff7f793          	zext.b	a5,a5
-800005ec:	fd078793          	addi	a5,a5,-48
-800005f0:	0ff7f613          	zext.b	a2,a5
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:312
-                pFormat++;
-800005f4:	0405                	addi	s0,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:309
-            while ((*pFormat >= '0') && (*pFormat <= '9')) {
-800005f6:	00040683          	lb	a3,0(s0)
-800005fa:	0ff6f793          	zext.b	a5,a3
-800005fe:	fd078713          	addi	a4,a5,-48
-80000602:	0ff77713          	zext.b	a4,a4
-80000606:	4525                	li	a0,9
-80000608:	fce57be3          	bgeu	a0,a4,800005de <vsnprintf+0x6c>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:316
-            }
-
-            /* Check if there is enough space */
-            if (size + width > length) {
-8000060c:	009607b3          	add	a5,a2,s1
-80000610:	00f9f963          	bgeu	s3,a5,80000622 <vsnprintf+0xb0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:318
-
-                width = length - size;
-80000614:	0ff9f613          	zext.b	a2,s3
-80000618:	0ff4f793          	zext.b	a5,s1
-8000061c:	8e1d                	sub	a2,a2,a5
-8000061e:	0ff67613          	zext.b	a2,a2
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:322
-            }
-
-            /* Parse type */
-            switch (*pFormat) {
-80000622:	fa868693          	addi	a3,a3,-88
-80000626:	0ff6f713          	zext.b	a4,a3
-8000062a:	02000793          	li	a5,32
-8000062e:	08e7ec63          	bltu	a5,a4,800006c6 <vsnprintf+0x154>
-80000632:	00271693          	slli	a3,a4,0x2
-80000636:	800027b7          	lui	a5,0x80002
-8000063a:	aec78793          	addi	a5,a5,-1300 # 80001aec <__clz_tab+0x100>
-8000063e:	96be                	add	a3,a3,a5
-80000640:	429c                	lw	a5,0(a3)
-80000642:	8782                	jr	a5
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:324
-            case 'd':
-            case 'i': num = PutSignedInt(pStr, fill, width, va_arg(ap, signed int)); break;
-80000644:	47b2                	lw	a5,12(sp)
-80000646:	00478713          	addi	a4,a5,4
-8000064a:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:324 (discriminator 1)
-8000064c:	4394                	lw	a3,0(a5)
-8000064e:	854a                	mv	a0,s2
-80000650:	33d9                	jal	80000416 <PutSignedInt>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:334
-            case 'c': num = PutChar(pStr, va_arg(ap, unsigned int)); break;
-            default:
-                return EOF;
-            }
-
-            pFormat++;
-80000652:	00140613          	addi	a2,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:335
-            pStr += num;
-80000656:	992a                	add	s2,s2,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:336
-            size += num;
-80000658:	94aa                	add	s1,s1,a0
-8000065a:	5422                	lw	s0,40(sp)
-8000065c:	b799                	j	800005a2 <vsnprintf+0x30>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:325
-            case 'u': num = PutUnsignedInt(pStr, fill, width, va_arg(ap, unsigned int)); break;
-8000065e:	47b2                	lw	a5,12(sp)
-80000660:	00478713          	addi	a4,a5,4
-80000664:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:325 (discriminator 1)
-80000666:	4394                	lw	a3,0(a5)
-80000668:	854a                	mv	a0,s2
-8000066a:	332d                	jal	80000394 <PutUnsignedInt>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:325
-8000066c:	b7dd                	j	80000652 <vsnprintf+0xe0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:326
-            case 'x': num = PutHexa(pStr, fill, width, 0, va_arg(ap, unsigned int)); break;
-8000066e:	47b2                	lw	a5,12(sp)
-80000670:	00478713          	addi	a4,a5,4
-80000674:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:326 (discriminator 1)
-80000676:	4398                	lw	a4,0(a5)
-80000678:	4681                	li	a3,0
-8000067a:	854a                	mv	a0,s2
-8000067c:	35b5                	jal	800004e8 <PutHexa>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:326
-8000067e:	bfd1                	j	80000652 <vsnprintf+0xe0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:327
-            case 'X': num = PutHexa(pStr, fill, width, 1, va_arg(ap, unsigned int)); break;
-80000680:	47b2                	lw	a5,12(sp)
-80000682:	00478713          	addi	a4,a5,4
-80000686:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:327 (discriminator 1)
-80000688:	4398                	lw	a4,0(a5)
-8000068a:	4685                	li	a3,1
-8000068c:	854a                	mv	a0,s2
-8000068e:	3da9                	jal	800004e8 <PutHexa>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:327
-80000690:	b7c9                	j	80000652 <vsnprintf+0xe0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:328
-            case 's': num = PutString(pStr, va_arg(ap, char *)); break;
-80000692:	47b2                	lw	a5,12(sp)
-80000694:	00478713          	addi	a4,a5,4
-80000698:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:328 (discriminator 1)
-8000069a:	438c                	lw	a1,0(a5)
-8000069c:	854a                	mv	a0,s2
-8000069e:	39f9                	jal	8000037c <PutString>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:328
-800006a0:	bf4d                	j	80000652 <vsnprintf+0xe0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:329
-            case 'c': num = PutChar(pStr, va_arg(ap, unsigned int)); break;
-800006a2:	47b2                	lw	a5,12(sp)
-800006a4:	00478713          	addi	a4,a5,4
-800006a8:	c63a                	sw	a4,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:329 (discriminator 1)
-800006aa:	00078583          	lb	a1,0(a5)
-800006ae:	854a                	mv	a0,s2
-800006b0:	31d1                	jal	80000374 <PutChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:329
-800006b2:	b745                	j	80000652 <vsnprintf+0xe0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:341
-        }
-    }
-
-    /* NULL-terminated (final \0 is not counted) */
-    if (size < length) {
-800006b4:	0134f563          	bgeu	s1,s3,800006be <vsnprintf+0x14c>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:343
-
-        *pStr = 0;
-800006b8:	00090023          	sb	zero,0(s2)
-800006bc:	a039                	j	800006ca <vsnprintf+0x158>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:347
-    }
-    else {
-
-        *(--pStr) = 0;
-800006be:	fe090fa3          	sb	zero,-1(s2)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:348
-        size--;
-800006c2:	14fd                	addi	s1,s1,-1
-800006c4:	a019                	j	800006ca <vsnprintf+0x158>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:322
-            switch (*pFormat) {
-800006c6:	54fd                	li	s1,-1
-800006c8:	5422                	lw	s0,40(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:352
-    }
-
-    return size;
-}
-800006ca:	8526                	mv	a0,s1
-800006cc:	50b2                	lw	ra,44(sp)
-800006ce:	5492                	lw	s1,36(sp)
-800006d0:	5902                	lw	s2,32(sp)
-800006d2:	49f2                	lw	s3,28(sp)
-800006d4:	6145                	addi	sp,sp,48
-800006d6:	8082                	ret
-
-800006d8 <vsprintf>:
-vsprintf():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:391
- * @param ap       Argument list.
- *
- * @return  The number of characters written.
- */
-signed int vsprintf(char *pString, const char *pFormat, va_list ap)
-{
-800006d8:	1141                	addi	sp,sp,-16
-800006da:	c606                	sw	ra,12(sp)
-800006dc:	86b2                	mv	a3,a2
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:392
-   return vsnprintf(pString, MAX_STRING_SIZE, pFormat, ap);
-800006de:	862e                	mv	a2,a1
-800006e0:	06400593          	li	a1,100
-800006e4:	3579                	jal	80000572 <vsnprintf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:393
-}
-800006e6:	40b2                	lw	ra,12(sp)
-800006e8:	0141                	addi	sp,sp,16
-800006ea:	8082                	ret
-
-800006ec <SystemCoreClockUpdate>:
+80000328 <SystemCoreClockUpdate>:
 SystemCoreClockUpdate():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:37
 //-- Functions -----------------------------------------------------------------
@@ -1496,138 +618,138 @@ void SystemCoreClockUpdate(void)
     uint32_t current_sysclk;
     uint32_t pll_refclk, pll_refdiv, pll_frac, pll_fbdiv, pll_pd0a, pll_pd0b, pll_pd1a, pll_pd1b = 1;
     current_sysclk = RCU->CLKSTAT_bit.SRC;
-800006ec:	3000e737          	lui	a4,0x3000e
-800006f0:	5f48                	lw	a0,60(a4)
-800006f2:	890d                	andi	a0,a0,3
+80000328:	3000e737          	lui	a4,0x3000e
+8000032c:	5f48                	lw	a0,60(a4)
+8000032e:	890d                	andi	a0,a0,3
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:39
   	pll_refclk = HSECLK_VAL;
    	pll_fbdiv = RCU->PLLSYSCFG2_bit.FBDIV;
-800006f4:	4f2c                	lw	a1,88(a4)
-800006f6:	6785                	lui	a5,0x1
-800006f8:	17fd                	addi	a5,a5,-1 # fff <printf.c.48218671+0xe2>
-800006fa:	8dfd                	and	a1,a1,a5
-800006fc:	05c2                	slli	a1,a1,0x10
-800006fe:	81c1                	srli	a1,a1,0x10
+80000330:	4f2c                	lw	a1,88(a4)
+80000332:	6785                	lui	a5,0x1
+80000334:	17fd                	addi	a5,a5,-1 # fff <system_k1921vg015.c.08e00f8f+0x7d0>
+80000336:	8dfd                	and	a1,a1,a5
+80000338:	05c2                	slli	a1,a1,0x10
+8000033a:	81c1                	srli	a1,a1,0x10
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:40
    	pll_refdiv = RCU->PLLSYSCFG0_bit.REFDIV;
-80000700:	05072883          	lw	a7,80(a4) # 3000e050 <retarget.c.9c45fa53+0x300067e6>
-80000704:	0078d893          	srli	a7,a7,0x7
-80000708:	03f8f893          	andi	a7,a7,63
+8000033c:	05072883          	lw	a7,80(a4) # 3000e050 <main.c.fafdc48c+0x3000ac9f>
+80000340:	0078d893          	srli	a7,a7,0x7
+80000344:	03f8f893          	andi	a7,a7,63
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:41
    	pll_pd0a = RCU->PLLSYSCFG0_bit.PD0A;
-8000070c:	4b3c                	lw	a5,80(a4)
-8000070e:	83b5                	srli	a5,a5,0xd
-80000710:	8b9d                	andi	a5,a5,7
+80000348:	4b3c                	lw	a5,80(a4)
+8000034a:	83b5                	srli	a5,a5,0xd
+8000034c:	8b9d                	andi	a5,a5,7
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:42
    	pll_pd0b = RCU->PLLSYSCFG0_bit.PD0B;
-80000712:	4b30                	lw	a2,80(a4)
-80000714:	8241                	srli	a2,a2,0x10
-80000716:	03f67613          	andi	a2,a2,63
+8000034e:	4b30                	lw	a2,80(a4)
+80000350:	8241                	srli	a2,a2,0x10
+80000352:	03f67613          	andi	a2,a2,63
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:43
    	pll_pd1a = RCU->PLLSYSCFG0_bit.PD1A;
-8000071a:	4b34                	lw	a3,80(a4)
-8000071c:	82d9                	srli	a3,a3,0x16
-8000071e:	8a9d                	andi	a3,a3,7
+80000356:	4b34                	lw	a3,80(a4)
+80000358:	82d9                	srli	a3,a3,0x16
+8000035a:	8a9d                	andi	a3,a3,7
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:44
    	pll_pd1b = RCU->PLLSYSCFG0_bit.PD1B;
-80000720:	05072803          	lw	a6,80(a4)
-80000724:	01985813          	srli	a6,a6,0x19
-80000728:	03f87813          	andi	a6,a6,63
+8000035c:	05072803          	lw	a6,80(a4)
+80000360:	01985813          	srli	a6,a6,0x19
+80000364:	03f87813          	andi	a6,a6,63
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:45
    	if (RCU->PLLSYSCFG0_bit.DSMEN) pll_frac = RCU->PLLSYSCFG1_bit.FRAC;
-8000072c:	4b38                	lw	a4,80(a4)
-8000072e:	8311                	srli	a4,a4,0x4
-80000730:	8b05                	andi	a4,a4,1
-80000732:	c735                	beqz	a4,8000079e <SystemCoreClockUpdate+0xb2>
+80000368:	4b38                	lw	a4,80(a4)
+8000036a:	8311                	srli	a4,a4,0x4
+8000036c:	8b05                	andi	a4,a4,1
+8000036e:	c735                	beqz	a4,800003da <SystemCoreClockUpdate+0xb2>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:45 (discriminator 1)
-80000734:	3000e737          	lui	a4,0x3000e
-80000738:	4b78                	lw	a4,84(a4)
-8000073a:	01000337          	lui	t1,0x1000
-8000073e:	137d                	addi	t1,t1,-1 # ffffff <retarget.c.9c45fa53+0xff8795>
-80000740:	00677733          	and	a4,a4,t1
+80000370:	3000e737          	lui	a4,0x3000e
+80000374:	4b78                	lw	a4,84(a4)
+80000376:	01000337          	lui	t1,0x1000
+8000037a:	137d                	addi	t1,t1,-1 # ffffff <main.c.fafdc48c+0xffcc4e>
+8000037c:	00677733          	and	a4,a4,t1
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:48
    	else pll_frac = 0;
 
    	SystemPll0Clock = (pll_refclk * (pll_fbdiv+pll_frac/(1 << 24))) / (pll_refdiv * (1+pll_pd0a) * (1+pll_pd0b));
-80000744:	8361                	srli	a4,a4,0x18
-80000746:	972e                	add	a4,a4,a1
-80000748:	00f425b7          	lui	a1,0xf42
-8000074c:	40058593          	addi	a1,a1,1024 # f42400 <retarget.c.9c45fa53+0xf3ab96>
-80000750:	02b70733          	mul	a4,a4,a1
-80000754:	0785                	addi	a5,a5,1
-80000756:	031787b3          	mul	a5,a5,a7
-8000075a:	0605                	addi	a2,a2,1
-8000075c:	02c787b3          	mul	a5,a5,a2
-80000760:	02f757b3          	divu	a5,a4,a5
-80000764:	aaf1ac23          	sw	a5,-1352(gp) # 40000238 <SystemPll0Clock>
+80000380:	8361                	srli	a4,a4,0x18
+80000382:	972e                	add	a4,a4,a1
+80000384:	00f425b7          	lui	a1,0xf42
+80000388:	40058593          	addi	a1,a1,1024 # f42400 <main.c.fafdc48c+0xf3f04f>
+8000038c:	02b70733          	mul	a4,a4,a1
+80000390:	0785                	addi	a5,a5,1
+80000392:	031787b3          	mul	a5,a5,a7
+80000396:	0605                	addi	a2,a2,1
+80000398:	02c787b3          	mul	a5,a5,a2
+8000039c:	02f757b3          	divu	a5,a4,a5
+800003a0:	90f1a623          	sw	a5,-1780(gp) # 4000008c <SystemPll0Clock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:49
    	SystemPll1Clock = (pll_refclk * (pll_fbdiv+pll_frac/(1 << 24))) / (pll_refdiv * (1+pll_pd1a) * (1+pll_pd1b));
-80000768:	0685                	addi	a3,a3,1
-8000076a:	031686b3          	mul	a3,a3,a7
-8000076e:	00180613          	addi	a2,a6,1
-80000772:	02c686b3          	mul	a3,a3,a2
-80000776:	02d75733          	divu	a4,a4,a3
-8000077a:	aae1aa23          	sw	a4,-1356(gp) # 40000234 <SystemPll1Clock>
+800003a4:	0685                	addi	a3,a3,1
+800003a6:	031686b3          	mul	a3,a3,a7
+800003aa:	00180613          	addi	a2,a6,1
+800003ae:	02c686b3          	mul	a3,a3,a2
+800003b2:	02d75733          	divu	a4,a4,a3
+800003b6:	90e1a423          	sw	a4,-1784(gp) # 40000088 <SystemPll1Clock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:50
     switch (current_sysclk) {
-8000077e:	4709                	li	a4,2
-80000780:	04e50163          	beq	a0,a4,800007c2 <SystemCoreClockUpdate+0xd6>
-80000784:	02a76063          	bltu	a4,a0,800007a4 <SystemCoreClockUpdate+0xb8>
-80000788:	c515                	beqz	a0,800007b4 <SystemCoreClockUpdate+0xc8>
-8000078a:	4785                	li	a5,1
-8000078c:	00f51b63          	bne	a0,a5,800007a2 <SystemCoreClockUpdate+0xb6>
+800003ba:	4709                	li	a4,2
+800003bc:	04e50163          	beq	a0,a4,800003fe <SystemCoreClockUpdate+0xd6>
+800003c0:	02a76063          	bltu	a4,a0,800003e0 <SystemCoreClockUpdate+0xb8>
+800003c4:	c515                	beqz	a0,800003f0 <SystemCoreClockUpdate+0xc8>
+800003c6:	4785                	li	a5,1
+800003c8:	00f51b63          	bne	a0,a5,800003de <SystemCoreClockUpdate+0xb6>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:55
     case RCU_CLKSTAT_SRC_HSICLK:
         SystemCoreClock = HSICLK_VAL;
         break;
     case RCU_CLKSTAT_SRC_HSECLK:
         SystemCoreClock = HSECLK_VAL;
-80000790:	00f427b7          	lui	a5,0xf42
-80000794:	40078793          	addi	a5,a5,1024 # f42400 <retarget.c.9c45fa53+0xf3ab96>
-80000798:	aaf1a823          	sw	a5,-1360(gp) # 40000230 <SystemCoreClock>
+800003cc:	00f427b7          	lui	a5,0xf42
+800003d0:	40078793          	addi	a5,a5,1024 # f42400 <main.c.fafdc48c+0xf3f04f>
+800003d4:	90f1a223          	sw	a5,-1788(gp) # 40000084 <SystemCoreClock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:56
         break;
-8000079c:	8082                	ret
+800003d8:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:46
    	else pll_frac = 0;
-8000079e:	4701                	li	a4,0
-800007a0:	b755                	j	80000744 <SystemCoreClockUpdate+0x58>
-800007a2:	8082                	ret
+800003da:	4701                	li	a4,0
+800003dc:	b755                	j	80000380 <SystemCoreClockUpdate+0x58>
+800003de:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:50
     switch (current_sysclk) {
-800007a4:	478d                	li	a5,3
-800007a6:	00f51663          	bne	a0,a5,800007b2 <SystemCoreClockUpdate+0xc6>
+800003e0:	478d                	li	a5,3
+800003e2:	00f51663          	bne	a0,a5,800003ee <SystemCoreClockUpdate+0xc6>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:61
     case RCU_CLKSTAT_SRC_SYSPLL0CLK:
     	SystemCoreClock = SystemPll0Clock;
     	break;
     case RCU_CLKSTAT_SRC_LSICLK:
     	SystemCoreClock = LSICLK_VAL;
-800007aa:	6721                	lui	a4,0x8
-800007ac:	aae1a823          	sw	a4,-1360(gp) # 40000230 <SystemCoreClock>
+800003e6:	6721                	lui	a4,0x8
+800003e8:	90e1a223          	sw	a4,-1788(gp) # 40000084 <SystemCoreClock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:65
         break;
     }
 
 }
-800007b0:	8082                	ret
-800007b2:	8082                	ret
+800003ec:	8082                	ret
+800003ee:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:52
         SystemCoreClock = HSICLK_VAL;
-800007b4:	000f47b7          	lui	a5,0xf4
-800007b8:	24078793          	addi	a5,a5,576 # f4240 <retarget.c.9c45fa53+0xec9d6>
-800007bc:	aaf1a823          	sw	a5,-1360(gp) # 40000230 <SystemCoreClock>
+800003f0:	000f47b7          	lui	a5,0xf4
+800003f4:	24078793          	addi	a5,a5,576 # f4240 <main.c.fafdc48c+0xf0e8f>
+800003f8:	90f1a223          	sw	a5,-1788(gp) # 40000084 <SystemCoreClock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:53
         break;
-800007c0:	8082                	ret
+800003fc:	8082                	ret
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:58
     	SystemCoreClock = SystemPll0Clock;
-800007c2:	aaf1a823          	sw	a5,-1360(gp) # 40000230 <SystemCoreClock>
+800003fe:	90f1a223          	sw	a5,-1788(gp) # 40000084 <SystemCoreClock>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:59
     	break;
-800007c6:	8082                	ret
+80000402:	8082                	ret
 
-800007c8 <ClkInit>:
+80000404 <ClkInit>:
 ClkInit():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:75
     uint32_t sysclk_source;
@@ -1636,27 +758,27 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
     #ifndef CKO_NONE
         //C7 clockout
         RCU->CGCFGAHB_bit.GPIOCEN = 1;
-800007c8:	3000e7b7          	lui	a5,0x3000e
-800007cc:	0007d703          	lhu	a4,0(a5) # 3000e000 <retarget.c.9c45fa53+0x30006796>
-800007d0:	40076713          	ori	a4,a4,1024
-800007d4:	00e79023          	sh	a4,0(a5)
+80000404:	3000e7b7          	lui	a5,0x3000e
+80000408:	0007d703          	lhu	a4,0(a5) # 3000e000 <main.c.fafdc48c+0x3000ac4f>
+8000040c:	40076713          	ori	a4,a4,1024
+80000410:	00e79023          	sh	a4,0(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:76
         RCU->RSTDISAHB_bit.GPIOCEN = 1;
-800007d8:	0107d703          	lhu	a4,16(a5)
-800007dc:	40076713          	ori	a4,a4,1024
-800007e0:	00e79823          	sh	a4,16(a5)
+80000414:	0107d703          	lhu	a4,16(a5)
+80000418:	40076713          	ori	a4,a4,1024
+8000041c:	00e79823          	sh	a4,16(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:77
         GPIOC->ALTFUNCNUM_bit.PIN7 = 3;
-800007e4:	28002737          	lui	a4,0x28002
-800007e8:	5f54                	lw	a3,60(a4)
-800007ea:	6631                	lui	a2,0xc
-800007ec:	8ed1                	or	a3,a3,a2
-800007ee:	df54                	sw	a3,60(a4)
+80000420:	28002737          	lui	a4,0x28002
+80000424:	5f54                	lw	a3,60(a4)
+80000426:	6631                	lui	a2,0xc
+80000428:	8ed1                	or	a3,a3,a2
+8000042a:	df54                	sw	a3,60(a4)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:78
         GPIOC->ALTFUNCSET_bit.PIN7 = 1;
-800007f0:	03475683          	lhu	a3,52(a4) # 28002034 <retarget.c.9c45fa53+0x27ffa7ca>
-800007f4:	0806e693          	ori	a3,a3,128
-800007f8:	02d71a23          	sh	a3,52(a4)
+8000042c:	03475683          	lhu	a3,52(a4) # 28002034 <main.c.fafdc48c+0x27ffec83>
+80000430:	0806e693          	ori	a3,a3,128
+80000434:	02d71a23          	sh	a3,52(a4)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:92
         RCU->CLKOUTCFG = (RCU_CLKOUTCFG_CLKSEL_HSE << RCU_CLKOUTCFG_CLKSEL_Pos) |
 				  	  	  (1 << RCU_CLKOUTCFG_DIVN_Pos) |
@@ -1664,9 +786,9 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 						  RCU_CLKOUTCFG_RSTDIS_Msk | RCU_CLKOUTCFG_CLKEN_Msk; //CKO = HSECLK
     #elif defined CKO_PLL0
         RCU->CLKOUTCFG = (RCU_CLKOUTCFG_CLKSEL_PLL0 << RCU_CLKOUTCFG_CLKSEL_Pos) |
-800007fc:	6745                	lui	a4,0x11
-800007fe:	12170713          	addi	a4,a4,289 # 11121 <retarget.c.9c45fa53+0x98b7>
-80000802:	0ae7ae23          	sw	a4,188(a5)
+80000438:	6745                	lui	a4,0x11
+8000043a:	12170713          	addi	a4,a4,289 # 11121 <main.c.fafdc48c+0xdd70>
+8000043e:	0ae7ae23          	sw	a4,188(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:108
 //select system clock
 #ifdef SYSCLK_PLL
@@ -1674,29 +796,29 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 	
 	//select HSE as source system clock while config PLL
 	RCU->SYSCLKCFG = (RCU_SYSCLKCFG_SRC_HSECLK << RCU_SYSCLKCFG_SRC_Pos);
-80000806:	4705                	li	a4,1
-80000808:	db98                	sw	a4,48(a5)
+80000442:	4705                	li	a4,1
+80000444:	db98                	sw	a4,48(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:110
     // Wait switching done
     timeout_counter = 0;
-8000080a:	4681                	li	a3,0
+80000446:	4681                	li	a3,0
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:111
     while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)){ //SYSCLK_SWITCH_TIMEOUT))
-8000080c:	a011                	j	80000810 <ClkInit+0x48>
+80000448:	a011                	j	8000044c <ClkInit+0x48>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:112
         timeout_counter++;
-8000080e:	0685                	addi	a3,a3,1
+8000044a:	0685                	addi	a3,a3,1
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:111
     while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)){ //SYSCLK_SWITCH_TIMEOUT))
-80000810:	3000e7b7          	lui	a5,0x3000e
-80000814:	5fd8                	lw	a4,60(a5)
-80000816:	8b0d                	andi	a4,a4,3
-80000818:	5b9c                	lw	a5,48(a5)
-8000081a:	8b8d                	andi	a5,a5,3
-8000081c:	00f70663          	beq	a4,a5,80000828 <ClkInit+0x60>
+8000044c:	3000e7b7          	lui	a5,0x3000e
+80000450:	5fd8                	lw	a4,60(a5)
+80000452:	8b0d                	andi	a4,a4,3
+80000454:	5b9c                	lw	a5,48(a5)
+80000456:	8b8d                	andi	a5,a5,3
+80000458:	00f70663          	beq	a4,a5,80000464 <ClkInit+0x60>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:111 (discriminator 1)
-80000820:	06300793          	li	a5,99
-80000824:	fed7f5e3          	bgeu	a5,a3,8000080e <ClkInit+0x46>
+8000045c:	06300793          	li	a5,99
+80000460:	fed7f5e3          	bgeu	a5,a3,8000044a <ClkInit+0x46>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:147
 	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
 	RCU->PLLSYSCFG2 = 100;         //FBDIV
@@ -1704,10 +826,10 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 // Fout0 = 50 000 000 Hz
 // Fout1 = 12 500 000 Hz
 	RCU->PLLSYSCFG0 =( 7 << RCU_PLLSYSCFG0_PD1B_Pos) |  //PD1B
-80000828:	3000e7b7          	lui	a5,0x3000e
-8000082c:	0fc16737          	lui	a4,0xfc16
-80000830:	10770713          	addi	a4,a4,263 # fc16107 <retarget.c.9c45fa53+0xfc0e89d>
-80000834:	cbb8                	sw	a4,80(a5)
+80000464:	3000e7b7          	lui	a5,0x3000e
+80000468:	0fc16737          	lui	a4,0xfc16
+8000046c:	10770713          	addi	a4,a4,263 # fc16107 <main.c.fafdc48c+0xfc12d56>
+80000470:	cbb8                	sw	a4,80(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:157
 					 ( 0 << RCU_PLLSYSCFG0_FOUTEN_Pos)    |  //fouten
 					 ( 0 << RCU_PLLSYSCFG0_DSMEN_Pos)     |  //dsmen
@@ -1715,11 +837,11 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 					 ( 3 << RCU_PLLSYSCFG0_BYP_Pos)       |  //bypass
 					 ( 1 << RCU_PLLSYSCFG0_PLLEN_Pos);       //en
 	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
-80000836:	0407aa23          	sw	zero,84(a5) # 3000e054 <retarget.c.9c45fa53+0x300067ea>
+80000472:	0407aa23          	sw	zero,84(a5) # 3000e054 <main.c.fafdc48c+0x3000aca3>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:158
 	RCU->PLLSYSCFG2 = 50;         //FBDIV
-8000083a:	03200713          	li	a4,50
-8000083e:	cfb8                	sw	a4,88(a5)
+80000476:	03200713          	li	a4,50
+8000047a:	cfb8                	sw	a4,88(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:192
 	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
 	RCU->PLLSYSCFG2 = 65;         //FBDIV
@@ -1727,52 +849,52 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 #error "Please define HSECLK_VAL with correct values!"
 #endif
 	RCU->PLLSYSCFG0_bit.FOUTEN = 1; 	// Fout0 Enable
-80000840:	4bb8                	lw	a4,80(a5)
-80000842:	f9f77713          	andi	a4,a4,-97
-80000846:	02076713          	ori	a4,a4,32
-8000084a:	cbb8                	sw	a4,80(a5)
+8000047c:	4bb8                	lw	a4,80(a5)
+8000047e:	f9f77713          	andi	a4,a4,-97
+80000482:	02076713          	ori	a4,a4,32
+80000486:	cbb8                	sw	a4,80(a5)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:193
 	timeout_counter = 1000;
-8000084c:	3e800793          	li	a5,1000
+80000488:	3e800793          	li	a5,1000
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:194
 	while(timeout_counter) timeout_counter--;
-80000850:	a011                	j	80000854 <ClkInit+0x8c>
+8000048c:	a011                	j	80000490 <ClkInit+0x8c>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:194 (discriminator 2)
-80000852:	17fd                	addi	a5,a5,-1
+8000048e:	17fd                	addi	a5,a5,-1
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:194 (discriminator 1)
-80000854:	fffd                	bnez	a5,80000852 <ClkInit+0x8a>
+80000490:	fffd                	bnez	a5,8000048e <ClkInit+0x8a>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:195 (discriminator 1)
 	while((RCU->PLLSYSSTAT_bit.LOCK) != 1)
-80000856:	3000e737          	lui	a4,0x3000e
-8000085a:	5338                	lw	a4,96(a4)
-8000085c:	8b05                	andi	a4,a4,1
-8000085e:	df65                	beqz	a4,80000856 <ClkInit+0x8e>
+80000492:	3000e737          	lui	a4,0x3000e
+80000496:	5338                	lw	a4,96(a4)
+80000498:	8b05                	andi	a4,a4,1
+8000049a:	df65                	beqz	a4,80000492 <ClkInit+0x8e>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:197
 	{}; 								// wait lock signal
 	RCU->PLLSYSCFG0_bit.BYP = 2; 		// Bypass for Fout1
-80000860:	3000e637          	lui	a2,0x3000e
-80000864:	4a38                	lw	a4,80(a2)
-80000866:	9b65                	andi	a4,a4,-7
-80000868:	00476713          	ori	a4,a4,4
-8000086c:	ca38                	sw	a4,80(a2)
+8000049c:	3000e637          	lui	a2,0x3000e
+800004a0:	4a38                	lw	a4,80(a2)
+800004a2:	9b65                	andi	a4,a4,-7
+800004a4:	00476713          	ori	a4,a4,4
+800004a8:	ca38                	sw	a4,80(a2)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:201
 	//select PLL as source system clock
 	sysclk_source = RCU_SYSCLKCFG_SRC_SYSPLL0CLK;
     // FLASH control settings
     FLASH->CTRL_bit.LAT = 3;
-8000086e:	3000d6b7          	lui	a3,0x3000d
-80000872:	46f8                	lw	a4,76(a3)
-80000874:	fff105b7          	lui	a1,0xfff10
-80000878:	15fd                	addi	a1,a1,-1 # fff0ffff <__data_source_start+0x7ff0e3e3>
-8000087a:	8f6d                	and	a4,a4,a1
-8000087c:	000305b7          	lui	a1,0x30
-80000880:	8f4d                	or	a4,a4,a1
-80000882:	c6f8                	sw	a4,76(a3)
+800004aa:	3000d6b7          	lui	a3,0x3000d
+800004ae:	46f8                	lw	a4,76(a3)
+800004b0:	fff105b7          	lui	a1,0xfff10
+800004b4:	15fd                	addi	a1,a1,-1 # fff0ffff <_tdata_start+0x7ff0f863>
+800004b6:	8f6d                	and	a4,a4,a1
+800004b8:	000305b7          	lui	a1,0x30
+800004bc:	8f4d                	or	a4,a4,a1
+800004be:	c6f8                	sw	a4,76(a3)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:202
     FLASH->CTRL_bit.CEN = 1;
-80000884:	46f8                	lw	a4,76(a3)
-80000886:	00276713          	ori	a4,a4,2
-8000088a:	c6f8                	sw	a4,76(a3)
+800004c0:	46f8                	lw	a4,76(a3)
+800004c2:	00276713          	ori	a4,a4,2
+800004c6:	c6f8                	sw	a4,76(a3)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:214
 #else
 #error "Please define SYSCLK source (SYSCLK_PLL | SYSCLK_HSE | SYSCLK_HSI | SYSCLK_LSI)!"
@@ -1780,69 +902,69 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 
     //switch sysclk
     RCU->SYSCLKCFG = (sysclk_source << RCU_SYSCLKCFG_SRC_Pos);
-8000088c:	4709                	li	a4,2
-8000088e:	da18                	sw	a4,48(a2)
+800004c8:	4709                	li	a4,2
+800004ca:	da18                	sw	a4,48(a2)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:217
     // Wait switching done
     timeout_counter = 0;
     while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)) //SYSCLK_SWITCH_TIMEOUT))
-80000890:	3000e737          	lui	a4,0x3000e
-80000894:	5f54                	lw	a3,60(a4)
-80000896:	8a8d                	andi	a3,a3,3
-80000898:	5b18                	lw	a4,48(a4)
-8000089a:	8b0d                	andi	a4,a4,3
-8000089c:	00e68863          	beq	a3,a4,800008ac <ClkInit+0xe4>
+800004cc:	3000e737          	lui	a4,0x3000e
+800004d0:	5f54                	lw	a3,60(a4)
+800004d2:	8a8d                	andi	a3,a3,3
+800004d4:	5b18                	lw	a4,48(a4)
+800004d6:	8b0d                	andi	a4,a4,3
+800004d8:	00e68863          	beq	a3,a4,800004e8 <ClkInit+0xe4>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:217 (discriminator 1)
-800008a0:	06300713          	li	a4,99
-800008a4:	00f76463          	bltu	a4,a5,800008ac <ClkInit+0xe4>
+800004dc:	06300713          	li	a4,99
+800004e0:	00f76463          	bltu	a4,a5,800004e8 <ClkInit+0xe4>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:218
         timeout_counter++;
-800008a8:	0785                	addi	a5,a5,1
-800008aa:	b7dd                	j	80000890 <ClkInit+0xc8>
+800004e4:	0785                	addi	a5,a5,1
+800004e6:	b7dd                	j	800004cc <ClkInit+0xc8>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:223
 /*    if (timeout_counter == SYSCLK_SWITCH_TIMEOUT) //SYSCLK failed to switch
         while (1) {
         };*/
 
 }
-800008ac:	8082                	ret
+800004e8:	8082                	ret
 
-800008ae <InterruptEnable>:
+800004ea <InterruptEnable>:
 InterruptEnable():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:226
 
 void InterruptEnable()
 {
-800008ae:	1141                	addi	sp,sp,-16
-800008b0:	c606                	sw	ra,12(sp)
+800004ea:	1141                	addi	sp,sp,-16
+800004ec:	c606                	sw	ra,12(sp)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:228
 	//allow all interrupts in machine mode
 	PLIC_SetThreshold (Plic_Mach_Target, 0); //allow all interrupts in machine mode
-800008b2:	4581                	li	a1,0
-800008b4:	4501                	li	a0,0
-800008b6:	3449                	jal	80000338 <PLIC_SetThreshold>
+800004ee:	4581                	li	a1,0
+800004f0:	4501                	li	a0,0
+800004f2:	3bdd                	jal	800002e8 <PLIC_SetThreshold>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:230
     // disable timer interrupt
     clear_csr(mie, MIE_MTIMER);
-800008b8:	08000793          	li	a5,128
-800008bc:	3047b7f3          	csrrc	a5,mie,a5
+800004f4:	08000793          	li	a5,128
+800004f8:	3047b7f3          	csrrc	a5,mie,a5
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:232
     // enable machine external interrupt
     set_csr(mie, MIE_MEXTERNAL);
-800008c0:	6785                	lui	a5,0x1
-800008c2:	80078793          	addi	a5,a5,-2048 # 800 <STACK_SIZE>
-800008c6:	3047a7f3          	csrrs	a5,mie,a5
+800004fc:	6785                	lui	a5,0x1
+800004fe:	80078793          	addi	a5,a5,-2048 # 800 <STACK_SIZE>
+80000502:	3047a7f3          	csrrs	a5,mie,a5
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:234
     // enable global interrupts
     set_csr(mstatus, MSTATUS_MIE);
-800008ca:	300467f3          	csrrsi	a5,mstatus,8
+80000506:	300467f3          	csrrsi	a5,mstatus,8
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:235
 }
-800008ce:	40b2                	lw	ra,12(sp)
-800008d0:	0141                	addi	sp,sp,16
-800008d2:	8082                	ret
+8000050a:	40b2                	lw	ra,12(sp)
+8000050c:	0141                	addi	sp,sp,16
+8000050e:	8082                	ret
 
-800008d4 <SystemInit>:
+80000510 <SystemInit>:
 SystemInit():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:248
     // disable global interrupts
@@ -1851,8 +973,8 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 
 void SystemInit(void)
 {
-800008d4:	1141                	addi	sp,sp,-16
-800008d6:	c606                	sw	ra,12(sp)
+80000510:	1141                	addi	sp,sp,-16
+80000512:	c606                	sw	ra,12(sp)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:256
 //	clear_csr(mie, MIE_MTIMER);
 	// enable machine external interrupt
@@ -1860,585 +982,167 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c
 	// enable global interrupts
 //	set_csr(mstatus, MSTATUS_MIE);
 	ClkInit();
-800008d8:	3dc5                	jal	800007c8 <ClkInit>
+80000514:	3dc5                	jal	80000404 <ClkInit>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/system_k1921vg015.c:257
 }
-800008da:	40b2                	lw	ra,12(sp)
-800008dc:	0141                	addi	sp,sp,16
-800008de:	8082                	ret
+80000516:	40b2                	lw	ra,12(sp)
+80000518:	0141                	addi	sp,sp,16
+8000051a:	8082                	ret
 
-800008e0 <BSP_led_init>:
-BSP_led_init():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:42
-}
-
-void BSP_led_init()
-{
-	// CGCFGAHB регистр конфигурации тактирования для шины AHB
-	RCU->CGCFGAHB_bit.GPIOAEN = 1; //  Разрешаем тактирование GPIOA
-800008e0:	3000e7b7          	lui	a5,0x3000e
-800008e4:	0007d703          	lhu	a4,0(a5) # 3000e000 <retarget.c.9c45fa53+0x30006796>
-800008e8:	10076713          	ori	a4,a4,256
-800008ec:	00e79023          	sh	a4,0(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:45
-
-	// RSTDISAHB - регистр снятия сброса для шины AHB
-	RCU->RSTDISAHB_bit.GPIOAEN = 1; //Включаем  GPIOA
-800008f0:	0107d703          	lhu	a4,16(a5)
-800008f4:	10076713          	ori	a4,a4,256
-800008f8:	00e79823          	sh	a4,16(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:47
-
-	GPIOA->OUTENSET = LEDS_MSK; // OUTENSET - регистр, который настраивает выводы как выходы
-800008fc:	280007b7          	lui	a5,0x28000
-80000900:	6741                	lui	a4,0x10
-80000902:	f0070713          	addi	a4,a4,-256 # ff00 <retarget.c.9c45fa53+0x8696>
-80000906:	d7d8                	sw	a4,44(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:49
-	// GPIOA->DATAOUTSET = LEDS_MSK;
-	GPIOA->DATAOUTCLR = LEDS_MSK;   // гасит диоды
-80000908:	c7d8                	sw	a4,12(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:52
+8000051c <UART1_init>:
+UART1_init():
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:95
+    uint32_t baud_icoef = HSECLK_VAL / (16 * UART1_BAUD);
+    uint32_t baud_fcoef = ((HSECLK_VAL / (16.0f * RETARGET_UART_BAUD) - baud_icoef) * 64 + 0.5f);
 
 
-	GPIOA->OUTENCLR = PA7_MSK;    // Кнопка как вход
-8000090a:	08000713          	li	a4,128
-8000090e:	db98                	sw	a4,48(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:55
-	// PULLMODE – регистр выбора режима подтяжки порта
-	// 0b00111..11 -> 14 и 15 зануляюся
-	GPIOA->PULLMODE &= ~(0b11 << (7 * 2));  // стр 367
-80000910:	5398                	lw	a4,32(a5)
-80000912:	76d1                	lui	a3,0xffff4
-80000914:	16fd                	addi	a3,a3,-1 # ffff3fff <__data_source_start+0x7fff23e3>
-80000916:	8f75                	and	a4,a4,a3
-80000918:	d398                	sw	a4,32(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:56
-	GPIOA->PULLMODE |= (0b01 << (7 * 2));  // Подтяжка к уровню логической единицы
-8000091a:	5398                	lw	a4,32(a5)
-8000091c:	6691                	lui	a3,0x4
-8000091e:	8f55                	or	a4,a4,a3
-80000920:	d398                	sw	a4,32(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:58
+    // Настраиваем GPIO
+    RCU->CGCFGAHB_bit.GPIOAEN = 1;  // включает такирование AHB
+8000051c:	3000e7b7          	lui	a5,0x3000e
+80000520:	0007d703          	lhu	a4,0(a5) # 3000e000 <main.c.fafdc48c+0x3000ac4f>
+80000524:	10076713          	ori	a4,a4,256
+80000528:	00e79023          	sh	a4,0(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:96
+    RCU->RSTDISAHB_bit.GPIOAEN = 1; // снимает сброс
+8000052c:	0107d703          	lhu	a4,16(a5)
+80000530:	10076713          	ori	a4,a4,256
+80000534:	00e79823          	sh	a4,16(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:97
+    RCU->CGCFGAPB_bit.UART1EN = 1;  // тактирование uart1
+80000538:	4798                	lw	a4,8(a5)
+8000053a:	08076713          	ori	a4,a4,128
+8000053e:	c798                	sw	a4,8(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:98
+    RCU->RSTDISAPB_bit.UART1EN = 1; // снимает сброс с uart1
+80000540:	4f98                	lw	a4,24(a5)
+80000542:	08076713          	ori	a4,a4,128
+80000546:	cf98                	sw	a4,24(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:100
 
-	GPIOA->OUTENSET = PA5_MSK;  // включение вывода, теперь как выход
-80000922:	4705                	li	a4,1
-80000924:	d7d8                	sw	a4,44(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:60
+    GPIOA->ALTFUNCNUM_bit.PIN2 = 1;
+80000548:	28000737          	lui	a4,0x28000
+8000054c:	5f54                	lw	a3,60(a4)
+8000054e:	fcf6f693          	andi	a3,a3,-49
+80000552:	0106e693          	ori	a3,a3,16
+80000556:	df54                	sw	a3,60(a4)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:101
+    GPIOA->ALTFUNCNUM_bit.PIN3 = 1;
+80000558:	5f54                	lw	a3,60(a4)
+8000055a:	f3f6f693          	andi	a3,a3,-193
+8000055e:	0406e693          	ori	a3,a3,64
+80000562:	df54                	sw	a3,60(a4)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:104
 
-}
-80000926:	8082                	ret
+    // ALTFUNCSET – активирует альтернативные функции для PA2 и PA3
+    GPIOA->ALTFUNCSET = GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;
+80000564:	46b1                	li	a3,12
+80000566:	db54                	sw	a3,52(a4)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:110
 
-80000928 <TMR32_init>:
-TMR32_init():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:63
+    // Настраиваем UART1
+    // UARTCLKCFG - Регистры настройки тактирования UART
+    // CLKSEL - выбирает источник тактирования UART1
+    // HSE внешний генератор
+    RCU->UARTCLKCFG[1].UARTCLKCFG_bit.CLKSEL = RCU_UARTCLKCFG_CLKSEL_HSE;
+80000568:	5bf8                	lw	a4,116(a5)
+8000056a:	fffd06b7          	lui	a3,0xfffd0
+8000056e:	16fd                	addi	a3,a3,-1 # fffcffff <_tdata_start+0x7ffcf863>
+80000570:	8f75                	and	a4,a4,a3
+80000572:	66c1                	lui	a3,0x10
+80000574:	8f55                	or	a4,a4,a3
+80000576:	dbf8                	sw	a4,116(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:113
 
-void TMR32_init(uint32_t period)
-{
-80000928:	1141                	addi	sp,sp,-16
-8000092a:	c606                	sw	ra,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:64
-	RCU->CGCFGAPB_bit.TMR32EN = 1;
-8000092c:	3000e7b7          	lui	a5,0x3000e
-80000930:	4798                	lw	a4,8(a5)
-80000932:	00176713          	ori	a4,a4,1
-80000936:	c798                	sw	a4,8(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:65
-	RCU->RSTDISAPB_bit.TMR32EN = 1;
-80000938:	4f98                	lw	a4,24(a5)
-8000093a:	00176713          	ori	a4,a4,1
-8000093e:	cf98                	sw	a4,24(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:68
+    // DIVEN - отключает дополнительный делитель частоты
+    RCU->UARTCLKCFG[1].UARTCLKCFG_bit.DIVEN = 0;
+80000578:	5bf8                	lw	a4,116(a5)
+8000057a:	fff006b7          	lui	a3,0xfff00
+8000057e:	16fd                	addi	a3,a3,-1 # ffefffff <_tdata_start+0x7feff863>
+80000580:	8f75                	and	a4,a4,a3
+80000582:	dbf8                	sw	a4,116(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:115
+    // RSTDIS - снимает сброс
+    RCU->UARTCLKCFG[1].UARTCLKCFG_bit.RSTDIS = 1;
+80000584:	5bf8                	lw	a4,116(a5)
+80000586:	10076713          	ori	a4,a4,256
+8000058a:	dbf8                	sw	a4,116(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:117
+    // включает тактирование
+    RCU->UARTCLKCFG[1].UARTCLKCFG_bit.CLKEN = 1;
+8000058c:	5bf8                	lw	a4,116(a5)
+8000058e:	00176713          	ori	a4,a4,1
+80000592:	dbf8                	sw	a4,116(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:120
 
-	//Записываем значение периода в CAPCOM[0]
-	TMR32->CAPCOM[0].VAL = period - 1;
-80000940:	157d                	addi	a0,a0,-1
-80000942:	30000737          	lui	a4,0x30000
-80000946:	cf48                	sw	a0,28(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:70
-	//Выбираем режим счета от 0 до значения CAPCOM[0]
-	TMR32->CTRL_bit.MODE = 1;
-80000948:	00075783          	lhu	a5,0(a4) # 30000000 <retarget.c.9c45fa53+0x2fff8796>
-8000094c:	fcf7f793          	andi	a5,a5,-49
-80000950:	0107e793          	ori	a5,a5,16
-80000954:	00f71023          	sh	a5,0(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:73
+    // Fractional Baud Rate Divisor
+    UART1->IBRD = baud_icoef; // записывасет дробную часть
+80000594:	300077b7          	lui	a5,0x30007
+80000598:	4721                	li	a4,8
+8000059a:	d3d8                	sw	a4,36(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:123
 
-	//Разрешаем прерывание по совпадению значения счетчика и CAPCOM[0]
-	TMR32->IM = 2;
-80000958:	4789                	li	a5,2
-8000095a:	c71c                	sw	a5,8(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:76
+    // Line Control Register High
+    UART1->FBRD = baud_fcoef;
+8000059c:	02c00713          	li	a4,44
+800005a0:	d798                	sw	a4,40(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:128
 
-	// Настраиваем обработчик прерывания для TMR32
-	PLIC_SetIrqHandler(Plic_Mach_Target, IsrVect_IRQ_TMR32, TMR32_IRQHandler);
-8000095c:	80001637          	lui	a2,0x80001
-80000960:	97c60613          	addi	a2,a2,-1668 # 8000097c <TMR32_IRQHandler>
-80000964:	4599                	li	a1,6
-80000966:	4501                	li	a0,0
-80000968:	3ab1                	jal	800002c4 <PLIC_SetIrqHandler>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:77
-	PLIC_SetPriority(IsrVect_IRQ_TMR32, 0x1);
-8000096a:	4585                	li	a1,1
-8000096c:	4519                	li	a0,6
-8000096e:	3a85                	jal	800002de <PLIC_SetPriority>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:78
-	PLIC_IntEnable(Plic_Mach_Target, IsrVect_IRQ_TMR32);
-80000970:	4599                	li	a1,6
-80000972:	4501                	li	a0,0
-80000974:	3a9d                	jal	800002ea <PLIC_IntEnable>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:79
-}
-80000976:	40b2                	lw	ra,12(sp)
-80000978:	0141                	addi	sp,sp,16
-8000097a:	8082                	ret
+    // Line Control Register High
+    // UART_LCRH_FEN_Msk включает FIFO (буфер для данных)
+    // 3 << UART_LCRH_WLEN_Pos – устанавливает 8 бит данных
+    UART1->LCRH = UART_LCRH_FEN_Msk | (3 << UART_LCRH_WLEN_Pos);
+800005a2:	07000713          	li	a4,112
+800005a6:	d7d8                	sw	a4,44(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:131
 
-8000097c <TMR32_IRQHandler>:
-TMR32_IRQHandler():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:130
-    // GPIOA->DATAOUTTGL = LED7_MSK;  // 12
-   //GPIOA->DATAOUT = (LED4_MSK | LED5_MSK);  // горят оба диода
-
-	static uint8_t d = 0;
-	static uint8_t last_button_state = 1;
-	uint8_t curr_button_state = (GPIOA->DATA & PA7_MSK) ? 1 : 0;
-8000097c:	280007b7          	lui	a5,0x28000
-80000980:	439c                	lw	a5,0(a5)
-80000982:	0807f793          	andi	a5,a5,128
-80000986:	00f037b3          	snez	a5,a5
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:133
-
-
-	if (curr_button_state != last_button_state)
-8000098a:	8801c703          	lbu	a4,-1920(gp) # 40000000 <last_button_state.1>
-8000098e:	00f70c63          	beq	a4,a5,800009a6 <TMR32_IRQHandler+0x2a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:135
-	{
-		d = 5;
-80000992:	4695                	li	a3,5
-80000994:	aad18423          	sb	a3,-1368(gp) # 40000228 <d.0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:148
-		{
-			GPIOA->DATAOUTTGL = LED7_MSK; // LED7_MSK;
-		}
-	}
-
-	last_button_state = curr_button_state;
-80000998:	88f18023          	sb	a5,-1920(gp) # 40000000 <last_button_state.1>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:152
-
-
-	//Сбрасываем флаг прерывания таймера
-	TMR32->IC = 3;
-8000099c:	300007b7          	lui	a5,0x30000
-800009a0:	470d                	li	a4,3
-800009a2:	cbd8                	sw	a4,20(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:153
-}
-800009a4:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:137
-	else if (d > 0)
-800009a6:	aa81c703          	lbu	a4,-1368(gp) # 40000228 <d.0>
-800009aa:	d77d                	beqz	a4,80000998 <TMR32_IRQHandler+0x1c>
+    //Interrupt FIFO Level Select
+    UART1->IFLS = 0;
+800005a8:	0207aa23          	sw	zero,52(a5) # 30007034 <main.c.fafdc48c+0x30003c83>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:139
-		d--;
-800009ac:	177d                	addi	a4,a4,-1
-800009ae:	0ff77713          	zext.b	a4,a4
-800009b2:	aae18423          	sb	a4,-1368(gp) # 40000228 <d.0>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:142
-		if (d == 0 && curr_button_state == 0)
-800009b6:	8f5d                	or	a4,a4,a5
-800009b8:	f365                	bnez	a4,80000998 <TMR32_IRQHandler+0x1c>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:144
-			GPIOA->DATAOUTTGL = LED7_MSK; // LED7_MSK;
-800009ba:	28000737          	lui	a4,0x28000
-800009be:	66a1                	lui	a3,0x8
-800009c0:	cb14                	sw	a3,16(a4)
-800009c2:	bfd9                	j	80000998 <TMR32_IRQHandler+0x1c>
-
-800009c4 <retarget_init>:
-retarget_init():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:31
-#if defined RETARGET
-    uint32_t baud_icoef = SystemCoreClock_uart / (16 * RETARGET_UART_BAUD);
-    uint32_t baud_fcoef = ((SystemCoreClock_uart / (16.0f * RETARGET_UART_BAUD) - baud_icoef) * 64 + 0.5f);
-    uint32_t uartclk_ref = 1;//RCU_UARTCFG_UARTCFG_CLKSEL_OSICLK;
-
-    RCU->CGCFGAHB_bit.GPIOAEN = 1;
-800009c4:	3000e7b7          	lui	a5,0x3000e
-800009c8:	0007d703          	lhu	a4,0(a5) # 3000e000 <retarget.c.9c45fa53+0x30006796>
-800009cc:	10076713          	ori	a4,a4,256
-800009d0:	00e79023          	sh	a4,0(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:32
-    RCU->RSTDISAHB_bit.GPIOAEN = 1;
-800009d4:	0107d703          	lhu	a4,16(a5)
-800009d8:	10076713          	ori	a4,a4,256
-800009dc:	00e79823          	sh	a4,16(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:33
-    RCU->CGCFGAPB_bit.UART0EN = 1;
-800009e0:	4798                	lw	a4,8(a5)
-800009e2:	04076713          	ori	a4,a4,64
-800009e6:	c798                	sw	a4,8(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:34
-    RCU->RSTDISAPB_bit.UART0EN = 1;
-800009e8:	4f98                	lw	a4,24(a5)
-800009ea:	04076713          	ori	a4,a4,64
-800009ee:	cf98                	sw	a4,24(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:36
-
-    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN0 = 1;
-800009f0:	28000737          	lui	a4,0x28000
-800009f4:	5f54                	lw	a3,60(a4)
-800009f6:	9af1                	andi	a3,a3,-4
-800009f8:	0016e693          	ori	a3,a3,1
-800009fc:	df54                	sw	a3,60(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:37
-    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN1 = 1;
-800009fe:	5f54                	lw	a3,60(a4)
-80000a00:	9acd                	andi	a3,a3,-13
-80000a02:	0046e693          	ori	a3,a3,4
-80000a06:	df54                	sw	a3,60(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:38
-    RETARGET_UART_PORT->ALTFUNCSET = (1 << RETARGET_UART_PIN_TX_POS) | (1 << RETARGET_UART_PIN_RX_POS);
-80000a08:	468d                	li	a3,3
-80000a0a:	db54                	sw	a3,52(a4)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:39
-    RCU->UARTCLKCFG[RETARGET_UART_NUM].UARTCLKCFG = (uartclk_ref << RCU_UARTCLKCFG_CLKSEL_Pos) |
-80000a0c:	6741                	lui	a4,0x10
-80000a0e:	10170713          	addi	a4,a4,257 # 10101 <retarget.c.9c45fa53+0x8897>
-80000a12:	dbb8                	sw	a4,112(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:42
-                                              	  	  RCU_UARTCLKCFG_CLKEN_Msk |
-													  RCU_UARTCLKCFG_RSTDIS_Msk;
-    RETARGET_UART->IBRD = baud_icoef;
-80000a14:	300067b7          	lui	a5,0x30006
-80000a18:	4721                	li	a4,8
-80000a1a:	d3d8                	sw	a4,36(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:43
-    RETARGET_UART->FBRD = baud_fcoef;
-80000a1c:	02c00713          	li	a4,44
-80000a20:	d798                	sw	a4,40(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:44
-    RETARGET_UART->LCRH = UART_LCRH_FEN_Msk | (3 << UART_LCRH_WLEN_Pos);
-80000a22:	07000713          	li	a4,112
-80000a26:	d7d8                	sw	a4,44(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:45
-    RETARGET_UART->CR = UART_CR_TXE_Msk | UART_CR_RXE_Msk | UART_CR_UARTEN_Msk;
-80000a28:	30100713          	li	a4,769
-80000a2c:	db98                	sw	a4,48(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:47
-#endif //RETARGET
+     Control Register
+     UART_CR_TXE_Msk разрешает передачу (TX)
+     UART_CR_RXE_Msk разрешает приём (RX)
+     UART_CR_UARTEN_Msk включает UART
+     */
+    UART1->CR = UART_CR_TXE_Msk | UART_CR_RXE_Msk | UART_CR_UARTEN_Msk;
+800005ac:	30100713          	li	a4,769
+800005b0:	db98                	sw	a4,48(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:140
 }
-80000a2e:	8082                	ret
+800005b2:	8082                	ret
 
-80000a30 <retarget_put_char>:
-retarget_put_char():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:61 (discriminator 1)
-}
-
-int retarget_put_char(int ch)
-{
-#if defined RETARGET
-    while (RETARGET_UART->FR_bit.BUSY) {
-80000a30:	300067b7          	lui	a5,0x30006
-80000a34:	4f9c                	lw	a5,24(a5)
-80000a36:	838d                	srli	a5,a5,0x3
-80000a38:	8b85                	andi	a5,a5,1
-80000a3a:	fbfd                	bnez	a5,80000a30 <retarget_put_char>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:63
-    };
-    RETARGET_UART->DR = ch;
-80000a3c:	300067b7          	lui	a5,0x30006
-80000a40:	c388                	sw	a0,0(a5)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../retarget.c:66
-#endif //RETARGET
-    return 0;
-}
-80000a42:	4501                	li	a0,0
-80000a44:	8082                	ret
-
-80000a46 <PrintChar>:
-PrintChar():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:21
-{
-80000a46:	1141                	addi	sp,sp,-16
-80000a48:	c606                	sw	ra,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:22
-	retarget_put_char(c);
-80000a4a:	37dd                	jal	80000a30 <retarget_put_char>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:23
-}
-80000a4c:	40b2                	lw	ra,12(sp)
-80000a4e:	0141                	addi	sp,sp,16
-80000a50:	8082                	ret
-
-80000a52 <fputc>:
-fputc():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:518
- * @param pStream  Output stream.
- * @param The character written if successful, or -1 if the output stream is
- *        not stdout or stderr.
- */
-signed int fputc(signed int c, FILE *pStream)
-{
-80000a52:	1141                	addi	sp,sp,-16
-80000a54:	c606                	sw	ra,12(sp)
-80000a56:	c422                	sw	s0,8(sp)
-80000a58:	842a                	mv	s0,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:519
-    if ((pStream == stdout) || (pStream == stderr)) {
-80000a5a:	98818793          	addi	a5,gp,-1656 # 40000108 <r>
-80000a5e:	479c                	lw	a5,8(a5)
-80000a60:	00b78763          	beq	a5,a1,80000a6e <fputc+0x1c>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:519 (discriminator 1)
-80000a64:	98818793          	addi	a5,gp,-1656 # 40000108 <r>
-80000a68:	47dc                	lw	a5,12(a5)
-80000a6a:	00b79b63          	bne	a5,a1,80000a80 <fputc+0x2e>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:521
-
-    	PrintChar(c);
-80000a6e:	01841513          	slli	a0,s0,0x18
-80000a72:	8561                	srai	a0,a0,0x18
-80000a74:	3fc9                	jal	80000a46 <PrintChar>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:523
-
-        return c;
-80000a76:	8522                	mv	a0,s0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:529
-    }
-    else {
-
-        return EOF;
-    }
-}
-80000a78:	40b2                	lw	ra,12(sp)
-80000a7a:	4422                	lw	s0,8(sp)
-80000a7c:	0141                	addi	sp,sp,16
-80000a7e:	8082                	ret
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:527
-        return EOF;
-80000a80:	557d                	li	a0,-1
-80000a82:	bfdd                	j	80000a78 <fputc+0x26>
-
-80000a84 <fputs>:
-fputs():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:543
- *
- * @return  Number of characters written if successful, or -1 if the output
- *          stream is not stdout or stderr.
- */
-signed int fputs(const char *pStr, FILE *pStream)
-{
-80000a84:	1141                	addi	sp,sp,-16
-80000a86:	c606                	sw	ra,12(sp)
-80000a88:	c422                	sw	s0,8(sp)
-80000a8a:	c226                	sw	s1,4(sp)
-80000a8c:	c04a                	sw	s2,0(sp)
-80000a8e:	842a                	mv	s0,a0
-80000a90:	892e                	mv	s2,a1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:544
-    signed int num = 0;
-80000a92:	4481                	li	s1,0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:546
-
-    while (*pStr != 0) {
-80000a94:	a019                	j	80000a9a <fputs+0x16>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:552
-
-        if (fputc(*pStr, pStream) == -1) {
-
-            return -1;
-        }
-        num++;
-80000a96:	0485                	addi	s1,s1,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:553
-        pStr++;
-80000a98:	0405                	addi	s0,s0,1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:546
-    while (*pStr != 0) {
-80000a9a:	00040503          	lb	a0,0(s0)
-80000a9e:	c519                	beqz	a0,80000aac <fputs+0x28>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:548
-        if (fputc(*pStr, pStream) == -1) {
-80000aa0:	85ca                	mv	a1,s2
-80000aa2:	3f45                	jal	80000a52 <fputc>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:548 (discriminator 1)
-80000aa4:	57fd                	li	a5,-1
-80000aa6:	fef518e3          	bne	a0,a5,80000a96 <fputs+0x12>
-80000aaa:	a011                	j	80000aae <fputs+0x2a>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:556
-    }
-
-    return num;
-80000aac:	8526                	mv	a0,s1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:557
-}
-80000aae:	40b2                	lw	ra,12(sp)
-80000ab0:	4422                	lw	s0,8(sp)
-80000ab2:	4492                	lw	s1,4(sp)
-80000ab4:	4902                	lw	s2,0(sp)
-80000ab6:	0141                	addi	sp,sp,16
-80000ab8:	8082                	ret
-
-80000aba <vfprintf>:
-vfprintf():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:404
-{
-80000aba:	7135                	addi	sp,sp,-160
-80000abc:	cf06                	sw	ra,156(sp)
-80000abe:	cd22                	sw	s0,152(sp)
-80000ac0:	842a                	mv	s0,a0
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:406
-    char pError[] = "stdio.c: increase MAX_STRING_SIZE\n\r";
-80000ac2:	800027b7          	lui	a5,0x80002
-80000ac6:	b7078793          	addi	a5,a5,-1168 # 80001b70 <__clz_tab+0x184>
-80000aca:	0007ae83          	lw	t4,0(a5)
-80000ace:	0047ae03          	lw	t3,4(a5)
-80000ad2:	0087a303          	lw	t1,8(a5)
-80000ad6:	00c7a883          	lw	a7,12(a5)
-80000ada:	0107a803          	lw	a6,16(a5)
-80000ade:	4bc8                	lw	a0,20(a5)
-80000ae0:	4f94                	lw	a3,24(a5)
-80000ae2:	4fd8                	lw	a4,28(a5)
-80000ae4:	539c                	lw	a5,32(a5)
-80000ae6:	c476                	sw	t4,8(sp)
-80000ae8:	c672                	sw	t3,12(sp)
-80000aea:	c81a                	sw	t1,16(sp)
-80000aec:	ca46                	sw	a7,20(sp)
-80000aee:	cc42                	sw	a6,24(sp)
-80000af0:	ce2a                	sw	a0,28(sp)
-80000af2:	d036                	sw	a3,32(sp)
-80000af4:	d23a                	sw	a4,36(sp)
-80000af6:	d43e                	sw	a5,40(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:409
-    if (vsprintf(pStr, pFormat, ap) >= MAX_STRING_SIZE) {
-80000af8:	1068                	addi	a0,sp,44
-80000afa:	3ef9                	jal	800006d8 <vsprintf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:409 (discriminator 1)
-80000afc:	06300793          	li	a5,99
-80000b00:	00a7d863          	bge	a5,a0,80000b10 <vfprintf+0x56>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:411
-        fputs(pError, stderr);
-80000b04:	98818793          	addi	a5,gp,-1656 # 40000108 <r>
-80000b08:	47cc                	lw	a1,12(a5)
-80000b0a:	0028                	addi	a0,sp,8
-80000b0c:	3fa5                	jal	80000a84 <fputs>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:412
-        while (1); /* Increase MAX_STRING_SIZE */
-80000b0e:	a001                	j	80000b0e <vfprintf+0x54>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:416
-    return fputs(pStr, pStream);
-80000b10:	85a2                	mv	a1,s0
-80000b12:	1068                	addi	a0,sp,44
-80000b14:	3f85                	jal	80000a84 <fputs>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:417
-}
-80000b16:	40fa                	lw	ra,156(sp)
-80000b18:	446a                	lw	s0,152(sp)
-80000b1a:	610d                	addi	sp,sp,160
-80000b1c:	8082                	ret
-
-80000b1e <vprintf>:
-vprintf():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:428
-{
-80000b1e:	1141                	addi	sp,sp,-16
-80000b20:	c606                	sw	ra,12(sp)
-80000b22:	862e                	mv	a2,a1
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:429
-    return vfprintf(stdout, pFormat, ap);
-80000b24:	85aa                	mv	a1,a0
-80000b26:	98818793          	addi	a5,gp,-1656 # 40000108 <r>
-80000b2a:	4788                	lw	a0,8(a5)
-80000b2c:	3779                	jal	80000aba <vfprintf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:430
-}
-80000b2e:	40b2                	lw	ra,12(sp)
-80000b30:	0141                	addi	sp,sp,16
-80000b32:	8082                	ret
-
-80000b34 <printf>:
-printf():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:461
-{
-80000b34:	7139                	addi	sp,sp,-64
-80000b36:	ce06                	sw	ra,28(sp)
-80000b38:	d22e                	sw	a1,36(sp)
-80000b3a:	d432                	sw	a2,40(sp)
-80000b3c:	d636                	sw	a3,44(sp)
-80000b3e:	d83a                	sw	a4,48(sp)
-80000b40:	da3e                	sw	a5,52(sp)
-80000b42:	dc42                	sw	a6,56(sp)
-80000b44:	de46                	sw	a7,60(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:466
-    va_start(ap, pFormat);
-80000b46:	104c                	addi	a1,sp,36
-80000b48:	c62e                	sw	a1,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:467
-    result = vprintf(pFormat, ap);
-80000b4a:	3fd1                	jal	80000b1e <vprintf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/printf.c:471
-}
-80000b4c:	40f2                	lw	ra,28(sp)
-80000b4e:	6121                	addi	sp,sp,64
-80000b50:	8082                	ret
-
-80000b52 <periph_init>:
+800005b4 <periph_init>:
 periph_init():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:83
-{
-80000b52:	1141                	addi	sp,sp,-16
-80000b54:	c606                	sw	ra,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:84
-	BSP_led_init();
-80000b56:	3369                	jal	800008e0 <BSP_led_init>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:85
-	SystemInit();
-80000b58:	3bb5                	jal	800008d4 <SystemInit>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:86
-	SystemCoreClockUpdate();
-80000b5a:	3e49                	jal	800006ec <SystemCoreClockUpdate>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:87
-	BSP_led_init();
-80000b5c:	3351                	jal	800008e0 <BSP_led_init>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:88
-	retarget_init();
-80000b5e:	359d                	jal	800009c4 <retarget_init>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:89
-	printf("K1921VG015 SYSCLK = %d MHz\n", (int)(SystemCoreClock / 1E6));
-80000b60:	ab01a503          	lw	a0,-1360(gp) # 40000230 <SystemCoreClock>
-80000b64:	56b000ef          	jal	800018ce <__floatunsidf>
-80000b68:	800027b7          	lui	a5,0x80002
-80000b6c:	c087a603          	lw	a2,-1016(a5) # 80001c08 <__clz_tab+0x21c>
-80000b70:	c0c7a683          	lw	a3,-1012(a5)
-80000b74:	2421                	jal	80000d7c <__divdf3>
-80000b76:	473000ef          	jal	800017e8 <__fixdfsi>
-80000b7a:	85aa                	mv	a1,a0
-80000b7c:	80002537          	lui	a0,0x80002
-80000b80:	b9450513          	addi	a0,a0,-1132 # 80001b94 <__clz_tab+0x1a8>
-80000b84:	3f45                	jal	80000b34 <printf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:90
-	printf("  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\n", (unsigned int)PMUSYS->UID[0], (unsigned int)PMUSYS->UID[1], (unsigned int)PMUSYS->UID[2], (unsigned int)PMUSYS->UID[3]);
-80000b86:	3000f7b7          	lui	a5,0x3000f
-80000b8a:	1107a583          	lw	a1,272(a5) # 3000f110 <retarget.c.9c45fa53+0x300078a6>
-80000b8e:	1147a603          	lw	a2,276(a5)
-80000b92:	1187a683          	lw	a3,280(a5)
-80000b96:	11c7a703          	lw	a4,284(a5)
-80000b9a:	80002537          	lui	a0,0x80002
-80000b9e:	bb050513          	addi	a0,a0,-1104 # 80001bb0 <__clz_tab+0x1c4>
-80000ba2:	3f49                	jal	80000b34 <printf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:91
-	printf("  Start RunLeds\n");
-80000ba4:	80002537          	lui	a0,0x80002
-80000ba8:	bf050513          	addi	a0,a0,-1040 # 80001bf0 <__clz_tab+0x204>
-80000bac:	3761                	jal	80000b34 <printf>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:92
-}
-80000bae:	40b2                	lw	ra,12(sp)
-80000bb0:	0141                	addi	sp,sp,16
-80000bb2:	8082                	ret
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:145
 
-80000bb4 <trap_handler>:
+
+//-- Peripheral init functions -------------------------------------------------
+void periph_init()
+{
+800005b4:	1141                	addi	sp,sp,-16
+800005b6:	c606                	sw	ra,12(sp)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:147
+	//BSP_led_init();
+	SystemInit();
+800005b8:	3fa1                	jal	80000510 <SystemInit>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:148
+	SystemCoreClockUpdate();
+800005ba:	33bd                	jal	80000328 <SystemCoreClockUpdate>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:151
+	//BSP_led_init();
+	//retarget_init();
+	UART1_init();
+800005bc:	3785                	jal	8000051c <UART1_init>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:155
+	// printf("K1921VG015 SYSCLK = %d MHz\n", (int)(SystemCoreClock / 1E6));
+	// printf("  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\n", (unsigned int)PMUSYS->UID[0], (unsigned int)PMUSYS->UID[1], (unsigned int)PMUSYS->UID[2], (unsigned int)PMUSYS->UID[3]);
+	// printf("  Start RunLeds\n");
+}
+800005be:	40b2                	lw	ra,12(sp)
+800005c0:	0141                	addi	sp,sp,16
+800005c2:	8082                	ret
+
+800005c4 <trap_handler>:
 trap_handler():
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:186
 #define MCAUSE_EXCEPT_STAMOACCSFAULT    0x7
@@ -2447,11 +1151,11 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:186
 void trap_handler (void)
 {
 	uint32_t mcause_val = read_csr(mcause);
-80000bb4:	342027f3          	csrr	a5,mcause
+800005c4:	342027f3          	csrr	a5,mcause
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:188
 
 	if((mcause_val & MCAUSE_INTERRUPT_FLAG) == 0) {
-80000bb8:	0007c363          	bltz	a5,80000bbe <trap_handler+0xa>
+800005c8:	0007c363          	bltz	a5,800005ce <trap_handler+0xa>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:216
 			default: // MCAUSE_EXCEPT UNKNOWN
 
@@ -2459,1239 +1163,199 @@ D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:216
 		}
 
 		while(1) {}; //TRAP
-80000bbc:	a001                	j	80000bbc <trap_handler+0x8>
+800005cc:	a001                	j	800005cc <trap_handler+0x8>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:185
 {
-80000bbe:	1141                	addi	sp,sp,-16
-80000bc0:	c606                	sw	ra,12(sp)
+800005ce:	1141                	addi	sp,sp,-16
+800005d0:	c606                	sw	ra,12(sp)
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:219
 	} else {
 		// handle interrupt
 		PLIC_MachHandler();
-80000bc2:	f88ff0ef          	jal	8000034a <PLIC_MachHandler>
+800005d2:	3325                	jal	800002fa <PLIC_MachHandler>
 D:\temp\K1921VG015\proj\Run_leds__2\Debug/../platform/source/plic.c:221
 	}
 }
-80000bc6:	40b2                	lw	ra,12(sp)
-80000bc8:	0141                	addi	sp,sp,16
-80000bca:	8082                	ret
+800005d4:	40b2                	lw	ra,12(sp)
+800005d6:	0141                	addi	sp,sp,16
+800005d8:	8082                	ret
 
-80000bcc <main>:
+800005da <main>:
 main():
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:100
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:162
+//--- USER FUNCTIONS ----------------------------------------------------------------------
+volatile uint32_t led_shift;
+
+//-- Main ----------------------------------------------------------------------
+int main(void)
 {
-80000bcc:	1141                	addi	sp,sp,-16
-80000bce:	c606                	sw	ra,12(sp)
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:101
+800005da:	1141                	addi	sp,sp,-16
+800005dc:	c606                	sw	ra,12(sp)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:164
+	uint32_t	i;
 	periph_init();
-80000bd0:	3749                	jal	80000b52 <periph_init>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:103
-	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
-80000bd2:	0007a537          	lui	a0,0x7a
-80000bd6:	12050513          	addi	a0,a0,288 # 7a120 <retarget.c.9c45fa53+0x728b6>
-80000bda:	33b9                	jal	80000928 <TMR32_init>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:104
+800005de:	3fd9                	jal	800005b4 <periph_init>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:167
+	// TMR32_init(SystemCoreClock>>10);  // если << 1, медленно
+	//TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
 	InterruptEnable();
-80000bdc:	39c9                	jal	800008ae <InterruptEnable>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:105
+800005e0:	3729                	jal	800004ea <InterruptEnable>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:168
 	led_shift = LED0_MSK;
-80000bde:	10000713          	li	a4,256
-80000be2:	aae1a623          	sw	a4,-1364(gp) # 4000022c <led_shift>
-D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:106
+800005e2:	10000713          	li	a4,256
+800005e6:	90e1a023          	sw	a4,-1792(gp) # 40000080 <led_shift>
+800005ea:	a039                	j	800005f8 <main+0x1e>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:172 (discriminator 3)
 	while (1)
-80000be6:	a001                	j	80000be6 <main+0x1a>
+	{
+		UART1->DR = 0x053;
+	    for(i=0;i<100000; ++i)
+800005ec:	0705                	addi	a4,a4,1 # 28000001 <main.c.fafdc48c+0x27ffcc50>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:172 (discriminator 1)
+800005ee:	67e1                	lui	a5,0x18
+800005f0:	69f78793          	addi	a5,a5,1695 # 1869f <main.c.fafdc48c+0x152ee>
+800005f4:	fee7fce3          	bgeu	a5,a4,800005ec <main+0x12>
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:171
+		UART1->DR = 0x053;
+800005f8:	300077b7          	lui	a5,0x30007
+800005fc:	05300713          	li	a4,83
+80000600:	c398                	sw	a4,0(a5)
+D:\temp\K1921VG015\proj\Run_leds__2\Debug/../main.c:172
+	    for(i=0;i<100000; ++i)
+80000602:	4701                	li	a4,0
+80000604:	b7ed                	j	800005ee <main+0x14>
 
-80000be8 <memset>:
+80000606 <memset>:
 memset():
-80000be8:	433d                	li	t1,15
-80000bea:	872a                	mv	a4,a0
-80000bec:	02c37363          	bgeu	t1,a2,80000c12 <memset+0x2a>
-80000bf0:	00f77793          	andi	a5,a4,15
-80000bf4:	efbd                	bnez	a5,80000c72 <memset+0x8a>
-80000bf6:	e5ad                	bnez	a1,80000c60 <memset+0x78>
-80000bf8:	ff067693          	andi	a3,a2,-16
-80000bfc:	8a3d                	andi	a2,a2,15
-80000bfe:	96ba                	add	a3,a3,a4
-80000c00:	c30c                	sw	a1,0(a4)
-80000c02:	c34c                	sw	a1,4(a4)
-80000c04:	c70c                	sw	a1,8(a4)
-80000c06:	c74c                	sw	a1,12(a4)
-80000c08:	0741                	addi	a4,a4,16
-80000c0a:	fed76be3          	bltu	a4,a3,80000c00 <memset+0x18>
-80000c0e:	e211                	bnez	a2,80000c12 <memset+0x2a>
-80000c10:	8082                	ret
-80000c12:	40c306b3          	sub	a3,t1,a2
-80000c16:	068a                	slli	a3,a3,0x2
-80000c18:	00000297          	auipc	t0,0x0
-80000c1c:	9696                	add	a3,a3,t0
-80000c1e:	00a68067          	jr	10(a3) # 800a <retarget.c.9c45fa53+0x7a0>
-80000c22:	00b70723          	sb	a1,14(a4)
-80000c26:	00b706a3          	sb	a1,13(a4)
-80000c2a:	00b70623          	sb	a1,12(a4)
-80000c2e:	00b705a3          	sb	a1,11(a4)
-80000c32:	00b70523          	sb	a1,10(a4)
-80000c36:	00b704a3          	sb	a1,9(a4)
-80000c3a:	00b70423          	sb	a1,8(a4)
-80000c3e:	00b703a3          	sb	a1,7(a4)
-80000c42:	00b70323          	sb	a1,6(a4)
-80000c46:	00b702a3          	sb	a1,5(a4)
-80000c4a:	00b70223          	sb	a1,4(a4)
-80000c4e:	00b701a3          	sb	a1,3(a4)
-80000c52:	00b70123          	sb	a1,2(a4)
-80000c56:	00b700a3          	sb	a1,1(a4)
-80000c5a:	00b70023          	sb	a1,0(a4)
-80000c5e:	8082                	ret
-80000c60:	0ff5f593          	zext.b	a1,a1
-80000c64:	00859693          	slli	a3,a1,0x8
-80000c68:	8dd5                	or	a1,a1,a3
-80000c6a:	01059693          	slli	a3,a1,0x10
-80000c6e:	8dd5                	or	a1,a1,a3
-80000c70:	b761                	j	80000bf8 <memset+0x10>
-80000c72:	00279693          	slli	a3,a5,0x2
-80000c76:	00000297          	auipc	t0,0x0
-80000c7a:	9696                	add	a3,a3,t0
-80000c7c:	8286                	mv	t0,ra
-80000c7e:	fa8680e7          	jalr	-88(a3)
-80000c82:	8096                	mv	ra,t0
-80000c84:	17c1                	addi	a5,a5,-16
-80000c86:	8f1d                	sub	a4,a4,a5
-80000c88:	963e                	add	a2,a2,a5
-80000c8a:	f8c374e3          	bgeu	t1,a2,80000c12 <memset+0x2a>
-80000c8e:	b7a5                	j	80000bf6 <memset+0xe>
+80000606:	433d                	li	t1,15
+80000608:	872a                	mv	a4,a0
+8000060a:	02c37363          	bgeu	t1,a2,80000630 <memset+0x2a>
+8000060e:	00f77793          	andi	a5,a4,15
+80000612:	efbd                	bnez	a5,80000690 <memset+0x8a>
+80000614:	e5ad                	bnez	a1,8000067e <memset+0x78>
+80000616:	ff067693          	andi	a3,a2,-16
+8000061a:	8a3d                	andi	a2,a2,15
+8000061c:	96ba                	add	a3,a3,a4
+8000061e:	c30c                	sw	a1,0(a4)
+80000620:	c34c                	sw	a1,4(a4)
+80000622:	c70c                	sw	a1,8(a4)
+80000624:	c74c                	sw	a1,12(a4)
+80000626:	0741                	addi	a4,a4,16
+80000628:	fed76be3          	bltu	a4,a3,8000061e <memset+0x18>
+8000062c:	e211                	bnez	a2,80000630 <memset+0x2a>
+8000062e:	8082                	ret
+80000630:	40c306b3          	sub	a3,t1,a2
+80000634:	068a                	slli	a3,a3,0x2
+80000636:	00000297          	auipc	t0,0x0
+8000063a:	9696                	add	a3,a3,t0
+8000063c:	00a68067          	jr	10(a3)
+80000640:	00b70723          	sb	a1,14(a4)
+80000644:	00b706a3          	sb	a1,13(a4)
+80000648:	00b70623          	sb	a1,12(a4)
+8000064c:	00b705a3          	sb	a1,11(a4)
+80000650:	00b70523          	sb	a1,10(a4)
+80000654:	00b704a3          	sb	a1,9(a4)
+80000658:	00b70423          	sb	a1,8(a4)
+8000065c:	00b703a3          	sb	a1,7(a4)
+80000660:	00b70323          	sb	a1,6(a4)
+80000664:	00b702a3          	sb	a1,5(a4)
+80000668:	00b70223          	sb	a1,4(a4)
+8000066c:	00b701a3          	sb	a1,3(a4)
+80000670:	00b70123          	sb	a1,2(a4)
+80000674:	00b700a3          	sb	a1,1(a4)
+80000678:	00b70023          	sb	a1,0(a4)
+8000067c:	8082                	ret
+8000067e:	0ff5f593          	zext.b	a1,a1
+80000682:	00859693          	slli	a3,a1,0x8
+80000686:	8dd5                	or	a1,a1,a3
+80000688:	01059693          	slli	a3,a1,0x10
+8000068c:	8dd5                	or	a1,a1,a3
+8000068e:	b761                	j	80000616 <memset+0x10>
+80000690:	00279693          	slli	a3,a5,0x2
+80000694:	00000297          	auipc	t0,0x0
+80000698:	9696                	add	a3,a3,t0
+8000069a:	8286                	mv	t0,ra
+8000069c:	fa8680e7          	jalr	-88(a3)
+800006a0:	8096                	mv	ra,t0
+800006a2:	17c1                	addi	a5,a5,-16 # 30006ff0 <main.c.fafdc48c+0x30003c3f>
+800006a4:	8f1d                	sub	a4,a4,a5
+800006a6:	963e                	add	a2,a2,a5
+800006a8:	f8c374e3          	bgeu	t1,a2,80000630 <memset+0x2a>
+800006ac:	b7a5                	j	80000614 <memset+0xe>
 
-80000c90 <memcpy>:
+800006ae <memcpy>:
 memcpy():
-80000c90:	00a5c7b3          	xor	a5,a1,a0
-80000c94:	8b8d                	andi	a5,a5,3
-80000c96:	00c508b3          	add	a7,a0,a2
-80000c9a:	e7b1                	bnez	a5,80000ce6 <memcpy+0x56>
-80000c9c:	478d                	li	a5,3
-80000c9e:	04c7f463          	bgeu	a5,a2,80000ce6 <memcpy+0x56>
-80000ca2:	00357793          	andi	a5,a0,3
-80000ca6:	872a                	mv	a4,a0
-80000ca8:	e7dd                	bnez	a5,80000d56 <memcpy+0xc6>
-80000caa:	ffc8f613          	andi	a2,a7,-4
-80000cae:	40e606b3          	sub	a3,a2,a4
-80000cb2:	02000793          	li	a5,32
-80000cb6:	04d7c463          	blt	a5,a3,80000cfe <memcpy+0x6e>
-80000cba:	86ae                	mv	a3,a1
-80000cbc:	87ba                	mv	a5,a4
-80000cbe:	02c77163          	bgeu	a4,a2,80000ce0 <memcpy+0x50>
-80000cc2:	0006a803          	lw	a6,0(a3)
-80000cc6:	0791                	addi	a5,a5,4
-80000cc8:	0691                	addi	a3,a3,4
-80000cca:	ff07ae23          	sw	a6,-4(a5)
-80000cce:	fec7eae3          	bltu	a5,a2,80000cc2 <memcpy+0x32>
-80000cd2:	167d                	addi	a2,a2,-1
-80000cd4:	8e19                	sub	a2,a2,a4
-80000cd6:	9a71                	andi	a2,a2,-4
-80000cd8:	0591                	addi	a1,a1,4 # 30004 <retarget.c.9c45fa53+0x2879a>
-80000cda:	0711                	addi	a4,a4,4
-80000cdc:	95b2                	add	a1,a1,a2
-80000cde:	9732                	add	a4,a4,a2
-80000ce0:	01176663          	bltu	a4,a7,80000cec <memcpy+0x5c>
-80000ce4:	8082                	ret
-80000ce6:	872a                	mv	a4,a0
-80000ce8:	ff157ee3          	bgeu	a0,a7,80000ce4 <memcpy+0x54>
-80000cec:	0005c783          	lbu	a5,0(a1)
-80000cf0:	0705                	addi	a4,a4,1
-80000cf2:	0585                	addi	a1,a1,1
-80000cf4:	fef70fa3          	sb	a5,-1(a4)
-80000cf8:	fee89ae3          	bne	a7,a4,80000cec <memcpy+0x5c>
-80000cfc:	8082                	ret
-80000cfe:	5194                	lw	a3,32(a1)
-80000d00:	0005a383          	lw	t2,0(a1)
-80000d04:	0045a283          	lw	t0,4(a1)
-80000d08:	0085af83          	lw	t6,8(a1)
-80000d0c:	00c5af03          	lw	t5,12(a1)
-80000d10:	0105ae83          	lw	t4,16(a1)
-80000d14:	0145ae03          	lw	t3,20(a1)
-80000d18:	0185a303          	lw	t1,24(a1)
-80000d1c:	01c5a803          	lw	a6,28(a1)
-80000d20:	02470713          	addi	a4,a4,36
-80000d24:	fed72e23          	sw	a3,-4(a4)
-80000d28:	fc772e23          	sw	t2,-36(a4)
-80000d2c:	40e606b3          	sub	a3,a2,a4
-80000d30:	fe572023          	sw	t0,-32(a4)
-80000d34:	fff72223          	sw	t6,-28(a4)
-80000d38:	ffe72423          	sw	t5,-24(a4)
-80000d3c:	ffd72623          	sw	t4,-20(a4)
-80000d40:	ffc72823          	sw	t3,-16(a4)
-80000d44:	fe672a23          	sw	t1,-12(a4)
-80000d48:	ff072c23          	sw	a6,-8(a4)
-80000d4c:	02458593          	addi	a1,a1,36
-80000d50:	fad7c7e3          	blt	a5,a3,80000cfe <memcpy+0x6e>
-80000d54:	b79d                	j	80000cba <memcpy+0x2a>
-80000d56:	0005c683          	lbu	a3,0(a1)
-80000d5a:	0705                	addi	a4,a4,1
-80000d5c:	00377793          	andi	a5,a4,3
-80000d60:	fed70fa3          	sb	a3,-1(a4)
-80000d64:	0585                	addi	a1,a1,1
-80000d66:	d3b1                	beqz	a5,80000caa <memcpy+0x1a>
-80000d68:	0005c683          	lbu	a3,0(a1)
-80000d6c:	0705                	addi	a4,a4,1
-80000d6e:	00377793          	andi	a5,a4,3
-80000d72:	fed70fa3          	sb	a3,-1(a4)
-80000d76:	0585                	addi	a1,a1,1
-80000d78:	fff9                	bnez	a5,80000d56 <memcpy+0xc6>
-80000d7a:	bf05                	j	80000caa <memcpy+0x1a>
-
-80000d7c <__divdf3>:
-__divdf3():
-80000d7c:	7179                	addi	sp,sp,-48
-80000d7e:	d422                	sw	s0,40(sp)
-80000d80:	d04a                	sw	s2,32(sp)
-80000d82:	c266                	sw	s9,4(sp)
-80000d84:	d606                	sw	ra,44(sp)
-80000d86:	d226                	sw	s1,36(sp)
-80000d88:	ce4e                	sw	s3,28(sp)
-80000d8a:	cc52                	sw	s4,24(sp)
-80000d8c:	ca56                	sw	s5,20(sp)
-80000d8e:	c85a                	sw	s6,16(sp)
-80000d90:	c65e                	sw	s7,12(sp)
-80000d92:	c462                	sw	s8,8(sp)
-80000d94:	c06a                	sw	s10,0(sp)
-80000d96:	842a                	mv	s0,a0
-80000d98:	8cb2                	mv	s9,a2
-80000d9a:	8936                	mv	s2,a3
-80000d9c:	00202af3          	frrm	s5
-80000da0:	0145d793          	srli	a5,a1,0x14
-80000da4:	00c59493          	slli	s1,a1,0xc
-80000da8:	7ff7f793          	andi	a5,a5,2047
-80000dac:	80b1                	srli	s1,s1,0xc
-80000dae:	01f5db13          	srli	s6,a1,0x1f
-80000db2:	12078863          	beqz	a5,80000ee2 <__divdf3+0x166>
-80000db6:	7ff00713          	li	a4,2047
-80000dba:	06e78d63          	beq	a5,a4,80000e34 <__divdf3+0xb8>
-80000dbe:	048e                	slli	s1,s1,0x3
-80000dc0:	01d55b93          	srli	s7,a0,0x1d
-80000dc4:	009bebb3          	or	s7,s7,s1
-80000dc8:	00800737          	lui	a4,0x800
-80000dcc:	c0178a13          	addi	s4,a5,-1023
-80000dd0:	00351c13          	slli	s8,a0,0x3
-80000dd4:	00ebebb3          	or	s7,s7,a4
-80000dd8:	4481                	li	s1,0
-80000dda:	4d01                	li	s10,0
-80000ddc:	4981                	li	s3,0
-80000dde:	01495793          	srli	a5,s2,0x14
-80000de2:	00c91413          	slli	s0,s2,0xc
-80000de6:	7ff7f793          	andi	a5,a5,2047
-80000dea:	8031                	srli	s0,s0,0xc
-80000dec:	01f95913          	srli	s2,s2,0x1f
-80000df0:	8666                	mv	a2,s9
-80000df2:	c7ad                	beqz	a5,80000e5c <__divdf3+0xe0>
-80000df4:	7ff00713          	li	a4,2047
-80000df8:	0ce78763          	beq	a5,a4,80000ec6 <__divdf3+0x14a>
-80000dfc:	040e                	slli	s0,s0,0x3
-80000dfe:	01dcd713          	srli	a4,s9,0x1d
-80000e02:	8f41                	or	a4,a4,s0
-80000e04:	c0178793          	addi	a5,a5,-1023
-80000e08:	00800437          	lui	s0,0x800
-80000e0c:	40fa0a33          	sub	s4,s4,a5
-80000e10:	003c9613          	slli	a2,s9,0x3
-80000e14:	8c59                	or	s0,s0,a4
-80000e16:	4581                	li	a1,0
-80000e18:	47bd                	li	a5,15
-80000e1a:	012b4733          	xor	a4,s6,s2
-80000e1e:	1a97ea63          	bltu	a5,s1,80000fd2 <__divdf3+0x256>
-80000e22:	00001697          	auipc	a3,0x1
-80000e26:	b8a68693          	addi	a3,a3,-1142 # 800019ac <_tdata_start>
-80000e2a:	048a                	slli	s1,s1,0x2
-80000e2c:	94b6                	add	s1,s1,a3
-80000e2e:	409c                	lw	a5,0(s1)
-80000e30:	97b6                	add	a5,a5,a3
-80000e32:	8782                	jr	a5
-80000e34:	00a4ebb3          	or	s7,s1,a0
-80000e38:	100b9c63          	bnez	s7,80000f50 <__divdf3+0x1d4>
-80000e3c:	8a3e                	mv	s4,a5
-80000e3e:	01495793          	srli	a5,s2,0x14
-80000e42:	00c91413          	slli	s0,s2,0xc
-80000e46:	7ff7f793          	andi	a5,a5,2047
-80000e4a:	4c01                	li	s8,0
-80000e4c:	44a1                	li	s1,8
-80000e4e:	4d09                	li	s10,2
-80000e50:	4981                	li	s3,0
-80000e52:	8031                	srli	s0,s0,0xc
-80000e54:	01f95913          	srli	s2,s2,0x1f
-80000e58:	8666                	mv	a2,s9
-80000e5a:	ffc9                	bnez	a5,80000df4 <__divdf3+0x78>
-80000e5c:	019467b3          	or	a5,s0,s9
-80000e60:	10078963          	beqz	a5,80000f72 <__divdf3+0x1f6>
-80000e64:	38040663          	beqz	s0,800011f0 <__divdf3+0x474>
-80000e68:	8522                	mv	a0,s0
-80000e6a:	2d5000ef          	jal	8000193e <__clzsi2>
-80000e6e:	87aa                	mv	a5,a0
-80000e70:	ff550693          	addi	a3,a0,-11
-80000e74:	4775                	li	a4,29
-80000e76:	ff878613          	addi	a2,a5,-8
-80000e7a:	8f15                	sub	a4,a4,a3
-80000e7c:	00c41433          	sll	s0,s0,a2
-80000e80:	00ecd733          	srl	a4,s9,a4
-80000e84:	8c59                	or	s0,s0,a4
-80000e86:	00cc9633          	sll	a2,s9,a2
-80000e8a:	97d2                	add	a5,a5,s4
-80000e8c:	3f378a13          	addi	s4,a5,1011
-80000e90:	4581                	li	a1,0
-80000e92:	b759                	j	80000e18 <__divdf3+0x9c>
-80000e94:	4781                	li	a5,0
-80000e96:	4401                	li	s0,0
-80000e98:	4681                	li	a3,0
-80000e9a:	07d2                	slli	a5,a5,0x14
-80000e9c:	8fc1                	or	a5,a5,s0
-80000e9e:	077e                	slli	a4,a4,0x1f
-80000ea0:	8fd9                	or	a5,a5,a4
-80000ea2:	8536                	mv	a0,a3
-80000ea4:	85be                	mv	a1,a5
-80000ea6:	10099063          	bnez	s3,80000fa6 <__divdf3+0x22a>
-80000eaa:	50b2                	lw	ra,44(sp)
-80000eac:	5422                	lw	s0,40(sp)
-80000eae:	5492                	lw	s1,36(sp)
-80000eb0:	5902                	lw	s2,32(sp)
-80000eb2:	49f2                	lw	s3,28(sp)
-80000eb4:	4a62                	lw	s4,24(sp)
-80000eb6:	4ad2                	lw	s5,20(sp)
-80000eb8:	4b42                	lw	s6,16(sp)
-80000eba:	4bb2                	lw	s7,12(sp)
-80000ebc:	4c22                	lw	s8,8(sp)
-80000ebe:	4c92                	lw	s9,4(sp)
-80000ec0:	4d02                	lw	s10,0(sp)
-80000ec2:	6145                	addi	sp,sp,48
-80000ec4:	8082                	ret
-80000ec6:	019467b3          	or	a5,s0,s9
-80000eca:	801a0a13          	addi	s4,s4,-2047
-80000ece:	cbc5                	beqz	a5,80000f7e <__divdf3+0x202>
-80000ed0:	000807b7          	lui	a5,0x80
-80000ed4:	0034e493          	ori	s1,s1,3
-80000ed8:	458d                	li	a1,3
-80000eda:	f2f47fe3          	bgeu	s0,a5,80000e18 <__divdf3+0x9c>
-80000ede:	49c1                	li	s3,16
-80000ee0:	bf25                	j	80000e18 <__divdf3+0x9c>
-80000ee2:	00a4ebb3          	or	s7,s1,a0
-80000ee6:	080b8063          	beqz	s7,80000f66 <__divdf3+0x1ea>
-80000eea:	2e048663          	beqz	s1,800011d6 <__divdf3+0x45a>
-80000eee:	8526                	mv	a0,s1
-80000ef0:	24f000ef          	jal	8000193e <__clzsi2>
-80000ef4:	872a                	mv	a4,a0
-80000ef6:	ff550793          	addi	a5,a0,-11
-80000efa:	4bf5                	li	s7,29
-80000efc:	ff870c13          	addi	s8,a4,-8 # 7ffff8 <retarget.c.9c45fa53+0x7f878e>
-80000f00:	40fb8bb3          	sub	s7,s7,a5
-80000f04:	018494b3          	sll	s1,s1,s8
-80000f08:	01745bb3          	srl	s7,s0,s7
-80000f0c:	009bebb3          	or	s7,s7,s1
-80000f10:	01841c33          	sll	s8,s0,s8
-80000f14:	c0d00793          	li	a5,-1011
-80000f18:	40e78a33          	sub	s4,a5,a4
-80000f1c:	4481                	li	s1,0
-80000f1e:	4d01                	li	s10,0
-80000f20:	4981                	li	s3,0
-80000f22:	bd75                	j	80000dde <__divdf3+0x62>
-80000f24:	895a                	mv	s2,s6
-80000f26:	845e                	mv	s0,s7
-80000f28:	8662                	mv	a2,s8
-80000f2a:	4789                	li	a5,2
-80000f2c:	04fd0f63          	beq	s10,a5,80000f8a <__divdf3+0x20e>
-80000f30:	478d                	li	a5,3
-80000f32:	06fd0d63          	beq	s10,a5,80000fac <__divdf3+0x230>
-80000f36:	4785                	li	a5,1
-80000f38:	3ffa0f93          	addi	t6,s4,1023
-80000f3c:	30fd1a63          	bne	s10,a5,80001250 <__divdf3+0x4d4>
-80000f40:	00197713          	andi	a4,s2,1
-80000f44:	4781                	li	a5,0
-80000f46:	4401                	li	s0,0
-80000f48:	4681                	li	a3,0
-80000f4a:	bf81                	j	80000e9a <__divdf3+0x11e>
-80000f4c:	8d2e                	mv	s10,a1
-80000f4e:	bff1                	j	80000f2a <__divdf3+0x1ae>
-80000f50:	000809b7          	lui	s3,0x80
-80000f54:	0134b9b3          	sltu	s3,s1,s3
-80000f58:	8ba6                	mv	s7,s1
-80000f5a:	8c2a                	mv	s8,a0
-80000f5c:	8a3e                	mv	s4,a5
-80000f5e:	0992                	slli	s3,s3,0x4
-80000f60:	44b1                	li	s1,12
-80000f62:	4d0d                	li	s10,3
-80000f64:	bdad                	j	80000dde <__divdf3+0x62>
-80000f66:	4c01                	li	s8,0
-80000f68:	4491                	li	s1,4
-80000f6a:	4a01                	li	s4,0
-80000f6c:	4d05                	li	s10,1
-80000f6e:	4981                	li	s3,0
-80000f70:	b5bd                	j	80000dde <__divdf3+0x62>
-80000f72:	0014e493          	ori	s1,s1,1
-80000f76:	4401                	li	s0,0
-80000f78:	4601                	li	a2,0
-80000f7a:	4585                	li	a1,1
-80000f7c:	bd71                	j	80000e18 <__divdf3+0x9c>
-80000f7e:	0024e493          	ori	s1,s1,2
-80000f82:	4401                	li	s0,0
-80000f84:	4601                	li	a2,0
-80000f86:	4589                	li	a1,2
-80000f88:	bd41                	j	80000e18 <__divdf3+0x9c>
-80000f8a:	00197713          	andi	a4,s2,1
-80000f8e:	7ff00793          	li	a5,2047
-80000f92:	4401                	li	s0,0
-80000f94:	4681                	li	a3,0
-80000f96:	b711                	j	80000e9a <__divdf3+0x11e>
-80000f98:	00001797          	auipc	a5,0x1
-80000f9c:	c7878793          	addi	a5,a5,-904 # 80001c10 <__clz_tab+0x224>
-80000fa0:	4388                	lw	a0,0(a5)
-80000fa2:	43cc                	lw	a1,4(a5)
-80000fa4:	49c1                	li	s3,16
-80000fa6:	0019a073          	csrs	fflags,s3
-80000faa:	b701                	j	80000eaa <__divdf3+0x12e>
-80000fac:	4701                	li	a4,0
-80000fae:	7ff00793          	li	a5,2047
-80000fb2:	00080437          	lui	s0,0x80
-80000fb6:	4681                	li	a3,0
-80000fb8:	b5cd                	j	80000e9a <__divdf3+0x11e>
-80000fba:	077e                	slli	a4,a4,0x1f
-80000fbc:	7ff007b7          	lui	a5,0x7ff00
-80000fc0:	8fd9                	or	a5,a5,a4
-80000fc2:	4701                	li	a4,0
-80000fc4:	853a                	mv	a0,a4
-80000fc6:	85be                	mv	a1,a5
-80000fc8:	0089e993          	ori	s3,s3,8
-80000fcc:	0019a073          	csrs	fflags,s3
-80000fd0:	bde9                	j	80000eaa <__divdf3+0x12e>
-80000fd2:	27746363          	bltu	s0,s7,80001238 <__divdf3+0x4bc>
-80000fd6:	248b8f63          	beq	s7,s0,80001234 <__divdf3+0x4b8>
-80000fda:	87e2                	mv	a5,s8
-80000fdc:	1a7d                	addi	s4,s4,-1
-80000fde:	4c01                	li	s8,0
-80000fe0:	00841693          	slli	a3,s0,0x8
-80000fe4:	0106d313          	srli	t1,a3,0x10
-80000fe8:	026bd433          	divu	s0,s7,t1
-80000fec:	01865593          	srli	a1,a2,0x18
-80000ff0:	8dd5                	or	a1,a1,a3
-80000ff2:	01059893          	slli	a7,a1,0x10
-80000ff6:	0108d893          	srli	a7,a7,0x10
-80000ffa:	00861813          	slli	a6,a2,0x8
-80000ffe:	0107d693          	srli	a3,a5,0x10
-80001002:	026bfbb3          	remu	s7,s7,t1
-80001006:	02888633          	mul	a2,a7,s0
-8000100a:	0bc2                	slli	s7,s7,0x10
-8000100c:	0176e6b3          	or	a3,a3,s7
-80001010:	00c6fb63          	bgeu	a3,a2,80001026 <__divdf3+0x2aa>
-80001014:	96ae                	add	a3,a3,a1
-80001016:	fff40513          	addi	a0,s0,-1 # 7ffff <retarget.c.9c45fa53+0x78795>
-8000101a:	28b6e663          	bltu	a3,a1,800012a6 <__divdf3+0x52a>
-8000101e:	28c6f463          	bgeu	a3,a2,800012a6 <__divdf3+0x52a>
-80001022:	1479                	addi	s0,s0,-2
-80001024:	96ae                	add	a3,a3,a1
-80001026:	8e91                	sub	a3,a3,a2
-80001028:	0266d633          	divu	a2,a3,t1
-8000102c:	07c2                	slli	a5,a5,0x10
-8000102e:	83c1                	srli	a5,a5,0x10
-80001030:	0266f6b3          	remu	a3,a3,t1
-80001034:	02c88fb3          	mul	t6,a7,a2
-80001038:	06c2                	slli	a3,a3,0x10
-8000103a:	8fd5                	or	a5,a5,a3
-8000103c:	01f7fb63          	bgeu	a5,t6,80001052 <__divdf3+0x2d6>
-80001040:	97ae                	add	a5,a5,a1
-80001042:	fff60693          	addi	a3,a2,-1
-80001046:	24b7ee63          	bltu	a5,a1,800012a2 <__divdf3+0x526>
-8000104a:	25f7fc63          	bgeu	a5,t6,800012a2 <__divdf3+0x526>
-8000104e:	1679                	addi	a2,a2,-2
-80001050:	97ae                	add	a5,a5,a1
-80001052:	0442                	slli	s0,s0,0x10
-80001054:	8c51                	or	s0,s0,a2
-80001056:	01041693          	slli	a3,s0,0x10
-8000105a:	01081e13          	slli	t3,a6,0x10
-8000105e:	82c1                	srli	a3,a3,0x10
-80001060:	010e5e13          	srli	t3,t3,0x10
-80001064:	01085e93          	srli	t4,a6,0x10
-80001068:	01045513          	srli	a0,s0,0x10
-8000106c:	02de8633          	mul	a2,t4,a3
-80001070:	41f787b3          	sub	a5,a5,t6
-80001074:	02de0f33          	mul	t5,t3,a3
-80001078:	03c50fb3          	mul	t6,a0,t3
-8000107c:	010f5693          	srli	a3,t5,0x10
-80001080:	967e                	add	a2,a2,t6
-80001082:	96b2                	add	a3,a3,a2
-80001084:	03d50533          	mul	a0,a0,t4
-80001088:	01f6f463          	bgeu	a3,t6,80001090 <__divdf3+0x314>
-8000108c:	6641                	lui	a2,0x10
-8000108e:	9532                	add	a0,a0,a2
-80001090:	010f1f93          	slli	t6,t5,0x10
-80001094:	0106d613          	srli	a2,a3,0x10
-80001098:	01069f13          	slli	t5,a3,0x10
-8000109c:	010fdf93          	srli	t6,t6,0x10
-800010a0:	00a606b3          	add	a3,a2,a0
-800010a4:	9f7e                	add	t5,t5,t6
-800010a6:	16d7e563          	bltu	a5,a3,80001210 <__divdf3+0x494>
-800010aa:	16d78163          	beq	a5,a3,8000120c <__divdf3+0x490>
-800010ae:	41ec0f33          	sub	t5,s8,t5
-800010b2:	8f95                	sub	a5,a5,a3
-800010b4:	01ec3c33          	sltu	s8,s8,t5
-800010b8:	418786b3          	sub	a3,a5,s8
-800010bc:	3ffa0f93          	addi	t6,s4,1023
-800010c0:	87fe                	mv	a5,t6
-800010c2:	893a                	mv	s2,a4
-800010c4:	2ad58363          	beq	a1,a3,8000136a <__divdf3+0x5ee>
-800010c8:	0266d633          	divu	a2,a3,t1
-800010cc:	010f5513          	srli	a0,t5,0x10
-800010d0:	0266f6b3          	remu	a3,a3,t1
-800010d4:	02c882b3          	mul	t0,a7,a2
-800010d8:	06c2                	slli	a3,a3,0x10
-800010da:	8ec9                	or	a3,a3,a0
-800010dc:	0056fb63          	bgeu	a3,t0,800010f2 <__divdf3+0x376>
-800010e0:	96ae                	add	a3,a3,a1
-800010e2:	fff60513          	addi	a0,a2,-1 # ffff <retarget.c.9c45fa53+0x8795>
-800010e6:	2cb6e663          	bltu	a3,a1,800013b2 <__divdf3+0x636>
-800010ea:	2c56f463          	bgeu	a3,t0,800013b2 <__divdf3+0x636>
-800010ee:	1679                	addi	a2,a2,-2
-800010f0:	96ae                	add	a3,a3,a1
-800010f2:	405686b3          	sub	a3,a3,t0
-800010f6:	0266d533          	divu	a0,a3,t1
-800010fa:	0f42                	slli	t5,t5,0x10
-800010fc:	010f5f13          	srli	t5,t5,0x10
-80001100:	0266f6b3          	remu	a3,a3,t1
-80001104:	02a888b3          	mul	a7,a7,a0
-80001108:	06c2                	slli	a3,a3,0x10
-8000110a:	00df6f33          	or	t5,t5,a3
-8000110e:	011f7b63          	bgeu	t5,a7,80001124 <__divdf3+0x3a8>
-80001112:	9f2e                	add	t5,t5,a1
-80001114:	fff50693          	addi	a3,a0,-1
-80001118:	28bf6b63          	bltu	t5,a1,800013ae <__divdf3+0x632>
-8000111c:	291f7963          	bgeu	t5,a7,800013ae <__divdf3+0x632>
-80001120:	1579                	addi	a0,a0,-2
-80001122:	9f2e                	add	t5,t5,a1
-80001124:	0642                	slli	a2,a2,0x10
-80001126:	8e49                	or	a2,a2,a0
-80001128:	01061693          	slli	a3,a2,0x10
-8000112c:	82c1                	srli	a3,a3,0x10
-8000112e:	01065293          	srli	t0,a2,0x10
-80001132:	02de8533          	mul	a0,t4,a3
-80001136:	411f0f33          	sub	t5,t5,a7
-8000113a:	03c28333          	mul	t1,t0,t3
-8000113e:	03c68e33          	mul	t3,a3,t3
-80001142:	951a                	add	a0,a0,t1
-80001144:	010e5693          	srli	a3,t3,0x10
-80001148:	96aa                	add	a3,a3,a0
-8000114a:	025e8eb3          	mul	t4,t4,t0
-8000114e:	0066f463          	bgeu	a3,t1,80001156 <__divdf3+0x3da>
-80001152:	6541                	lui	a0,0x10
-80001154:	9eaa                	add	t4,t4,a0
-80001156:	0106d513          	srli	a0,a3,0x10
-8000115a:	0e42                	slli	t3,t3,0x10
-8000115c:	010e5e13          	srli	t3,t3,0x10
-80001160:	06c2                	slli	a3,a3,0x10
-80001162:	9576                	add	a0,a0,t4
-80001164:	96f2                	add	a3,a3,t3
-80001166:	0eaf7263          	bgeu	t5,a0,8000124a <__divdf3+0x4ce>
-8000116a:	9f2e                	add	t5,t5,a1
-8000116c:	88fa                	mv	a7,t5
-8000116e:	fff60313          	addi	t1,a2,-1
-80001172:	32bf6a63          	bltu	t5,a1,800014a6 <__divdf3+0x72a>
-80001176:	30af6b63          	bltu	t5,a0,8000148c <__divdf3+0x710>
-8000117a:	3eaf0a63          	beq	t5,a0,8000156e <__divdf3+0x7f2>
-8000117e:	861a                	mv	a2,t1
-80001180:	c0200693          	li	a3,-1022
-80001184:	00166613          	ori	a2,a2,1
-80001188:	22da4763          	blt	s4,a3,800013b6 <__divdf3+0x63a>
-8000118c:	4689                	li	a3,2
-8000118e:	0019e993          	ori	s3,s3,1
-80001192:	32da8b63          	beq	s5,a3,800014c8 <__divdf3+0x74c>
-80001196:	468d                	li	a3,3
-80001198:	30da8b63          	beq	s5,a3,800014ae <__divdf3+0x732>
-8000119c:	360a8163          	beqz	s5,800014fe <__divdf3+0x782>
-800011a0:	00741693          	slli	a3,s0,0x7
-800011a4:	1a06c063          	bltz	a3,80001344 <__divdf3+0x5c8>
-800011a8:	7fe00693          	li	a3,2046
-800011ac:	1bf6d663          	bge	a3,t6,80001358 <__divdf3+0x5dc>
-800011b0:	0c0a8f63          	beqz	s5,8000128e <__divdf3+0x512>
-800011b4:	00100637          	lui	a2,0x100
-800011b8:	167d                	addi	a2,a2,-1 # fffff <retarget.c.9c45fa53+0xf8795>
-800011ba:	7fe00793          	li	a5,2046
-800011be:	56fd                	li	a3,-1
-800011c0:	07d2                	slli	a5,a5,0x14
-800011c2:	8fd1                	or	a5,a5,a2
-800011c4:	077e                	slli	a4,a4,0x1f
-800011c6:	8fd9                	or	a5,a5,a4
-800011c8:	8536                	mv	a0,a3
-800011ca:	85be                	mv	a1,a5
-800011cc:	0059e993          	ori	s3,s3,5
-800011d0:	0019a073          	csrs	fflags,s3
-800011d4:	b9d9                	j	80000eaa <__divdf3+0x12e>
-800011d6:	27a5                	jal	8000193e <__clzsi2>
-800011d8:	01550793          	addi	a5,a0,21 # 10015 <retarget.c.9c45fa53+0x87ab>
-800011dc:	46f1                	li	a3,28
-800011de:	02050713          	addi	a4,a0,32
-800011e2:	d0f6dce3          	bge	a3,a5,80000efa <__divdf3+0x17e>
-800011e6:	1561                	addi	a0,a0,-8
-800011e8:	00a41bb3          	sll	s7,s0,a0
-800011ec:	4c01                	li	s8,0
-800011ee:	b31d                	j	80000f14 <__divdf3+0x198>
-800011f0:	8566                	mv	a0,s9
-800011f2:	27b1                	jal	8000193e <__clzsi2>
-800011f4:	01550693          	addi	a3,a0,21
-800011f8:	4771                	li	a4,28
-800011fa:	02050793          	addi	a5,a0,32
-800011fe:	c6d75be3          	bge	a4,a3,80000e74 <__divdf3+0xf8>
-80001202:	1561                	addi	a0,a0,-8
-80001204:	00ac9433          	sll	s0,s9,a0
-80001208:	4601                	li	a2,0
-8000120a:	b141                	j	80000e8a <__divdf3+0x10e>
-8000120c:	ebec71e3          	bgeu	s8,t5,800010ae <__divdf3+0x332>
-80001210:	010c0633          	add	a2,s8,a6
-80001214:	01863533          	sltu	a0,a2,s8
-80001218:	00b50fb3          	add	t6,a0,a1
-8000121c:	97fe                	add	a5,a5,t6
-8000121e:	8c32                	mv	s8,a2
-80001220:	fff40f93          	addi	t6,s0,-1
-80001224:	06f5fa63          	bgeu	a1,a5,80001298 <__divdf3+0x51c>
-80001228:	10d7e663          	bltu	a5,a3,80001334 <__divdf3+0x5b8>
-8000122c:	10f68263          	beq	a3,a5,80001330 <__divdf3+0x5b4>
-80001230:	847e                	mv	s0,t6
-80001232:	bdb5                	j	800010ae <__divdf3+0x332>
-80001234:	dacc63e3          	bltu	s8,a2,80000fda <__divdf3+0x25e>
-80001238:	01fb9793          	slli	a5,s7,0x1f
-8000123c:	001c5693          	srli	a3,s8,0x1
-80001240:	001bdb93          	srli	s7,s7,0x1
-80001244:	8fd5                	or	a5,a5,a3
-80001246:	0c7e                	slli	s8,s8,0x1f
-80001248:	bb61                	j	80000fe0 <__divdf3+0x264>
-8000124a:	f2af1be3          	bne	t5,a0,80001180 <__divdf3+0x404>
-8000124e:	fe91                	bnez	a3,8000116a <__divdf3+0x3ee>
-80001250:	87fe                	mv	a5,t6
-80001252:	05f05c63          	blez	t6,800012aa <__divdf3+0x52e>
-80001256:	00767713          	andi	a4,a2,7
-8000125a:	48071763          	bnez	a4,800016e8 <__divdf3+0x96c>
-8000125e:	00197713          	andi	a4,s2,1
-80001262:	00741693          	slli	a3,s0,0x7
-80001266:	0006d863          	bgez	a3,80001276 <__divdf3+0x4fa>
-8000126a:	ff0006b7          	lui	a3,0xff000
-8000126e:	16fd                	addi	a3,a3,-1 # feffffff <__data_source_start+0x7effe3e3>
-80001270:	400a0793          	addi	a5,s4,1024
-80001274:	8c75                	and	s0,s0,a3
-80001276:	7fe00693          	li	a3,2046
-8000127a:	0cf6df63          	bge	a3,a5,80001358 <__divdf3+0x5dc>
-8000127e:	4789                	li	a5,2
-80001280:	26fa8663          	beq	s5,a5,800014ec <__divdf3+0x770>
-80001284:	478d                	li	a5,3
-80001286:	f2fa95e3          	bne	s5,a5,800011b0 <__divdf3+0x434>
-8000128a:	f20915e3          	bnez	s2,800011b4 <__divdf3+0x438>
-8000128e:	7ff00793          	li	a5,2047
-80001292:	4601                	li	a2,0
-80001294:	4681                	li	a3,0
-80001296:	b72d                	j	800011c0 <__divdf3+0x444>
-80001298:	f8f59ce3          	bne	a1,a5,80001230 <__divdf3+0x4b4>
-8000129c:	d551                	beqz	a0,80001228 <__divdf3+0x4ac>
-8000129e:	847e                	mv	s0,t6
-800012a0:	b539                	j	800010ae <__divdf3+0x332>
-800012a2:	8636                	mv	a2,a3
-800012a4:	b37d                	j	80001052 <__divdf3+0x2d6>
-800012a6:	842a                	mv	s0,a0
-800012a8:	bbbd                	j	80001026 <__divdf3+0x2aa>
-800012aa:	1a0f9063          	bnez	t6,8000144a <__divdf3+0x6ce>
-800012ae:	00767713          	andi	a4,a2,7
-800012b2:	00165793          	srli	a5,a2,0x1
-800012b6:	4c071563          	bnez	a4,80001780 <__divdf3+0xa04>
-800012ba:	01845613          	srli	a2,s0,0x18
-800012be:	8a05                	andi	a2,a2,1
-800012c0:	00164613          	xori	a2,a2,1
-800012c4:	4a7d                	li	s4,31
-800012c6:	4685                	li	a3,1
-800012c8:	01441a33          	sll	s4,s0,s4
-800012cc:	8fd9                	or	a5,a5,a4
-800012ce:	00fa67b3          	or	a5,s4,a5
-800012d2:	0077f713          	andi	a4,a5,7
-800012d6:	00d45433          	srl	s0,s0,a3
-800012da:	c779                	beqz	a4,800013a8 <__divdf3+0x62c>
-800012dc:	4709                	li	a4,2
-800012de:	0019e993          	ori	s3,s3,1
-800012e2:	2eea8d63          	beq	s5,a4,800015dc <__divdf3+0x860>
-800012e6:	470d                	li	a4,3
-800012e8:	2aea8c63          	beq	s5,a4,800015a0 <__divdf3+0x824>
-800012ec:	0a0a9e63          	bnez	s5,800013a8 <__divdf3+0x62c>
-800012f0:	00f7f693          	andi	a3,a5,15
-800012f4:	4591                	li	a1,4
-800012f6:	00197713          	andi	a4,s2,1
-800012fa:	00b68863          	beq	a3,a1,8000130a <__divdf3+0x58e>
-800012fe:	00b786b3          	add	a3,a5,a1
-80001302:	00f6b7b3          	sltu	a5,a3,a5
-80001306:	943e                	add	s0,s0,a5
-80001308:	87b6                	mv	a5,a3
-8000130a:	00841693          	slli	a3,s0,0x8
-8000130e:	2e06d263          	bgez	a3,800015f2 <__divdf3+0x876>
-80001312:	0019e993          	ori	s3,s3,1
-80001316:	1e061b63          	bnez	a2,8000150c <__divdf3+0x790>
-8000131a:	01f71793          	slli	a5,a4,0x1f
-8000131e:	00100737          	lui	a4,0x100
-80001322:	8fd9                	or	a5,a5,a4
-80001324:	4701                	li	a4,0
-80001326:	853a                	mv	a0,a4
-80001328:	85be                	mv	a1,a5
-8000132a:	0019a073          	csrs	fflags,s3
-8000132e:	beb5                	j	80000eaa <__divdf3+0x12e>
-80001330:	f1e670e3          	bgeu	a2,t5,80001230 <__divdf3+0x4b4>
-80001334:	9642                	add	a2,a2,a6
-80001336:	01063533          	sltu	a0,a2,a6
-8000133a:	952e                	add	a0,a0,a1
-8000133c:	1479                	addi	s0,s0,-2
-8000133e:	97aa                	add	a5,a5,a0
-80001340:	8c32                	mv	s8,a2
-80001342:	b3b5                	j	800010ae <__divdf3+0x332>
-80001344:	400a0793          	addi	a5,s4,1024
-80001348:	7fe00693          	li	a3,2046
-8000134c:	f2f6cce3          	blt	a3,a5,80001284 <__divdf3+0x508>
-80001350:	ff0006b7          	lui	a3,0xff000
-80001354:	16fd                	addi	a3,a3,-1 # feffffff <__data_source_start+0x7effe3e3>
-80001356:	8c75                	and	s0,s0,a3
-80001358:	01d41693          	slli	a3,s0,0x1d
-8000135c:	820d                	srli	a2,a2,0x3
-8000135e:	0426                	slli	s0,s0,0x9
-80001360:	7ff7f793          	andi	a5,a5,2047
-80001364:	8ed1                	or	a3,a3,a2
-80001366:	8031                	srli	s0,s0,0xc
-80001368:	be0d                	j	80000e9a <__divdf3+0x11e>
-8000136a:	567d                	li	a2,-1
-8000136c:	e3f040e3          	bgtz	t6,8000118c <__divdf3+0x410>
-80001370:	040f9a63          	bnez	t6,800013c4 <__divdf3+0x648>
-80001374:	800007b7          	lui	a5,0x80000
-80001378:	17fd                	addi	a5,a5,-1 # 7fffffff <__TLS0_BASE__+0x3ffbffff>
-8000137a:	4709                	li	a4,2
-8000137c:	0019e993          	ori	s3,s3,1
-80001380:	22ea8b63          	beq	s5,a4,800015b6 <__divdf3+0x83a>
-80001384:	470d                	li	a4,3
-80001386:	1eea8a63          	beq	s5,a4,8000157a <__divdf3+0x7fe>
-8000138a:	2e0a8763          	beqz	s5,80001678 <__divdf3+0x8fc>
-8000138e:	01845613          	srli	a2,s0,0x18
-80001392:	01f41713          	slli	a4,s0,0x1f
-80001396:	0017e793          	ori	a5,a5,1
-8000139a:	8a05                	andi	a2,a2,1
-8000139c:	8fd9                	or	a5,a5,a4
-8000139e:	00164613          	xori	a2,a2,1
-800013a2:	8005                	srli	s0,s0,0x1
-800013a4:	0019e993          	ori	s3,s3,1
-800013a8:	00197713          	andi	a4,s2,1
-800013ac:	bfb9                	j	8000130a <__divdf3+0x58e>
-800013ae:	8536                	mv	a0,a3
-800013b0:	bb95                	j	80001124 <__divdf3+0x3a8>
-800013b2:	862a                	mv	a2,a0
-800013b4:	bb3d                	j	800010f2 <__divdf3+0x376>
-800013b6:	c0100793          	li	a5,-1023
-800013ba:	00fa1563          	bne	s4,a5,800013c4 <__divdf3+0x648>
-800013be:	00165793          	srli	a5,a2,0x1
-800013c2:	bf65                	j	8000137a <__divdf3+0x5fe>
-800013c4:	4685                	li	a3,1
-800013c6:	41f686b3          	sub	a3,a3,t6
-800013ca:	03800793          	li	a5,56
-800013ce:	08d7c963          	blt	a5,a3,80001460 <__divdf3+0x6e4>
-800013d2:	47fd                	li	a5,31
-800013d4:	38d7dc63          	bge	a5,a3,8000176c <__divdf3+0x9f0>
-800013d8:	5705                	li	a4,-31
-800013da:	41f70733          	sub	a4,a4,t6
-800013de:	02000793          	li	a5,32
-800013e2:	00e45733          	srl	a4,s0,a4
-800013e6:	00f68763          	beq	a3,a5,800013f4 <__divdf3+0x678>
-800013ea:	43ea0793          	addi	a5,s4,1086
-800013ee:	00f417b3          	sll	a5,s0,a5
-800013f2:	8e5d                	or	a2,a2,a5
-800013f4:	00c036b3          	snez	a3,a2
-800013f8:	8ed9                	or	a3,a3,a4
-800013fa:	0076f793          	andi	a5,a3,7
-800013fe:	cbf5                	beqz	a5,800014f2 <__divdf3+0x776>
-80001400:	4789                	li	a5,2
-80001402:	0019e993          	ori	s3,s3,1
-80001406:	2afa8163          	beq	s5,a5,800016a8 <__divdf3+0x92c>
-8000140a:	478d                	li	a5,3
-8000140c:	28fa8963          	beq	s5,a5,8000169e <__divdf3+0x922>
-80001410:	280a9163          	bnez	s5,80001692 <__divdf3+0x916>
-80001414:	00f6f793          	andi	a5,a3,15
-80001418:	4711                	li	a4,4
-8000141a:	26e78c63          	beq	a5,a4,80001692 <__divdf3+0x916>
-8000141e:	00e687b3          	add	a5,a3,a4
-80001422:	00d7b6b3          	sltu	a3,a5,a3
-80001426:	838d                	srli	a5,a5,0x3
-80001428:	06f6                	slli	a3,a3,0x1d
-8000142a:	8edd                	or	a3,a3,a5
-8000142c:	00197713          	andi	a4,s2,1
-80001430:	4781                	li	a5,0
-80001432:	4401                	li	s0,0
-80001434:	07d2                	slli	a5,a5,0x14
-80001436:	8fc1                	or	a5,a5,s0
-80001438:	077e                	slli	a4,a4,0x1f
-8000143a:	8fd9                	or	a5,a5,a4
-8000143c:	8536                	mv	a0,a3
-8000143e:	85be                	mv	a1,a5
-80001440:	0029e993          	ori	s3,s3,2
-80001444:	0019a073          	csrs	fflags,s3
-80001448:	b48d                	j	80000eaa <__divdf3+0x12e>
-8000144a:	4685                	li	a3,1
-8000144c:	41f686b3          	sub	a3,a3,t6
-80001450:	03800793          	li	a5,56
-80001454:	f6d7dfe3          	bge	a5,a3,800013d2 <__divdf3+0x656>
-80001458:	8e41                	or	a2,a2,s0
-8000145a:	00197713          	andi	a4,s2,1
-8000145e:	ce19                	beqz	a2,8000147c <__divdf3+0x700>
-80001460:	4789                	li	a5,2
-80001462:	0019e993          	ori	s3,s3,1
-80001466:	864a                	mv	a2,s2
-80001468:	00fa8a63          	beq	s5,a5,8000147c <__divdf3+0x700>
-8000146c:	478d                	li	a5,3
-8000146e:	4601                	li	a2,0
-80001470:	00fa9663          	bne	s5,a5,8000147c <__divdf3+0x700>
-80001474:	00197613          	andi	a2,s2,1
-80001478:	00164613          	xori	a2,a2,1
-8000147c:	077e                	slli	a4,a4,0x1f
-8000147e:	8532                	mv	a0,a2
-80001480:	85ba                	mv	a1,a4
-80001482:	0029e993          	ori	s3,s3,2
-80001486:	0019a073          	csrs	fflags,s3
-8000148a:	b405                	j	80000eaa <__divdf3+0x12e>
-8000148c:	00181313          	slli	t1,a6,0x1
-80001490:	010338b3          	sltu	a7,t1,a6
-80001494:	98ae                	add	a7,a7,a1
-80001496:	98fa                	add	a7,a7,t5
-80001498:	1679                	addi	a2,a2,-2
-8000149a:	881a                	mv	a6,t1
-8000149c:	cea892e3          	bne	a7,a0,80001180 <__divdf3+0x404>
-800014a0:	cf0690e3          	bne	a3,a6,80001180 <__divdf3+0x404>
-800014a4:	b375                	j	80001250 <__divdf3+0x4d4>
-800014a6:	861a                	mv	a2,t1
-800014a8:	fea88ce3          	beq	a7,a0,800014a0 <__divdf3+0x724>
-800014ac:	b9d1                	j	80001180 <__divdf3+0x404>
-800014ae:	c33d                	beqz	a4,80001514 <__divdf3+0x798>
-800014b0:	00741713          	slli	a4,s0,0x7
-800014b4:	16075c63          	bgez	a4,8000162c <__divdf3+0x8b0>
-800014b8:	400a0793          	addi	a5,s4,1024
-800014bc:	7fe00713          	li	a4,2046
-800014c0:	16f75063          	bge	a4,a5,80001620 <__divdf3+0x8a4>
-800014c4:	4705                	li	a4,1
-800014c6:	b3d1                	j	8000128a <__divdf3+0x50e>
-800014c8:	06091d63          	bnez	s2,80001542 <__divdf3+0x7c6>
-800014cc:	00741713          	slli	a4,s0,0x7
-800014d0:	14075263          	bgez	a4,80001614 <__divdf3+0x898>
-800014d4:	400a0793          	addi	a5,s4,1024
-800014d8:	7fe00713          	li	a4,2046
-800014dc:	14f74063          	blt	a4,a5,8000161c <__divdf3+0x8a0>
-800014e0:	ff000737          	lui	a4,0xff000
-800014e4:	177d                	addi	a4,a4,-1 # feffffff <__data_source_start+0x7effe3e3>
-800014e6:	8c79                	and	s0,s0,a4
-800014e8:	4701                	li	a4,0
-800014ea:	b5bd                	j	80001358 <__divdf3+0x5dc>
-800014ec:	da0911e3          	bnez	s2,8000128e <__divdf3+0x512>
-800014f0:	b1d1                	j	800011b4 <__divdf3+0x438>
-800014f2:	828d                	srli	a3,a3,0x3
-800014f4:	00197713          	andi	a4,s2,1
-800014f8:	4781                	li	a5,0
-800014fa:	4401                	li	s0,0
-800014fc:	ba79                	j	80000e9a <__divdf3+0x11e>
-800014fe:	00460693          	addi	a3,a2,4
-80001502:	00c6b633          	sltu	a2,a3,a2
-80001506:	9432                	add	s0,s0,a2
-80001508:	8636                	mv	a2,a3
-8000150a:	bba1                	j	80001262 <__divdf3+0x4e6>
-8000150c:	4785                	li	a5,1
-8000150e:	4401                	li	s0,0
-80001510:	4681                	li	a3,0
-80001512:	b70d                	j	80001434 <__divdf3+0x6b8>
-80001514:	00860713          	addi	a4,a2,8
-80001518:	00c73633          	sltu	a2,a4,a2
-8000151c:	9432                	add	s0,s0,a2
-8000151e:	010006b7          	lui	a3,0x1000
-80001522:	8ee1                	and	a3,a3,s0
-80001524:	863a                	mv	a2,a4
-80001526:	12068a63          	beqz	a3,8000165a <__divdf3+0x8de>
-8000152a:	400a0793          	addi	a5,s4,1024
-8000152e:	7fe00713          	li	a4,2046
-80001532:	faf757e3          	bge	a4,a5,800014e0 <__divdf3+0x764>
-80001536:	4789                	li	a5,2
-80001538:	4701                	li	a4,0
-8000153a:	4901                	li	s2,0
-8000153c:	d4fa94e3          	bne	s5,a5,80001284 <__divdf3+0x508>
-80001540:	b995                	j	800011b4 <__divdf3+0x438>
-80001542:	00860713          	addi	a4,a2,8
-80001546:	00c73633          	sltu	a2,a4,a2
-8000154a:	9432                	add	s0,s0,a2
-8000154c:	010006b7          	lui	a3,0x1000
-80001550:	8ee1                	and	a3,a3,s0
-80001552:	863a                	mv	a2,a4
-80001554:	cae5                	beqz	a3,80001644 <__divdf3+0x8c8>
-80001556:	400a0793          	addi	a5,s4,1024
-8000155a:	7fe00713          	li	a4,2046
-8000155e:	0cf75163          	bge	a4,a5,80001620 <__divdf3+0x8a4>
-80001562:	4705                	li	a4,1
-80001564:	7ff00793          	li	a5,2047
-80001568:	4601                	li	a2,0
-8000156a:	4681                	li	a3,0
-8000156c:	b991                	j	800011c0 <__divdf3+0x444>
-8000156e:	f0d86fe3          	bltu	a6,a3,8000148c <__divdf3+0x710>
-80001572:	861a                	mv	a2,t1
-80001574:	c10696e3          	bne	a3,a6,80001180 <__divdf3+0x404>
-80001578:	b9e1                	j	80001250 <__divdf3+0x4d4>
-8000157a:	4705                	li	a4,1
-8000157c:	12090d63          	beqz	s2,800016b6 <__divdf3+0x93a>
-80001580:	01845613          	srli	a2,s0,0x18
-80001584:	8a05                	andi	a2,a2,1
-80001586:	00164613          	xori	a2,a2,1
-8000158a:	8fd9                	or	a5,a5,a4
-8000158c:	01f41693          	slli	a3,s0,0x1f
-80001590:	0077f713          	andi	a4,a5,7
-80001594:	8005                	srli	s0,s0,0x1
-80001596:	8fd5                	or	a5,a5,a3
-80001598:	e00708e3          	beqz	a4,800013a8 <__divdf3+0x62c>
-8000159c:	0019e993          	ori	s3,s3,1
-800015a0:	4705                	li	a4,1
-800015a2:	d60914e3          	bnez	s2,8000130a <__divdf3+0x58e>
-800015a6:	00878713          	addi	a4,a5,8
-800015aa:	00f737b3          	sltu	a5,a4,a5
-800015ae:	943e                	add	s0,s0,a5
-800015b0:	87ba                	mv	a5,a4
-800015b2:	4701                	li	a4,0
-800015b4:	bb99                	j	8000130a <__divdf3+0x58e>
-800015b6:	4705                	li	a4,1
-800015b8:	10091963          	bnez	s2,800016ca <__divdf3+0x94e>
-800015bc:	01845613          	srli	a2,s0,0x18
-800015c0:	8a05                	andi	a2,a2,1
-800015c2:	00164613          	xori	a2,a2,1
-800015c6:	8f5d                	or	a4,a4,a5
-800015c8:	00777693          	andi	a3,a4,7
-800015cc:	01f41793          	slli	a5,s0,0x1f
-800015d0:	8fd9                	or	a5,a5,a4
-800015d2:	8005                	srli	s0,s0,0x1
-800015d4:	dc068ae3          	beqz	a3,800013a8 <__divdf3+0x62c>
-800015d8:	0019e993          	ori	s3,s3,1
-800015dc:	4701                	li	a4,0
-800015de:	d20906e3          	beqz	s2,8000130a <__divdf3+0x58e>
-800015e2:	00878713          	addi	a4,a5,8
-800015e6:	00f737b3          	sltu	a5,a4,a5
-800015ea:	943e                	add	s0,s0,a5
-800015ec:	87ba                	mv	a5,a4
-800015ee:	4705                	li	a4,1
-800015f0:	bb29                	j	8000130a <__divdf3+0x58e>
-800015f2:	838d                	srli	a5,a5,0x3
-800015f4:	01d41693          	slli	a3,s0,0x1d
-800015f8:	0426                	slli	s0,s0,0x9
-800015fa:	8edd                	or	a3,a3,a5
-800015fc:	8031                	srli	s0,s0,0xc
-800015fe:	4781                	li	a5,0
-80001600:	88060de3          	beqz	a2,80000e9a <__divdf3+0x11e>
-80001604:	0019f613          	andi	a2,s3,1
-80001608:	00197713          	andi	a4,s2,1
-8000160c:	4781                	li	a5,0
-8000160e:	880606e3          	beqz	a2,80000e9a <__divdf3+0x11e>
-80001612:	b50d                	j	80001434 <__divdf3+0x6b8>
-80001614:	7fe00713          	li	a4,2046
-80001618:	03f75f63          	bge	a4,t6,80001656 <__divdf3+0x8da>
-8000161c:	4701                	li	a4,0
-8000161e:	be59                	j	800011b4 <__divdf3+0x438>
-80001620:	ff000737          	lui	a4,0xff000
-80001624:	177d                	addi	a4,a4,-1 # feffffff <__data_source_start+0x7effe3e3>
-80001626:	8c79                	and	s0,s0,a4
-80001628:	4705                	li	a4,1
-8000162a:	b33d                	j	80001358 <__divdf3+0x5dc>
-8000162c:	7fe00713          	li	a4,2046
-80001630:	01f75863          	bge	a4,t6,80001640 <__divdf3+0x8c4>
-80001634:	4705                	li	a4,1
-80001636:	bebd                	j	800011b4 <__divdf3+0x438>
-80001638:	7fe00713          	li	a4,2046
-8000163c:	fff74ce3          	blt	a4,t6,80001634 <__divdf3+0x8b8>
-80001640:	4705                	li	a4,1
-80001642:	bb19                	j	80001358 <__divdf3+0x5dc>
-80001644:	7fe00713          	li	a4,2046
-80001648:	fff75ce3          	bge	a4,t6,80001640 <__divdf3+0x8c4>
-8000164c:	4705                	li	a4,1
-8000164e:	7ff00793          	li	a5,2047
-80001652:	4601                	li	a2,0
-80001654:	b6b5                	j	800011c0 <__divdf3+0x444>
-80001656:	4701                	li	a4,0
-80001658:	b301                	j	80001358 <__divdf3+0x5dc>
-8000165a:	7fe00713          	li	a4,2046
-8000165e:	fff75ce3          	bge	a4,t6,80001656 <__divdf3+0x8da>
-80001662:	4789                	li	a5,2
-80001664:	fafa8ce3          	beq	s5,a5,8000161c <__divdf3+0x8a0>
-80001668:	478d                	li	a5,3
-8000166a:	4701                	li	a4,0
-8000166c:	b4fa92e3          	bne	s5,a5,800011b0 <__divdf3+0x434>
-80001670:	7ff00793          	li	a5,2047
-80001674:	4601                	li	a2,0
-80001676:	b6a9                	j	800011c0 <__divdf3+0x444>
-80001678:	4705                	li	a4,1
-8000167a:	ffc63613          	sltiu	a2,a2,-4
-8000167e:	00163613          	seqz	a2,a2
-80001682:	9622                	add	a2,a2,s0
-80001684:	8261                	srli	a2,a2,0x18
-80001686:	8a05                	andi	a2,a2,1
-80001688:	00164613          	xori	a2,a2,1
-8000168c:	4a7d                	li	s4,31
-8000168e:	4685                	li	a3,1
-80001690:	b925                	j	800012c8 <__divdf3+0x54c>
-80001692:	828d                	srli	a3,a3,0x3
-80001694:	00197713          	andi	a4,s2,1
-80001698:	4781                	li	a5,0
-8000169a:	4401                	li	s0,0
-8000169c:	bb61                	j	80001434 <__divdf3+0x6b8>
-8000169e:	04090063          	beqz	s2,800016de <__divdf3+0x962>
-800016a2:	828d                	srli	a3,a3,0x3
-800016a4:	4401                	li	s0,0
-800016a6:	bfb9                	j	80001604 <__divdf3+0x888>
-800016a8:	02091b63          	bnez	s2,800016de <__divdf3+0x962>
-800016ac:	828d                	srli	a3,a3,0x3
-800016ae:	4701                	li	a4,0
-800016b0:	4781                	li	a5,0
-800016b2:	4401                	li	s0,0
-800016b4:	b341                	j	80001434 <__divdf3+0x6b8>
-800016b6:	ff863613          	sltiu	a2,a2,-8
-800016ba:	00163613          	seqz	a2,a2
-800016be:	9622                	add	a2,a2,s0
-800016c0:	8261                	srli	a2,a2,0x18
-800016c2:	8a05                	andi	a2,a2,1
-800016c4:	00164613          	xori	a2,a2,1
-800016c8:	b5c9                	j	8000158a <__divdf3+0x80e>
-800016ca:	ff863613          	sltiu	a2,a2,-8
-800016ce:	00163613          	seqz	a2,a2
-800016d2:	9622                	add	a2,a2,s0
-800016d4:	8261                	srli	a2,a2,0x18
-800016d6:	8a05                	andi	a2,a2,1
-800016d8:	00164613          	xori	a2,a2,1
-800016dc:	b5ed                	j	800015c6 <__divdf3+0x84a>
-800016de:	00868793          	addi	a5,a3,8 # 1000008 <retarget.c.9c45fa53+0xff879e>
-800016e2:	00d7b6b3          	sltu	a3,a5,a3
-800016e6:	b381                	j	80001426 <__divdf3+0x6aa>
-800016e8:	4709                	li	a4,2
-800016ea:	0019e993          	ori	s3,s3,1
-800016ee:	dcea8de3          	beq	s5,a4,800014c8 <__divdf3+0x74c>
-800016f2:	470d                	li	a4,3
-800016f4:	04ea8563          	beq	s5,a4,8000173e <__divdf3+0x9c2>
-800016f8:	020a8363          	beqz	s5,8000171e <__divdf3+0x9a2>
-800016fc:	00741693          	slli	a3,s0,0x7
-80001700:	00197713          	andi	a4,s2,1
-80001704:	0406df63          	bgez	a3,80001762 <__divdf3+0x9e6>
-80001708:	ff0006b7          	lui	a3,0xff000
-8000170c:	16fd                	addi	a3,a3,-1 # feffffff <__data_source_start+0x7effe3e3>
-8000170e:	400a0793          	addi	a5,s4,1024
-80001712:	7fe00593          	li	a1,2046
-80001716:	8c75                	and	s0,s0,a3
-80001718:	b6f5c6e3          	blt	a1,a5,80001284 <__divdf3+0x508>
-8000171c:	b935                	j	80001358 <__divdf3+0x5dc>
-8000171e:	00f67693          	andi	a3,a2,15
-80001722:	4591                	li	a1,4
-80001724:	00197713          	andi	a4,s2,1
-80001728:	dcb69be3          	bne	a3,a1,800014fe <__divdf3+0x782>
-8000172c:	00741693          	slli	a3,s0,0x7
-80001730:	c006cae3          	bltz	a3,80001344 <__divdf3+0x5c8>
-80001734:	7fe00693          	li	a3,2046
-80001738:	b5f6cbe3          	blt	a3,t6,8000128e <__divdf3+0x512>
-8000173c:	b931                	j	80001358 <__divdf3+0x5dc>
-8000173e:	dc090be3          	beqz	s2,80001514 <__divdf3+0x798>
-80001742:	00741713          	slli	a4,s0,0x7
-80001746:	ee0759e3          	bgez	a4,80001638 <__divdf3+0x8bc>
-8000174a:	ff000737          	lui	a4,0xff000
-8000174e:	177d                	addi	a4,a4,-1 # feffffff <__data_source_start+0x7effe3e3>
-80001750:	400a0793          	addi	a5,s4,1024
-80001754:	7fe00693          	li	a3,2046
-80001758:	8c79                	and	s0,s0,a4
-8000175a:	4705                	li	a4,1
-8000175c:	b2f6c7e3          	blt	a3,a5,8000128a <__divdf3+0x50e>
-80001760:	bee5                	j	80001358 <__divdf3+0x5dc>
-80001762:	7fe00693          	li	a3,2046
-80001766:	b1f6cfe3          	blt	a3,t6,80001284 <__divdf3+0x508>
-8000176a:	b6fd                	j	80001358 <__divdf3+0x5dc>
-8000176c:	41ea0a13          	addi	s4,s4,1054
-80001770:	01461733          	sll	a4,a2,s4
-80001774:	00d657b3          	srl	a5,a2,a3
-80001778:	00e03733          	snez	a4,a4
-8000177c:	4605                	li	a2,1
-8000177e:	b6a9                	j	800012c8 <__divdf3+0x54c>
-80001780:	00167693          	andi	a3,a2,1
-80001784:	4589                	li	a1,2
-80001786:	0019e993          	ori	s3,s3,1
-8000178a:	8736                	mv	a4,a3
-8000178c:	e2ba86e3          	beq	s5,a1,800015b8 <__divdf3+0x83c>
-80001790:	458d                	li	a1,3
-80001792:	deba85e3          	beq	s5,a1,8000157c <__divdf3+0x800>
-80001796:	020a8363          	beqz	s5,800017bc <__divdf3+0xa40>
-8000179a:	8edd                	or	a3,a3,a5
-8000179c:	01845613          	srli	a2,s0,0x18
-800017a0:	01f41793          	slli	a5,s0,0x1f
-800017a4:	8a05                	andi	a2,a2,1
-800017a6:	0076f713          	andi	a4,a3,7
-800017aa:	00164613          	xori	a2,a2,1
-800017ae:	8fd5                	or	a5,a5,a3
-800017b0:	8005                	srli	s0,s0,0x1
-800017b2:	be070be3          	beqz	a4,800013a8 <__divdf3+0x62c>
-800017b6:	0019e993          	ori	s3,s3,1
-800017ba:	b6fd                	j	800013a8 <__divdf3+0x62c>
-800017bc:	00f67593          	andi	a1,a2,15
-800017c0:	4511                	li	a0,4
-800017c2:	eaa59ce3          	bne	a1,a0,8000167a <__divdf3+0x8fe>
-800017c6:	8edd                	or	a3,a3,a5
-800017c8:	01845613          	srli	a2,s0,0x18
-800017cc:	01f41793          	slli	a5,s0,0x1f
-800017d0:	8a05                	andi	a2,a2,1
-800017d2:	0076f713          	andi	a4,a3,7
-800017d6:	00164613          	xori	a2,a2,1
-800017da:	8fd5                	or	a5,a5,a3
-800017dc:	8005                	srli	s0,s0,0x1
-800017de:	b00719e3          	bnez	a4,800012f0 <__divdf3+0x574>
-800017e2:	00197713          	andi	a4,s2,1
-800017e6:	b615                	j	8000130a <__divdf3+0x58e>
-
-800017e8 <__fixdfsi>:
-__fixdfsi():
-800017e8:	86aa                	mv	a3,a0
-800017ea:	002027f3          	frrm	a5
-800017ee:	00100737          	lui	a4,0x100
-800017f2:	0145d793          	srli	a5,a1,0x14
-800017f6:	7ff7f513          	andi	a0,a5,2047
-800017fa:	3fe00813          	li	a6,1022
-800017fe:	fff70793          	addi	a5,a4,-1 # fffff <retarget.c.9c45fa53+0xf8795>
-80001802:	8fed                	and	a5,a5,a1
-80001804:	8636                	mv	a2,a3
-80001806:	81fd                	srli	a1,a1,0x1f
-80001808:	00a84963          	blt	a6,a0,8000181a <__fixdfsi+0x32>
-8000180c:	e53d                	bnez	a0,8000187a <__fixdfsi+0x92>
-8000180e:	8fd5                	or	a5,a5,a3
-80001810:	cbb5                	beqz	a5,80001884 <__fixdfsi+0x9c>
-80001812:	4785                	li	a5,1
-80001814:	0017a073          	csrs	fflags,a5
-80001818:	8082                	ret
-8000181a:	41d00813          	li	a6,1053
-8000181e:	00a85d63          	bge	a6,a0,80001838 <__fixdfsi+0x50>
-80001822:	c1b5                	beqz	a1,80001886 <__fixdfsi+0x9e>
-80001824:	41e00713          	li	a4,1054
-80001828:	08e50363          	beq	a0,a4,800018ae <__fixdfsi+0xc6>
-8000182c:	80000537          	lui	a0,0x80000
-80001830:	47c1                	li	a5,16
-80001832:	0017a073          	csrs	fflags,a5
-80001836:	8082                	ret
-80001838:	43300813          	li	a6,1075
-8000183c:	40a80833          	sub	a6,a6,a0
-80001840:	48fd                	li	a7,31
-80001842:	8f5d                	or	a4,a4,a5
-80001844:	0508d863          	bge	a7,a6,80001894 <__fixdfsi+0xac>
-80001848:	02000793          	li	a5,32
-8000184c:	00f80863          	beq	a6,a5,8000185c <__fixdfsi+0x74>
-80001850:	c0d50793          	addi	a5,a0,-1011 # 7ffffc0d <__TLS0_BASE__+0x3ffbfc0d>
-80001854:	00f717b3          	sll	a5,a4,a5
-80001858:	00d7e633          	or	a2,a5,a3
-8000185c:	41300793          	li	a5,1043
-80001860:	40a786b3          	sub	a3,a5,a0
-80001864:	00d75533          	srl	a0,a4,a3
-80001868:	00c037b3          	snez	a5,a2
-8000186c:	c199                	beqz	a1,80001872 <__fixdfsi+0x8a>
-8000186e:	40a00533          	neg	a0,a0
-80001872:	d3dd                	beqz	a5,80001818 <__fixdfsi+0x30>
-80001874:	0017a073          	csrs	fflags,a5
-80001878:	8082                	ret
-8000187a:	4501                	li	a0,0
-8000187c:	4785                	li	a5,1
-8000187e:	0017a073          	csrs	fflags,a5
-80001882:	8082                	ret
-80001884:	8082                	ret
-80001886:	80000537          	lui	a0,0x80000
-8000188a:	157d                	addi	a0,a0,-1 # 7fffffff <__TLS0_BASE__+0x3ffbffff>
-8000188c:	47c1                	li	a5,16
-8000188e:	0017a073          	csrs	fflags,a5
-80001892:	8082                	ret
-80001894:	bed50793          	addi	a5,a0,-1043
-80001898:	00f71733          	sll	a4,a4,a5
-8000189c:	00f697b3          	sll	a5,a3,a5
-800018a0:	0106d6b3          	srl	a3,a3,a6
-800018a4:	00f037b3          	snez	a5,a5
-800018a8:	00d76533          	or	a0,a4,a3
-800018ac:	b7c1                	j	8000186c <__fixdfsi+0x84>
-800018ae:	07ae                	slli	a5,a5,0xb
-800018b0:	0156d713          	srli	a4,a3,0x15
-800018b4:	8fd9                	or	a5,a5,a4
-800018b6:	fbbd                	bnez	a5,8000182c <__fixdfsi+0x44>
-800018b8:	06ae                	slli	a3,a3,0xb
-800018ba:	e681                	bnez	a3,800018c2 <__fixdfsi+0xda>
-800018bc:	80000537          	lui	a0,0x80000
-800018c0:	8082                	ret
-800018c2:	87ae                	mv	a5,a1
-800018c4:	80000537          	lui	a0,0x80000
-800018c8:	0017a073          	csrs	fflags,a5
-800018cc:	8082                	ret
-
-800018ce <__floatunsidf>:
-__floatunsidf():
-800018ce:	1141                	addi	sp,sp,-16
-800018d0:	c422                	sw	s0,8(sp)
-800018d2:	c606                	sw	ra,12(sp)
-800018d4:	842a                	mv	s0,a0
-800018d6:	cd05                	beqz	a0,8000190e <__floatunsidf+0x40>
-800018d8:	209d                	jal	8000193e <__clzsi2>
-800018da:	41e00793          	li	a5,1054
-800018de:	8f89                	sub	a5,a5,a0
-800018e0:	4729                	li	a4,10
-800018e2:	7ff7f793          	andi	a5,a5,2047
-800018e6:	02a74e63          	blt	a4,a0,80001922 <__floatunsidf+0x54>
-800018ea:	472d                	li	a4,11
-800018ec:	8f09                	sub	a4,a4,a0
-800018ee:	01550693          	addi	a3,a0,21 # 80000015 <__TEXT_INIT_START__+0x15>
-800018f2:	00e45733          	srl	a4,s0,a4
-800018f6:	00d41433          	sll	s0,s0,a3
-800018fa:	40b2                	lw	ra,12(sp)
-800018fc:	8522                	mv	a0,s0
-800018fe:	0732                	slli	a4,a4,0xc
-80001900:	4422                	lw	s0,8(sp)
-80001902:	8331                	srli	a4,a4,0xc
-80001904:	07d2                	slli	a5,a5,0x14
-80001906:	8fd9                	or	a5,a5,a4
-80001908:	85be                	mv	a1,a5
-8000190a:	0141                	addi	sp,sp,16
-8000190c:	8082                	ret
-8000190e:	40b2                	lw	ra,12(sp)
-80001910:	8522                	mv	a0,s0
-80001912:	4781                	li	a5,0
-80001914:	4422                	lw	s0,8(sp)
-80001916:	4701                	li	a4,0
-80001918:	07d2                	slli	a5,a5,0x14
-8000191a:	8fd9                	or	a5,a5,a4
-8000191c:	85be                	mv	a1,a5
-8000191e:	0141                	addi	sp,sp,16
-80001920:	8082                	ret
-80001922:	1555                	addi	a0,a0,-11
-80001924:	00a41733          	sll	a4,s0,a0
-80001928:	4401                	li	s0,0
-8000192a:	40b2                	lw	ra,12(sp)
-8000192c:	8522                	mv	a0,s0
-8000192e:	0732                	slli	a4,a4,0xc
-80001930:	4422                	lw	s0,8(sp)
-80001932:	8331                	srli	a4,a4,0xc
-80001934:	07d2                	slli	a5,a5,0x14
-80001936:	8fd9                	or	a5,a5,a4
-80001938:	85be                	mv	a1,a5
-8000193a:	0141                	addi	sp,sp,16
-8000193c:	8082                	ret
-
-8000193e <__clzsi2>:
-__clzsi2():
-8000193e:	67c1                	lui	a5,0x10
-80001940:	02f57663          	bgeu	a0,a5,8000196c <__clzsi2+0x2e>
-80001944:	10053793          	sltiu	a5,a0,256
-80001948:	0017b793          	seqz	a5,a5
-8000194c:	078e                	slli	a5,a5,0x3
-8000194e:	02000713          	li	a4,32
-80001952:	8f1d                	sub	a4,a4,a5
-80001954:	00f55533          	srl	a0,a0,a5
-80001958:	00000797          	auipc	a5,0x0
-8000195c:	09478793          	addi	a5,a5,148 # 800019ec <__clz_tab>
-80001960:	97aa                	add	a5,a5,a0
-80001962:	0007c503          	lbu	a0,0(a5)
-80001966:	40a70533          	sub	a0,a4,a0
-8000196a:	8082                	ret
-8000196c:	010007b7          	lui	a5,0x1000
-80001970:	02f57063          	bgeu	a0,a5,80001990 <__clzsi2+0x52>
-80001974:	4741                	li	a4,16
-80001976:	87ba                	mv	a5,a4
-80001978:	00f55533          	srl	a0,a0,a5
-8000197c:	00000797          	auipc	a5,0x0
-80001980:	07078793          	addi	a5,a5,112 # 800019ec <__clz_tab>
-80001984:	97aa                	add	a5,a5,a0
-80001986:	0007c503          	lbu	a0,0(a5)
-8000198a:	40a70533          	sub	a0,a4,a0
-8000198e:	8082                	ret
-80001990:	47e1                	li	a5,24
-80001992:	00f55533          	srl	a0,a0,a5
-80001996:	00000797          	auipc	a5,0x0
-8000199a:	05678793          	addi	a5,a5,86 # 800019ec <__clz_tab>
-8000199e:	97aa                	add	a5,a5,a0
-800019a0:	0007c503          	lbu	a0,0(a5)
-800019a4:	4721                	li	a4,8
-800019a6:	40a70533          	sub	a0,a4,a0
-800019aa:	8082                	ret
+800006ae:	00a5c7b3          	xor	a5,a1,a0
+800006b2:	8b8d                	andi	a5,a5,3
+800006b4:	00c508b3          	add	a7,a0,a2
+800006b8:	e7b1                	bnez	a5,80000704 <memcpy+0x56>
+800006ba:	478d                	li	a5,3
+800006bc:	04c7f463          	bgeu	a5,a2,80000704 <memcpy+0x56>
+800006c0:	00357793          	andi	a5,a0,3
+800006c4:	872a                	mv	a4,a0
+800006c6:	e7dd                	bnez	a5,80000774 <memcpy+0xc6>
+800006c8:	ffc8f613          	andi	a2,a7,-4
+800006cc:	40e606b3          	sub	a3,a2,a4
+800006d0:	02000793          	li	a5,32
+800006d4:	04d7c463          	blt	a5,a3,8000071c <memcpy+0x6e>
+800006d8:	86ae                	mv	a3,a1
+800006da:	87ba                	mv	a5,a4
+800006dc:	02c77163          	bgeu	a4,a2,800006fe <memcpy+0x50>
+800006e0:	0006a803          	lw	a6,0(a3)
+800006e4:	0791                	addi	a5,a5,4
+800006e6:	0691                	addi	a3,a3,4
+800006e8:	ff07ae23          	sw	a6,-4(a5)
+800006ec:	fec7eae3          	bltu	a5,a2,800006e0 <memcpy+0x32>
+800006f0:	167d                	addi	a2,a2,-1 # 3000dfff <main.c.fafdc48c+0x3000ac4e>
+800006f2:	8e19                	sub	a2,a2,a4
+800006f4:	9a71                	andi	a2,a2,-4
+800006f6:	0591                	addi	a1,a1,4 # 30004 <main.c.fafdc48c+0x2cc53>
+800006f8:	0711                	addi	a4,a4,4
+800006fa:	95b2                	add	a1,a1,a2
+800006fc:	9732                	add	a4,a4,a2
+800006fe:	01176663          	bltu	a4,a7,8000070a <memcpy+0x5c>
+80000702:	8082                	ret
+80000704:	872a                	mv	a4,a0
+80000706:	ff157ee3          	bgeu	a0,a7,80000702 <memcpy+0x54>
+8000070a:	0005c783          	lbu	a5,0(a1)
+8000070e:	0705                	addi	a4,a4,1
+80000710:	0585                	addi	a1,a1,1
+80000712:	fef70fa3          	sb	a5,-1(a4)
+80000716:	fee89ae3          	bne	a7,a4,8000070a <memcpy+0x5c>
+8000071a:	8082                	ret
+8000071c:	5194                	lw	a3,32(a1)
+8000071e:	0005a383          	lw	t2,0(a1)
+80000722:	0045a283          	lw	t0,4(a1)
+80000726:	0085af83          	lw	t6,8(a1)
+8000072a:	00c5af03          	lw	t5,12(a1)
+8000072e:	0105ae83          	lw	t4,16(a1)
+80000732:	0145ae03          	lw	t3,20(a1)
+80000736:	0185a303          	lw	t1,24(a1)
+8000073a:	01c5a803          	lw	a6,28(a1)
+8000073e:	02470713          	addi	a4,a4,36
+80000742:	fed72e23          	sw	a3,-4(a4)
+80000746:	fc772e23          	sw	t2,-36(a4)
+8000074a:	40e606b3          	sub	a3,a2,a4
+8000074e:	fe572023          	sw	t0,-32(a4)
+80000752:	fff72223          	sw	t6,-28(a4)
+80000756:	ffe72423          	sw	t5,-24(a4)
+8000075a:	ffd72623          	sw	t4,-20(a4)
+8000075e:	ffc72823          	sw	t3,-16(a4)
+80000762:	fe672a23          	sw	t1,-12(a4)
+80000766:	ff072c23          	sw	a6,-8(a4)
+8000076a:	02458593          	addi	a1,a1,36
+8000076e:	fad7c7e3          	blt	a5,a3,8000071c <memcpy+0x6e>
+80000772:	b79d                	j	800006d8 <memcpy+0x2a>
+80000774:	0005c683          	lbu	a3,0(a1)
+80000778:	0705                	addi	a4,a4,1
+8000077a:	00377793          	andi	a5,a4,3
+8000077e:	fed70fa3          	sb	a3,-1(a4)
+80000782:	0585                	addi	a1,a1,1
+80000784:	d3b1                	beqz	a5,800006c8 <memcpy+0x1a>
+80000786:	0005c683          	lbu	a3,0(a1)
+8000078a:	0705                	addi	a4,a4,1
+8000078c:	00377793          	andi	a5,a4,3
+80000790:	fed70fa3          	sb	a3,-1(a4)
+80000794:	0585                	addi	a1,a1,1
+80000796:	fff9                	bnez	a5,80000774 <memcpy+0xc6>
+80000798:	bf05                	j	800006c8 <memcpy+0x1a>

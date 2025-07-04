@@ -18,8 +18,16 @@
  *==============================================================================
  */
 
+
+
+/*
+ TX - Transmit стр 123
+ RX - Receive
+ */
 #include "retarget.h"
 #define SystemCoreClock_uart	16000000
+
+
 //-- Functions -----------------------------------------------------------------
 void retarget_init()
 {
@@ -28,13 +36,18 @@ void retarget_init()
     uint32_t baud_fcoef = ((SystemCoreClock_uart / (16.0f * RETARGET_UART_BAUD) - baud_icoef) * 64 + 0.5f);
     uint32_t uartclk_ref = 1;//RCU_UARTCFG_UARTCFG_CLKSEL_OSICLK;
 
-    RCU->CGCFGAHB_bit.GPIOAEN = 1;
+    // Включаем тактирование
+    RCU->CGCFGAHB_bit.GPIOAEN = 1;   // разрешает порт A
     RCU->RSTDISAHB_bit.GPIOAEN = 1;
+
+    // UART0
     RCU->CGCFGAPB_bit.UART0EN = 1;
     RCU->RSTDISAPB_bit.UART0EN = 1;
 
-    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN0 = 1;
-    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN1 = 1;
+    //
+    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN0 = 1;  // PA0
+    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN1 = 1;  // PA1
+
     RETARGET_UART_PORT->ALTFUNCSET = (1 << RETARGET_UART_PIN_TX_POS) | (1 << RETARGET_UART_PIN_RX_POS);
     RCU->UARTCLKCFG[RETARGET_UART_NUM].UARTCLKCFG = (uartclk_ref << RCU_UARTCLKCFG_CLKSEL_Pos) |
                                               	  	  RCU_UARTCLKCFG_CLKEN_Msk |
@@ -46,20 +59,29 @@ void retarget_init()
 #endif //RETARGET
 }
 
+
+
 int retarget_get_char()
 {
 #if defined RETARGET
-    while (RETARGET_UART->FR_bit.RXFE) {
+	// FR = Flag Register
+	// RXFE = Receive FIFO Empty
+	// Пока буфер приёма пуст - ждем
+    while (RETARGET_UART->FR_bit.RXFE) // 1 когда буфер пуст
+    {
     };
     return (int)RETARGET_UART->DR_bit.DATA;
 #endif //RETARGET
 }
 
+// отправка символа
 int retarget_put_char(int ch)
 {
 #if defined RETARGET
+	// ожидание пока uart освободится
     while (RETARGET_UART->FR_bit.BUSY) {
     };
+    // отправка байта, DR - data register
     RETARGET_UART->DR = ch;
 #endif //RETARGET
     return 0;
