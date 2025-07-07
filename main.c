@@ -10,6 +10,9 @@
 #define GPIOA_ALL_Msk  0xFFFF
 #define GPIOB_ALL_Msk  0xFFFF
 #define LEDS_MSK  0xFF00
+
+#define PB0_MSK   (1 << 0)  // фонарик 2
+
 #define PA5_MSK   (1 << 5)   // фонарик
 #define PA7_MSK   (1 << 7)   // кнопка
 #define LED0_MSK  (1 << 8)
@@ -23,6 +26,7 @@
 
 static uint32_t button_click_counter = 1;
 
+char buff[120];
 
 // Режимы мигания диодов
 typedef enum LED_MODES{
@@ -34,6 +38,7 @@ typedef enum LED_MODES{
 };
 
 void TMR32_IRQHandler();
+void SPI0_IRQHandler();
 
 void Send_buff(char* a)
 {
@@ -53,19 +58,60 @@ void BSP_led_init()
 	// RSTDISAHB - регистр снятия сброса для шины AHB
 	RCU->RSTDISAHB_bit.GPIOAEN = 1; //Включаем  GPIOA
 
+	// для PB
+	RCU->CGCFGAHB_bit.GPIOBEN = 1;
+	RCU->RSTDISAHB_bit.GPIOBEN = 1;
+	GPIOB->OUTENSET = PB0_MSK;
+	GPIOB->DATAOUTCLR = PB0_MSK;
+
 	GPIOA->OUTENSET = LEDS_MSK; // OUTENSET - регистр, который настраивает выводы как выходы
 	// GPIOA->DATAOUTSET = LEDS_MSK;
 	GPIOA->DATAOUTCLR = LEDS_MSK;   // гасит диоды
 
-
 	GPIOA->OUTENCLR = PA7_MSK;    // Кнопка как вход
+
 	// PULLMODE – регистр выбора режима подтяжки порта
 	// 0b00111..11 -> 14 и 15 зануляюся
 	GPIOA->PULLMODE &= ~(0b11 << (7 * 2));  // стр 367
 	GPIOA->PULLMODE |= (0b01 << (7 * 2));  // Подтяжка к уровню логической единицы
 
 	GPIOA->OUTENSET = PA5_MSK;  // включение вывода, теперь как выход
+}
 
+void spi0_init()
+{
+	RCU->CGCFGAHB_bit.GPIOBEN = 1;   // Разрешение тактирования порта GPIOB
+	RCU->RSTDISAHB_bit.GPIOBEN = 1;  // Вывод из состояния сброса порта GPIOB
+	RCU->CGCFGAHB_bit.SPI0EN = 1;    // Разрешение тактирования SPI0
+	RCU->RSTDISAHB_bit.SPI0EN = 1;   // Вывод из состояния сброса SPI0
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKSEL = RCU_SPICLKCFG_CLKSEL_HSE; //Источник сигнала внешний кварц
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKEN = 1; 	//Разрешение тактирования
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
+	SPI0->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
+	SPI0->CR0_bit.SCR = 1;  // Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((1+1)*8)=1МГц
+	SPI0->CR0_bit.SPO = 0;  // Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
+	SPI0->CR0_bit.SPH = 1;  // Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
+	SPI0->CR0_bit.FRF = 0;  // Выбор протокола обмена информацией 0-SPI
+	SPI0->CR0_bit.DSS = 7;  // Размер слова данных 8 бит
+	SPI0->CR1_bit.MS = 0;   // Режим работы - Мастер
+	GPIOB->ALTFUNCSET = GPIO_ALTFUNCSET_PIN0_Msk | GPIO_ALTFUNCSET_PIN1_Msk | GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
+	GPIOB->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN0_AF1<<GPIO_ALTFUNCNUM_PIN0_Pos) | (GPIO_ALTFUNCNUM_PIN1_AF1<<GPIO_ALTFUNCNUM_PIN1_Pos) |
+						(GPIO_ALTFUNCNUM_PIN2_AF1<<GPIO_ALTFUNCNUM_PIN2_Pos) | (GPIO_ALTFUNCNUM_PIN3_AF1<<GPIO_ALTFUNCNUM_PIN3_Pos); //Выбор номера альтернативной функции
+	SPI0->IMSC = 0x1; // Разрешаем прерывания по переполнению приемного буфера
+	// Настраиваем обработчик прерывания для SPI0
+	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI0, SPI0_IRQHandler);
+	PLIC_SetPriority   (IsrVect_IRQ_SPI0, 0x1);
+	PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_SPI0);
+
+	SPI0->CR1_bit.SSE = 1; //Разрешение работы приемопередатчика
+}
+
+void Btn0_init()
+{
+  //Настраиваем кнопку SB3, подключенную к WAKEUP0
+  PMURTC->RTC_WAKECFG_bit.WAKEPOL = 0x1; // Устанавливаем полярность для WAKEUP0 - низкий уровень
+  PMURTC->RTC_WAKECFG_bit.WAKEEN = 0x1;  // Разрешаем событие WAKEUP0
+  PMURTC->RTC_HISTORY = 0x0;	// СБрасываем регистр событий
 }
 
 void TMR32_init(uint32_t period)
@@ -143,7 +189,6 @@ void UART1_init()
     UART1->CR = UART_CR_TXE_Msk | UART_CR_RXE_Msk | UART_CR_UARTEN_Msk;
 }
 
-
 //-- Peripheral init functions -------------------------------------------------
 void periph_init()
 {
@@ -152,24 +197,23 @@ void periph_init()
 	SystemCoreClockUpdate();
 	BSP_led_init();
 	UART1_init();
-	retarget_init(); // перенаправление стандартного printf
+	retarget_init();
 
-	printf("K1921VG015 SYSCLK = %d MHz\n", (int)(SystemCoreClock / 1E6));
-	printf("  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\n", (unsigned int)PMUSYS->UID[0], (unsigned int)PMUSYS->UID[1], (unsigned int)PMUSYS->UID[2], (unsigned int)PMUSYS->UID[3]);
-	printf("  Start RunLeds\n");
+	sprintf(buff,"K1921VG015 SYSCLK = %d MHz\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
+	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
+    sprintf(buff,"  PartNum = 0x%X\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
+    sprintf(buff,"  Start UART DMA\n\0"); Send_buff(buff);
+
 }
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
 volatile uint32_t led_shift;
-
-
 
 //-- Main ----------------------------------------------------------------------
 int main(void)
 {
 	uint32_t	i;
 	periph_init();
-	//TMR32_init(SystemCoreClock>>10);  // если << 1, медленно
 	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
 	InterruptEnable();
 	led_shift = LED0_MSK;
@@ -178,6 +222,19 @@ int main(void)
 		UART1->DR = 0x053;
 	    for(i=0;i<100000; ++i)
 	    {}
+
+	    /*
+	    prev_state = curr_state;
+	  curr_state = PMURTC->RTC_HISTORY_bit.WAKE0;
+	  if((curr_state == 1) &&  (prev_state == 0))
+	  {
+		  // Отправка тестовых данных в SPI0
+		  SPI0->DR = 0xAA;
+		  SPI0->DR = 0x55;
+		  SPI0->DR = 0x81;
+	  }
+	  PMURTC->RTC_HISTORY = 0x0;	// СБрасываем регистр событий
+	     */
 	}
 
 	return 0;
@@ -249,24 +306,19 @@ void TMR32_IRQHandler()
 		if(button_click_counter < (MODES_COUNT - 1))
 		{
 			button_click_counter++;
-			//update_leds();
-			//GPIOA->DATAOUTTGL = PA5_MSK;
 		}
 		else
 		{
-			button_click_counter = 1; // в первый режим
+			button_click_counter = 1;
 		}
-
-
-		// GPIOA->DATAOUTTGL = LEDS_MSK;
 	}
 
 	prev_button_state = button_state;
 
-
-	if (last_led_update >= 30) // чтобы обновление состояния было плавным
+	if (last_led_update >= 30)
 	{
 		update_leds();
+		GPIOB->DATAOUTTGL = PB0_MSK;
 		last_led_update = 0;
 	}
 	else{last_led_update++;}
@@ -274,50 +326,8 @@ void TMR32_IRQHandler()
 	TMR32->IC = 3;
 }
 
-
-/*
-//второй вариант без интегральной схемы
-void TMR32_IRQHandler()
+void SPI0_IRQHandler()
 {
-	static uint8_t d = 0;
-	static uint8_t last_button_state = 1;
-	uint8_t curr_button_state = (GPIOA->DATA & PA7_MSK) ? 1 : 0;
-	static uint32_t last_led_update = 0;
-
-	if (curr_button_state != last_button_state)
-	{
-		d = 5;
-
-	}
-	else if (d > 0)
-	{
-		d--;
-
-		// если счётчик дошёл до 0 и кнопка нажата
-		if (d == 0 && curr_button_state == 0)
-		{
-			//   GPIOA->DATAOUTTGL = LED7_MSK; // PA5_MSK - фонарик, LED7_MSK - диод
-			//Send_buff("Button pressed\n");
-
-			if(button_click_counter < (MODES_COUNT - 1))
-			{
-				button_click_counter++;
-			}
-			else
-			{
-				button_click_counter = 1; // в первый режим
-			}
-		}
-	}
-
-	if (++last_led_update >= 50) // чтобы обновление состояния было плавным
-	{
-		update_leds();
-		last_led_update = 0;
-	}
-
-	last_button_state = curr_button_state;
-
-	TMR32->IC = 3;
+	GPIOA->DATAOUTTGL = 0xFF00;
+	SPI0->ICR = 0x3;
 }
-*/
