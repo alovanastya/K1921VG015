@@ -5,11 +5,11 @@ C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memcpy.o)
                               ./platform/source/sys_init.o (symbol from plugin) (memcpy)
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
-                              C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o (__divdf3)
+                              C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o (__divdf3)
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(fixdfsi.o)
-                              C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o (__fixdfsi)
+                              C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o (__fixdfsi)
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(floatunsidf.o)
-                              C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o (__floatunsidf)
+                              C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o (__floatunsidf)
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clzsi2.o)
                               C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o) (__clzsi2)
 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clz.o)
@@ -17,224 +17,224 @@ C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_
 
 Discarded input sections
 
- .text          0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .bss           0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
+ .text          0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .bss           0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x68 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x20 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x94 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x3b C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x57 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000      0x364 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x4a C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x58 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000      0x1de C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x68 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x20 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x94 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x3b C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x57 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000      0x364 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x4a C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x58 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000      0x1de C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000     0x7207 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x20 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x3b C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x9e C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x364 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x112 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x4a C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x58 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x1de C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x170 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000      0x10c C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0xd6 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000     0x7207 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x20 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x3b C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x9e C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x364 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x112 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x4a C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x10 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x58 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x1de C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x170 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000      0x10c C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0xd6 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000     0x7207 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .group         0x00000000        0xc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000      0x7f0 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x1c C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x22 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x8e C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x51 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000      0x103 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x6a C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000      0x1df C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000     0x7207 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_macro   0x00000000       0x34 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
  .text          0x00000000        0x0 ./platform/source/startup_k1921vg015.o
  .data          0x00000000        0x0 ./platform/source/startup_k1921vg015.o
  .bss           0x00000000        0x0 ./platform/source/startup_k1921vg015.o
@@ -266,13 +266,13 @@ RAM1             0x10000000         0x00010000         xrw
 Linker script and memory map
 
 LOAD ./platform/source/plic.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
-LOAD C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
-LOAD C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+LOAD C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+LOAD C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
 LOAD ./platform/source/printf.o
 LOAD ./platform/source/startup_k1921vg015.o
 LOAD ./platform/source/sys_init.o
@@ -308,7 +308,7 @@ LOAD C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32
  *(.init.data .init.data.*)
                 0x800000b0                        . = ALIGN (0x10)
  *(.init.text .init.text.*)
- .init.text     0x800000b0       0x58 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .init.text     0x800000b0       0x58 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
                 0x800000b0                plf_init
                 0x80000000                        __TEXT_INIT_START__ = LOADADDR (.text.startup)
                 0x00000108                        __TEXT_INIT_SIZE__ = SIZEOF (.text.startup)
@@ -319,179 +319,179 @@ LOAD C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32
                 0x80000140      0x184 ./platform/source/startup_k1921vg015.o
                 0x80000140                trap_entry
 
-.text           0x800002c4     0x18a0
+.text           0x800002c4     0x18b4
                 [!provide]                        PROVIDE (__TEXT_START__ = .)
  *(.text .text.*)
  .text.PLIC_SetIrqHandler
-                0x800002c4       0x1a C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800002c4       0x1a C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_SetPriority
-                0x800002de        0xc C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800002de        0xc C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_IntEnable
-                0x800002ea       0x2a C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800002ea       0x2a C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_ClaimIrq
-                0x80000314       0x12 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000314       0x12 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_ClaimComplete
-                0x80000326       0x12 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000326       0x12 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_SetThreshold
-                0x80000338       0x12 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000338       0x12 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PLIC_MachHandler
-                0x8000034a       0x2a C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.PutChar  0x80000374        0x8 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x8000034a       0x2a C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.PutChar  0x80000374        0x8 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PutString
-                0x8000037c       0x18 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x8000037c       0x18 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PutUnsignedInt
-                0x80000394       0x82 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000394       0x82 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PutSignedInt
-                0x80000416       0xd2 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.PutHexa  0x800004e8       0x8a C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000416       0xd2 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.PutHexa  0x800004e8       0x8a C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.vsnprintf
-                0x80000572      0x166 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000572      0x166 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.vsprintf
-                0x800006d8       0x14 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800006d8       0x14 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.SystemCoreClockUpdate
-                0x800006ec       0xdc C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.ClkInit  0x800007c8       0xe6 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800006ec       0xdc C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.ClkInit  0x800007c8       0xe6 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.InterruptEnable
-                0x800008ae       0x26 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800008ae       0x26 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.SystemInit
-                0x800008d4        0xc C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800008d4        0xc C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.BSP_led_init
-                0x800008e0       0x4a C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x800008e0       0x4a C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.TMR32_init
-                0x8000092a       0x54 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x8000092a       0x54 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.UART1_init
-                0x8000097e       0x98 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x8000097e       0x98 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.update_leds
-                0x80000a16       0x76 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000a16       0x76 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.TMR32_IRQHandler
-                0x80000a8c       0xee C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000a8c       0xe8 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.retarget_init
-                0x80000b7a       0x6c C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000b74       0x6c C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.retarget_put_char
-                0x80000be6       0x16 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000be0       0x16 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.PrintChar
-                0x80000bfc        0xc C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.fputc    0x80000c08       0x32 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.fputs    0x80000c3a       0x36 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000bf6        0xc C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.fputc    0x80000c02       0x32 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.fputs    0x80000c34       0x36 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.vfprintf
-                0x80000c70       0x64 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.vprintf  0x80000cd4       0x16 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .text.printf   0x80000cea       0x1e C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000c6a       0x64 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.vprintf  0x80000cce       0x16 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .text.printf   0x80000ce4       0x1e C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.periph_init
-                0x80000d08       0x64 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80000d02       0x64 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .text.trap_handler
-                0x80000d6c       0x18 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
-                0x80000d6c                trap_handler
- .text.main     0x80000d84       0x1c C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
-                0x80000d84                main
- .text          0x80000da0       0xa8 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memset.o)
-                0x80000da0                memset
- .text.memcpy   0x80000e48       0xec C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memcpy.o)
-                0x80000e48                memcpy
- .text          0x80000f34      0xa6c C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
-                0x80000f34                __divdf3
- .text          0x800019a0       0xe6 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(fixdfsi.o)
-                0x800019a0                __fixdfsi
- .text          0x80001a86       0x70 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(floatunsidf.o)
-                0x80001a86                __floatunsidf
- .text          0x80001af6       0x6e C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clzsi2.o)
-                0x80001af6                __clzsi2
+                0x80000d66       0x18 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+                0x80000d66                trap_handler
+ .text.main     0x80000d7e       0x36 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+                0x80000d7e                main
+ .text          0x80000db4       0xa8 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memset.o)
+                0x80000db4                memset
+ .text.memcpy   0x80000e5c       0xec C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memcpy.o)
+                0x80000e5c                memcpy
+ .text          0x80000f48      0xa6c C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
+                0x80000f48                __divdf3
+ .text          0x800019b4       0xe6 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(fixdfsi.o)
+                0x800019b4                __fixdfsi
+ .text          0x80001a9a       0x70 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(floatunsidf.o)
+                0x80001a9a                __floatunsidf
+ .text          0x80001b0a       0x6e C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clzsi2.o)
+                0x80001b0a                __clzsi2
                 [!provide]                        PROVIDE (__TEXT_END__ = .)
 
-.tdata          0x80001b64        0x0
+.tdata          0x80001b78        0x0
                 [!provide]                        PROVIDE (_tls_data = .)
-                0x80001b64                        PROVIDE (_tdata_start = .)
+                0x80001b78                        PROVIDE (_tdata_start = .)
  *(.tdata .tdata.*)
                 [!provide]                        PROVIDE (_tdata_end = .)
 
-.tbss           0x80001b64        0x0
+.tbss           0x80001b78        0x0
                 [!provide]                        PROVIDE (_tbss_start = .)
  *(.tbss .tbss.*)
-                0x80001b64                        . = ALIGN (0x4)
-                0x80001b64                        PROVIDE (_tbss_end = .)
+                0x80001b78                        . = ALIGN (0x4)
+                0x80001b78                        PROVIDE (_tbss_end = .)
                 0x00000000                        __TLS_SIZE__ = (((_tbss_end - _tdata_start) + 0xf) & 0xfffffffffffffff0)
 
-.rodata         0x80001b64      0x255
+.rodata         0x80001b78      0x255
  *(.rodata)
- .rodata        0x80001b64       0x40 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
- .rodata        0x80001ba4      0x100 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clz.o)
-                0x80001ba4                __clz_tab
+ .rodata        0x80001b78       0x40 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
+ .rodata        0x80001bb8      0x100 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clz.o)
+                0x80001bb8                __clz_tab
  *(.rodata.*)
  .rodata.vsnprintf
-                0x80001ca4       0x84 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80001cb8       0x84 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .rodata.vfprintf.str1.4
-                0x80001d28       0x91 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80001d3c       0x91 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
                                  0x24 (size before relaxing)
  .rodata.periph_init.str1.4
-                0x80001db9       0x6d C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x80001dcd       0x6d C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  *(.gnu.linkonce.r.*)
 
-.srodata        0x80001dc0       0x20
+.srodata        0x80001dd0       0x20
  *(.srodata.cst16)
  *(.srodata.cst8)
- .srodata.cst8  0x80001dc0       0x10 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .srodata.cst8  0x80001dd0       0x10 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
                                   0x8 (size before relaxing)
- .srodata.cst8  0x80001dd0        0x8 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
+ .srodata.cst8  0x80001de0        0x8 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
  *(.srodata.cst4)
- .srodata.cst4  0x80001dd0       0x10 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .srodata.cst4  0x80001de0       0x10 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  *(.srodata.cst2)
  *(.srodata*)
 
-.rela.dyn       0x80001de0        0x0
+.rela.dyn       0x80001df0        0x0
  .rela.startup.entry
-                0x80001de0        0x0 ./platform/source/startup_k1921vg015.o
+                0x80001df0        0x0 ./platform/source/startup_k1921vg015.o
  .rela.text.crt.trap_entry
-                0x80001de0        0x0 ./platform/source/startup_k1921vg015.o
+                0x80001df0        0x0 ./platform/source/startup_k1921vg015.o
  .rela.init.text
-                0x80001de0        0x0 ./platform/source/startup_k1921vg015.o
+                0x80001df0        0x0 ./platform/source/startup_k1921vg015.o
 
-.sdata          0x40000000        0x8 load address 0x80001de0
+.sdata          0x40000000        0xc load address 0x80001df0
                 0x40000000                        __SDATA_BEGIN__ = .
  *(.sdata .sdata.* .sdata2.* .gnu.linkonce.s.*)
  .sdata.prev_button_state.1
-                0x40000000        0x1 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000000        0x1 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .sdata.button_state.2
-                0x40000001        0x1 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000001        0x1 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  *fill*         0x40000002        0x2 
- .sdata.Ysm.3   0x40000004        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .sdata.Ysm.3   0x40000004        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .sdata.button_click_counter
+                0x40000008        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
 
-.data           0x40000008      0x220 load address 0x80001de8
-                0x40000008                        __DATA_BEGIN__ = .
+.data           0x40000010      0x220 load address 0x80001dfc
+                0x40000010                        __DATA_BEGIN__ = .
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x40000008      0x100 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .data.r        0x40000108      0x120 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
-                0x40000228                        _edata = .
+ .data          0x40000010      0x100 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .data.r        0x40000110      0x120 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+                0x40000230                        _edata = .
                 [!provide]                        PROVIDE (edata = .)
-                0x80001de8                        PROVIDE (__data_source_start = LOADADDR (.data))
-                0x40000008                        PROVIDE (__data_target_start = ADDR (.data))
-                0x40000228                        PROVIDE (__data_target_end = (ADDR (.data) + SIZEOF (.data)))
-                0x80001de0                        PROVIDE (__sdata_source_start = LOADADDR (.sdata))
+                0x80001dfc                        PROVIDE (__data_source_start = LOADADDR (.data))
+                0x40000010                        PROVIDE (__data_target_start = ADDR (.data))
+                0x40000230                        PROVIDE (__data_target_end = (ADDR (.data) + SIZEOF (.data)))
+                0x80001df0                        PROVIDE (__sdata_source_start = LOADADDR (.sdata))
                 0x40000000                        PROVIDE (__sdata_target_start = ADDR (.sdata))
-                0x40000008                        PROVIDE (__sdata_target_end = (ADDR (.sdata) + SIZEOF (.sdata)))
+                0x4000000c                        PROVIDE (__sdata_target_end = (ADDR (.sdata) + SIZEOF (.sdata)))
 
-.sbss           0x40000228       0x18 load address 0x80002008
-                0x40000228                        PROVIDE (__bss_start = .)
+.sbss           0x40000230       0x14 load address 0x8000201c
+                0x40000230                        PROVIDE (__bss_start = .)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
  .sbss.last_led_update.0
-                0x40000228        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .sbss.button_click_counter
-                0x4000022c        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000230        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .sbss.led_shift
-                0x40000230        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000234        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .sbss.SystemCoreClock
-                0x40000234        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000238        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .sbss.SystemPll1Clock
-                0x40000238        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x4000023c        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .sbss.SystemPll0Clock
-                0x4000023c        0x4 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x40000240        0x4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  *(.scommon)
 
-.bss            0x40000240        0x0 load address 0x80002008
+.bss            0x40000244        0x0 load address 0x8000201c
  *(.bss .bss.* .gnu.linkonce.b.*)
  *(COMMON)
-                0x40000240                        . = ALIGN (0x4)
-                0x40000240                        __BSS_END__ = .
-                0x40000240                        PROVIDE (__bss_end = .)
+                0x40000244                        . = ALIGN (0x4)
+                0x40000244                        __BSS_END__ = .
+                0x40000244                        PROVIDE (__bss_end = .)
                 [!provide]                        PROVIDE (_end = .)
                 [!provide]                        PROVIDE (__end = .)
                 0x40000780                        __global_pointer$ = MIN ((__DATA_BEGIN__ + 0x780), MAX ((__SDATA_BEGIN__ + 0x780), (__BSS_END__ - 0x780)))
@@ -503,7 +503,7 @@ LOAD C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32
                 [!provide]                        PROVIDE (__C_STACK_TOP__ = .)
                 [!provide]                        PROVIDE (__STACK_END__ = .)
                 0x40040000                        PROVIDE (__TLS0_BASE__ = .)
-                0x40000240                        _heap_start = ALIGN (__bss_end, 0x10)
+                0x40000250                        _heap_start = ALIGN (__bss_end, 0x10)
                 0x4003f800                        _heap_end = DEFINED (HEAP_FIXED_AFTER_BSS)?MIN (ALIGN (__STACK_START__, 0x10), (_heap_start + HEAP_FIXED_AFTER_BSS)):ALIGN (__STACK_START__, 0x10)
 
 /DISCARD/
@@ -511,93 +511,93 @@ LOAD C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32
  *(.eh_frame .eh_frame.*)
 OUTPUT(Run_leds__2.elf elf32-littleriscv)
 
-.debug_info     0x00000000     0xb1f7
- .debug_info    0x00000000      0xbf0 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .debug_info    0x00000bf0      0x39e C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
-                0x00000bf0                plic.c.21d8f78f
- .debug_info    0x00000f8e      0xb76 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
-                0x00000f8e                printf.c.48218671
- .debug_info    0x00001b04      0x15e C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
-                0x00001b04                sys_init.c.d9db5e6f
- .debug_info    0x00001c62     0x2b82 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
-                0x00001c62                system_k1921vg015.c.08e00f8f
- .debug_info    0x000047e4     0x3a0d C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
-                0x000047e4                main.c.2ba452ab
- .debug_info    0x000081f1     0x2fd5 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
-                0x000081f1                retarget.c.918a4a7b
- .debug_info    0x0000b1c6       0x31 ./platform/source/startup_k1921vg015.o
+.debug_info     0x00000000     0xb1e1
+ .debug_info    0x00000000      0xbf4 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .debug_info    0x00000bf4      0x39e C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+                0x00000bf4                plic.c.21d8f78f
+ .debug_info    0x00000f92      0xb76 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+                0x00000f92                printf.c.48218671
+ .debug_info    0x00001b08      0x15e C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+                0x00001b08                sys_init.c.d9db5e6f
+ .debug_info    0x00001c66     0x2b82 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+                0x00001c66                system_k1921vg015.c.08e00f8f
+ .debug_info    0x000047e8     0x39f3 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+                0x000047e8                main.c.a794f1c9
+ .debug_info    0x000081db     0x2fd5 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+                0x000081db                retarget.c.918a4a7b
+ .debug_info    0x0000b1b0       0x31 ./platform/source/startup_k1921vg015.o
 
-.debug_abbrev   0x00000000      0xb78
- .debug_abbrev  0x00000000       0xe2 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .debug_abbrev  0x000000e2      0x167 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_abbrev  0x00000249      0x277 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_abbrev  0x000004c0       0xaf C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_abbrev  0x0000056f      0x1ed C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_abbrev  0x0000075c      0x28a C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_abbrev  0x000009e6      0x16e C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_abbrev  0x00000b54       0x24 ./platform/source/startup_k1921vg015.o
+.debug_abbrev   0x00000000      0xb70
+ .debug_abbrev  0x00000000       0xdb C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .debug_abbrev  0x000000db      0x167 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_abbrev  0x00000242      0x277 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_abbrev  0x000004b9       0xaf C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_abbrev  0x00000568      0x1ed C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_abbrev  0x00000755      0x289 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_abbrev  0x000009de      0x16e C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_abbrev  0x00000b4c       0x24 ./platform/source/startup_k1921vg015.o
 
 .debug_loclists
-                0x00000000      0x75c
+                0x00000000      0x76d
  .debug_loclists
-                0x00000000      0x75c C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000      0x76d C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
 
 .debug_aranges  0x00000000      0x158
  .debug_aranges
-                0x00000000      0x130 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000      0x130 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .debug_aranges
                 0x00000130       0x28 ./platform/source/startup_k1921vg015.o
 
 .debug_rnglists
                 0x00000000      0x104
  .debug_rnglists
-                0x00000000       0xe9 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000       0xe9 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .debug_rnglists
                 0x000000e9       0x1b ./platform/source/startup_k1921vg015.o
 
-.debug_line     0x00000000     0x208d
- .debug_line    0x00000000     0x1b1c C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .debug_line    0x00001b1c       0x80 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_line    0x00001b9c       0xbc C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_line    0x00001c58       0xf3 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_line    0x00001d4b       0x8f C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_line    0x00001dda       0xd5 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_line    0x00001eaf       0x7b C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
- .debug_line    0x00001f2a      0x163 ./platform/source/startup_k1921vg015.o
+.debug_line     0x00000000     0x20dc
+ .debug_line    0x00000000     0x1b6b C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .debug_line    0x00001b6b       0x80 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_line    0x00001beb       0xbc C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_line    0x00001ca7       0xf3 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_line    0x00001d9a       0x8f C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_line    0x00001e29       0xd5 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_line    0x00001efe       0x7b C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
+ .debug_line    0x00001f79      0x163 ./platform/source/startup_k1921vg015.o
 
 .debug_str      0x00000000    0x2afa3
- .debug_str     0x00000000      0x1a1 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
- .debug_str     0x00000000     0x4124 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_str     0x00000000    0x26a06 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_str     0x00000000     0x7b02 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_str     0x00000000    0x24c5a C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_str     0x00000000    0x28a42 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_str     0x00000000    0x24093 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+ .debug_str     0x00000000      0x1a1 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
+ .debug_str     0x00000000     0x4124 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_str     0x00000000    0x26a06 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_str     0x00000000     0x7b02 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_str     0x00000000    0x24c5a C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_str     0x00000000    0x28a3d C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_str     0x00000000    0x24093 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
  .debug_str     0x00000000    0x2afa3 ./platform/source/startup_k1921vg015.o
                                  0x6b (size before relaxing)
 
 .debug_line_str
                 0x00000000      0x36d
  .debug_line_str
-                0x00000000       0xc8 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000       0xc8 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .debug_line_str
-                0x00000000      0x1d5 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
+                0x00000000      0x1d5 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
  .debug_line_str
-                0x00000000      0x235 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
+                0x00000000      0x235 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
  .debug_line_str
-                0x00000000      0x29c C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
+                0x00000000      0x29c C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
  .debug_line_str
-                0x00000000      0x217 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
+                0x00000000      0x217 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
  .debug_line_str
-                0x00000000      0x245 C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
+                0x00000000      0x245 C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
  .debug_line_str
-                0x00000000      0x1bc C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+                0x00000000      0x1bc C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o
  .debug_line_str
                 0x00000000      0x36d ./platform/source/startup_k1921vg015.o
                                  0x52 (size before relaxing)
 
 .comment        0x00000000       0x12
- .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .comment       0x00000000       0x13 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .comment       0x00000000       0x12 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memcpy.o)
                                  0x13 (size before relaxing)
  .comment       0x00000012       0x13 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(divdf3.o)
@@ -609,7 +609,7 @@ OUTPUT(Run_leds__2.elf elf32-littleriscv)
 .note.GNU-stack
                 0x00000000        0x0
  .note.GNU-stack
-                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000        0x0 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .note.GNU-stack
                 0x00000000        0x0 C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/../../../../riscv64-unknown-elf/lib/rv32imfc_zicsr/ilp32f\libc.a(libc_a-memcpy.o)
  .note.GNU-stack
@@ -626,7 +626,7 @@ OUTPUT(Run_leds__2.elf elf32-littleriscv)
 .riscv.attributes
                 0x00000000       0x41
  .riscv.attributes
-                0x00000000       0x41 C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+                0x00000000       0x41 C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
  .riscv.attributes
                 0x00000041       0x3a ./platform/source/startup_k1921vg015.o
  .riscv.attributes
@@ -645,68 +645,68 @@ OUTPUT(Run_leds__2.elf elf32-littleriscv)
                 0x000001ef       0x3d C:/Syntacore/sc-dt/riscv-gcc/bin/../lib/gcc/riscv64-unknown-elf/14.2.0/rv32imfc_zicsr/ilp32f\libgcc.a(_clz.o)
 
 .debug_frame    0x00000000      0x3bc
- .debug_frame   0x00000000      0x3bc C:\Users\alova\AppData\Local\Temp\ccNZXCow.ltrans0.ltrans.o
+ .debug_frame   0x00000000      0x3bc C:\Users\alova\AppData\Local\Temp\cc8UWzjx.ltrans0.ltrans.o
 
 .debug_macro    0x00000000    0x11345
- .debug_macro   0x00000000       0xe9 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x000000e9      0x7f0 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x000008d9       0x1c C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x000008f5       0x34 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000929       0x22 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x0000094b       0x8e C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x000009d9       0x51 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000a2a      0x103 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000b2d       0x6a C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000b97      0x1df C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000d76       0xd0 C:\Users\alova\AppData\Local\Temp\ccDXhNpm.debug.temp.o
- .debug_macro   0x00000e46      0x157 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00000f9d       0x68 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001005       0x20 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001025       0x94 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000010b9       0x3b C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000010f4       0x34 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001128       0x16 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x0000113e       0x57 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001195       0x9e C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001233      0x364 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001597      0x112 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000016a9       0x10 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000016b9       0x16 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000016cf       0x4a C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001719       0x34 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x0000174d       0x10 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x0000175d       0x58 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000017b5      0x1de C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001993       0x16 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000019a9       0x16 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x000019bf      0x170 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001b2f       0x4c C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001b7b       0x1c C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00001b97     0x7207 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00008d9e       0x34 C:\Users\alova\AppData\Local\Temp\ccEzCnEQ.debug.temp.o
- .debug_macro   0x00008dd2      0x1bf C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00008f91      0x190 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00009121      0x23c C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x0000935d       0x10 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x0000936d       0x3c C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000093a9       0x16 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000093bf       0x10 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000093cf       0x1c C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000093eb       0x52 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x0000943d       0x22 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x0000945f       0x10 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x0000946f       0x52 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000094c1       0xcf C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00009590       0x1c C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000095ac       0x3d C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x000095e9      0x51a C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00009b03       0x25 C:\Users\alova\AppData\Local\Temp\ccDsmSrk.debug.temp.o
- .debug_macro   0x00009b28       0xa9 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00009bd1      0x10c C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00009cdd       0xd6 C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00009db3       0x6a C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x00009e1d     0x721f C:\Users\alova\AppData\Local\Temp\ccUQzOqN.debug.temp.o
- .debug_macro   0x0001103c      0x1db C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00011217       0x6e C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x00011285       0x3a C:\Users\alova\AppData\Local\Temp\ccVWpbOf.debug.temp.o
- .debug_macro   0x000112bf       0x86 C:\Users\alova\AppData\Local\Temp\cckhNmlI.debug.temp.o
+ .debug_macro   0x00000000       0xe9 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x000000e9      0x7f0 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x000008d9       0x1c C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x000008f5       0x34 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000929       0x22 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x0000094b       0x8e C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x000009d9       0x51 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000a2a      0x103 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000b2d       0x6a C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000b97      0x1df C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000d76       0xd0 C:\Users\alova\AppData\Local\Temp\ccI7Zw1i.debug.temp.o
+ .debug_macro   0x00000e46      0x157 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00000f9d       0x68 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001005       0x20 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001025       0x94 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000010b9       0x3b C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000010f4       0x34 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001128       0x16 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x0000113e       0x57 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001195       0x9e C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001233      0x364 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001597      0x112 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000016a9       0x10 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000016b9       0x16 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000016cf       0x4a C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001719       0x34 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x0000174d       0x10 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x0000175d       0x58 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000017b5      0x1de C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001993       0x16 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000019a9       0x16 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x000019bf      0x170 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001b2f       0x4c C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001b7b       0x1c C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00001b97     0x7207 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00008d9e       0x34 C:\Users\alova\AppData\Local\Temp\ccaEB0pH.debug.temp.o
+ .debug_macro   0x00008dd2      0x1bf C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00008f91      0x190 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00009121      0x23c C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x0000935d       0x10 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x0000936d       0x3c C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000093a9       0x16 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000093bf       0x10 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000093cf       0x1c C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000093eb       0x52 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x0000943d       0x22 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x0000945f       0x10 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x0000946f       0x52 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000094c1       0xcf C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00009590       0x1c C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000095ac       0x3d C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x000095e9      0x51a C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00009b03       0x25 C:\Users\alova\AppData\Local\Temp\cc2tIa54.debug.temp.o
+ .debug_macro   0x00009b28       0xa9 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00009bd1      0x10c C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00009cdd       0xd6 C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00009db3       0x6a C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x00009e1d     0x721f C:\Users\alova\AppData\Local\Temp\ccq4EBBs.debug.temp.o
+ .debug_macro   0x0001103c      0x1db C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00011217       0x6e C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x00011285       0x3a C:\Users\alova\AppData\Local\Temp\cc23acyQ.debug.temp.o
+ .debug_macro   0x000112bf       0x86 C:\Users\alova\AppData\Local\Temp\ccY3HHqe.debug.temp.o

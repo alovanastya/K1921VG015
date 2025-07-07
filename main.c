@@ -21,7 +21,8 @@
 #define LED6_MSK  (1 << 14)
 #define LED7_MSK  (1 << 15)  // PA15
 
-char buff[120];
+static uint32_t button_click_counter = 1;
+
 
 // Режимы мигания диодов
 typedef enum LED_MODES{
@@ -160,7 +161,7 @@ void periph_init()
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
 volatile uint32_t led_shift;
-volatile uint32_t button_click_counter = 0;
+
 
 
 //-- Main ----------------------------------------------------------------------
@@ -168,15 +169,15 @@ int main(void)
 {
 	uint32_t	i;
 	periph_init();
-	// TMR32_init(SystemCoreClock>>10);  // если << 1, медленно
+	//TMR32_init(SystemCoreClock>>10);  // если << 1, медленно
 	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
 	InterruptEnable();
 	led_shift = LED0_MSK;
 	while (1)
 	{
-		//UART1->DR = 0x053;
-	   // for(i=0;i<100000; ++i)
-	   // {}
+		UART1->DR = 0x053;
+	    for(i=0;i<100000; ++i)
+	    {}
 	}
 
 	return 0;
@@ -212,13 +213,14 @@ void update_leds()
 
 //-- IRQ INTERRUPT HANDLERS ---------------------------------------------------------------
 // не проверяла на мк
+
 void TMR32_IRQHandler()
 {
 	static uint8_t d = 0;
 	static uint8_t last_button_state = 1;
 	static uint32_t last_led_update = 0;
 
-	uint8_t x = (GPIOA->DATA & PA7_MSK) ? 1 : 0;
+	uint8_t x = (GPIOA->DATA & PA7_MSK) ? 0 : 1;
 	static float Ysm = 1000.0f;
 	const float k = 0.2f;
 
@@ -235,7 +237,7 @@ void TMR32_IRQHandler()
 	{
 		button_state = 1;
 	}
-	else if (Ysm < 300)
+	else if (Ysm < 500)
 	{
 		button_state = 0;
 	}
@@ -243,28 +245,38 @@ void TMR32_IRQHandler()
 
 	if (button_state == 0 && prev_button_state == 1)
 	{
+
 		if(button_click_counter < (MODES_COUNT - 1))
 		{
 			button_click_counter++;
+			//update_leds();
+			//GPIOA->DATAOUTTGL = PA5_MSK;
 		}
 		else
 		{
 			button_click_counter = 1; // в первый режим
 		}
+
+
+		// GPIOA->DATAOUTTGL = LEDS_MSK;
 	}
 
 	prev_button_state = button_state;
 
-	if (++last_led_update >= 50) // чтобы обновление состояния было плавным
-		{
-			update_leds();
-			last_led_update = 0;
-		}
+
+	if (last_led_update >= 30) // чтобы обновление состояния было плавным
+	{
+		update_leds();
+		last_led_update = 0;
+	}
+	else{last_led_update++;}
 
 	TMR32->IC = 3;
 }
 
-/* второй вариант без интегральной схемы
+
+/*
+//второй вариант без интегральной схемы
 void TMR32_IRQHandler()
 {
 	static uint8_t d = 0;
@@ -308,4 +320,4 @@ void TMR32_IRQHandler()
 
 	TMR32->IC = 3;
 }
- */
+*/
