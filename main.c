@@ -5,6 +5,7 @@
 #include "retarget.h"
 #include <string.h>
 
+#define PWM_PERIOD 1000
 #define CNT_SAMPLE 5
 #define UART1_BAUD  115200
 
@@ -53,69 +54,110 @@ void Send_buff(char* a)
 	}
 }
 
-void BSP_led_init()
+void PWM_init(void)
 {
-	// CGCFGAHB регистр конфигурации тактирования для шины AHB
-	RCU->CGCFGAHB_bit.GPIOAEN = 1; //  Разрешаем тактирование GPIOA
+    //Включение тактирования
+    RCU->CGCFGAPB |= (1 << 0);  //Включить TMR0 (бит 0)
+    RCU->RSTDISAPB |= (1 << 0); //Снять сброс TMR0
 
-	// RSTDISAHB - регистр снятия сброса для шины AHB
-	RCU->RSTDISAHB_bit.GPIOAEN = 1; //Включаем  GPIOA
+    //Настройка PB0 как TMR0_CH0
+    GPIOB->ALTFUNCNUM &= ~(0x3 << (0*2)); //Сброс битов
+    GPIOB->ALTFUNCNUM |= (1 << (0*2));    //Альт. функция 1
+    GPIOB->ALTFUNCSET = (1 << 0);         //Включить для PB0
+    GPIOB->OUTENSET = (1 << 0);           //Включить вывод
 
-	// для PB
-	RCU->CGCFGAHB_bit.GPIOBEN = 1;
-	RCU->RSTDISAHB_bit.GPIOBEN = 1;
-	GPIOB->OUTENSET = PB0_MSK;
-	GPIOB->DATAOUTCLR = PB0_MSK;
+    //Настройка TMR0
+    TMR0->CTRL = 0;              //Сброс регистра
+    TMR0->CTRL |= (2 << 0);      //PWM mode (биты 0-1)
+    TMR0->CAPCOM[0].VAL = 999;   //Период 1000 тактов
+    TMR0->CAPCOM[1].VAL = 499;   //Начальная скважность 50%
 
-	GPIOA->OUTENSET = LEDS_MSK; // OUTENSET - регистр, который настраивает выводы как выходы
-	// GPIOA->DATAOUTSET = LEDS_MSK;
-	GPIOA->DATAOUTCLR = LEDS_MSK;   // гасит диоды
-
-	GPIOA->OUTENCLR = PA7_MSK;    // Кнопка как вход
-
-	// PULLMODE – регистр выбора режима подтяжки порта
-	// 0b00111..11 -> 14 и 15 зануляюся
-	GPIOA->PULLMODE &= ~(0b11 << (7 * 2));  // стр 367
-	GPIOA->PULLMODE |= (0b01 << (7 * 2));  // Подтяжка к уровню логической единицы
-
-	GPIOA->OUTENSET = PA5_MSK;  // включение вывода, теперь как выход
+    //Включение таймера
+    TMR0->CTRL |= (1 << 4);      //Запуск (бит 4)
 }
 
-void spi0_init()
+// Установка скважности
+void PWM_set_duty(uint8_t percent)
 {
-	RCU->CGCFGAHB_bit.GPIOBEN = 1;   // Разрешение тактирования порта GPIOB
-	RCU->RSTDISAHB_bit.GPIOBEN = 1;  // Вывод из состояния сброса порта GPIOB
-	RCU->CGCFGAHB_bit.SPI0EN = 1;    // Разрешение тактирования SPI0
-	RCU->RSTDISAHB_bit.SPI0EN = 1;   // Вывод из состояния сброса SPI0
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKSEL = RCU_SPICLKCFG_CLKSEL_HSE; //Источник сигнала внешний кварц
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKEN = 1; 	//Разрешение тактирования
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
-	SPI0->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
-	SPI0->CR0_bit.SCR = 1;  // Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((1+1)*8)=1МГц
-	SPI0->CR0_bit.SPO = 0;  // Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
-	SPI0->CR0_bit.SPH = 1;  // Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
-	SPI0->CR0_bit.FRF = 0;  // Выбор протокола обмена информацией 0-SPI
-	SPI0->CR0_bit.DSS = 7;  // Размер слова данных 8 бит
-	SPI0->CR1_bit.MS = 0;   // Режим работы - Мастер
-	GPIOB->ALTFUNCSET = GPIO_ALTFUNCSET_PIN0_Msk | GPIO_ALTFUNCSET_PIN1_Msk | GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
-	GPIOB->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN0_AF1<<GPIO_ALTFUNCNUM_PIN0_Pos) | (GPIO_ALTFUNCNUM_PIN1_AF1<<GPIO_ALTFUNCNUM_PIN1_Pos) |
-						(GPIO_ALTFUNCNUM_PIN2_AF1<<GPIO_ALTFUNCNUM_PIN2_Pos) | (GPIO_ALTFUNCNUM_PIN3_AF1<<GPIO_ALTFUNCNUM_PIN3_Pos); //Выбор номера альтернативной функции
-	SPI0->IMSC = 0x1; // Разрешаем прерывания по переполнению приемного буфера
-	// Настраиваем обработчик прерывания для SPI0
-	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI0, SPI0_IRQHandler);
-	PLIC_SetPriority   (IsrVect_IRQ_SPI0, 0x1);
-	PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_SPI0);
-
-	SPI0->CR1_bit.SSE = 1; //Разрешение работы приемопередатчика
+	if (percent > 100) percent = 100;
+    uint32_t duty = (999 * percent) / 100;
+    TMR0->CAPCOM[1].VAL = duty;
 }
 
-void Btn0_init()
-{
-  //Настраиваем кнопку SB3, подключенную к WAKEUP0
-  PMURTC->RTC_WAKECFG_bit.WAKEPOL = 0x1; // Устанавливаем полярность для WAKEUP0 - низкий уровень
-  PMURTC->RTC_WAKECFG_bit.WAKEEN = 0x1;  // Разрешаем событие WAKEUP0
-  PMURTC->RTC_HISTORY = 0x0;	// СБрасываем регистр событий
+void BSP_led_init() {
+    RCU->CGCFGAHB_bit.GPIOAEN = 1;
+    RCU->RSTDISAHB_bit.GPIOAEN = 1;
+
+    // Инициализация GPIOB для PWM выхода
+    RCU->CGCFGAHB_bit.GPIOBEN = 1;
+    RCU->RSTDISAHB_bit.GPIOBEN = 1;
+    GPIOB->OUTENSET = PB0_MSK;
+    GPIOB->DATAOUTCLR = PB0_MSK;
+
+    GPIOA->OUTENSET = LEDS_MSK;
+    GPIOA->DATAOUTCLR = LEDS_MSK;
+
+    GPIOA->OUTENCLR = PA7_MSK; // Кнопка как вход
+    GPIOA->PULLMODE &= ~(0b11 << (7 * 2));
+    GPIOA->PULLMODE |= (0b01 << (7 * 2)); // Подтяжка к уровню логической единицы
+
+    GPIOA->OUTENSET = PA5_MSK; // Включение вывода PA5 как выход
 }
+
+
+void adcsar_init()
+{
+	// настройка питания ADCSAR
+  PMUSYS->ADCPWRCFG_bit.LDOEN = 1;
+  PMUSYS->ADCPWRCFG_bit.LVLDIS = 0;
+
+  //Сбрасываем блок ADCSAR
+  RCU->ADCSARCLKCFG_bit.RSTDIS = 0;
+  RCU->RSTDISAPB_bit.ADCSAREN = 0;
+
+  //Инициализация тактирвоания блока ADCSAR
+  RCU->ADCSARCLKCFG_bit.CLKSEL = 1;
+  RCU->ADCSARCLKCFG_bit.DIVEN = 0;
+  RCU->ADCSARCLKCFG_bit.CLKEN = 1;
+  RCU->ADCSARCLKCFG_bit.RSTDIS = 1;
+
+  //инициализация тактирования и сброса логики ADCSAR
+  RCU->CGCFGAPB_bit.ADCSAREN = 1;
+  RCU->RSTDISAPB_bit.ADCSAREN = 1;
+
+  //Настройка модуля ADCSAR
+  //12бит и калибровка при включении
+  ADCSAR->ACTL_bit.SELRES = ADCSAR_ACTL_SELRES_12bit;
+  ADCSAR->ACTL_bit.CALEN = 1;
+  ADCSAR->ACTL_bit.ADCEN = 1;
+
+  //Настройка секвенсора 0: CH0 - CH7
+  ADCSAR->EMUX_bit.EM0 = ADCSAR_EMUX_EM0_SwReq;
+  //ADCSAR->EMUX = 0x0F;
+  ADCSAR->SEQ[0].SCCTL_bit.ICNT = 0;
+  ADCSAR->SEQ[0].SCCTL_bit.RCNT = 0;
+  ADCSAR->SEQ[0].SRTMR = 0x0;
+  ADCSAR->SEQ[0].SRQCTL_bit.QAVGVAL = ADCSAR_SEQ_SRQCTL_QAVGVAL_Disable;
+  ADCSAR->SEQ[0].SRQCTL_bit.QAVGEN = 0;
+  ADCSAR->SEQ[0].SRQCTL_bit.RQMAX = 7;
+  ADCSAR->SEQ[0].SCCTL_bit.RAVGEN = 0;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ0 = 0;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ1 = 1;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ2 = 2;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ3 = 3;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ4 = 4;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ5 = 5;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ6 = 6;
+  ADCSAR->SEQ[0].SRQSEL_bit.RQ7 = 7;
+
+  //Включаем секвенсоры
+  ADCSAR->SEQSYNC = ADCSAR_SEQSYNC_SYNC0_Msk;
+  ADCSAR->SEQEN = ADCSAR_SEQEN_SEQEN0_Msk;
+
+  //Ждем пока АЦП пройдут инициализацию, начатую в самом начале
+  while (!(ADCSAR->ACTL_bit.ADCRDY)) { };
+}
+
 
 void TMR32_init(uint32_t period)
 {
@@ -198,15 +240,22 @@ void periph_init()
 	BSP_led_init();
 	SystemInit();
 	SystemCoreClockUpdate();
-	BSP_led_init();
 	UART1_init();
 	retarget_init();
+	adcsar_init();
+	PWM_init();
+
 
 	sprintf(buff,"  K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
 	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
     sprintf(buff,"  PartNum = 0x%X\r\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
     sprintf(buff,"  Start UART DMA\r\n\0"); Send_buff(buff);
 
+
+    // sprintf(buff,"ADCSAR->ACTL = 0x%08X\n", ADCSAR->ACTL);Send_buff(buff);
+    // sprintf(buff,"ADCSAR->CAL = 0x%08X\n", ADCSAR->CAL);Send_buff(buff);
+    //sprintf(buff,"ADCSAR->EMUX = 0x%08X\n", ADCSAR->EMUX);Send_buff(buff);
+    //sprintf(buff,"ADCSAR->SEQ[0].SRQCTL = 0x%08X\n", ADCSAR->SEQ[0].SRQCTL);Send_buff(buff);
 }
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
@@ -221,26 +270,29 @@ int main(void)
 	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
 	InterruptEnable();
 	led_shift = LED0_MSK;
+	 uint8_t brightness;
 	while (1)
 	{
-		UART1->DR = 0x053;
-	    for(i=0;i<100000; ++i)
-	    {}
+		ADCSAR->SEQSYNC_bit.GSYNC = 1;
 
-	    /*
-	    prev_state = curr_state;
-	  curr_state = PMURTC->RTC_HISTORY_bit.WAKE0;
-	  if((curr_state == 1) &&  (prev_state == 0))
-	  {
-		  // Отправка тестовых данных в SPI0
-		  SPI0->DR = 0xAA;
-		  SPI0->DR = 0x55;
-		  SPI0->DR = 0x81;
-	  }
-	  PMURTC->RTC_HISTORY = 0x0;	// СБрасываем регистр событий
-	     */
+		    while ((ADCSAR->BSTAT));
+		    while (!(ADCSAR->RIS_bit.SEQRIS0)); // Ожидание флага прерывания секвенсора 0
+		    int chn = 1;
+		    int ch_res = ADCSAR->SEQ[0].SFIFO;
+		    int curr_voltage_mV = (ch_res * 3300) / 4095;
+		    // на 2.5 показывает плохо дальше
+		    // aref 2.77 в
+		    // 3.3 там 3.3
+		     brightness = (ch_res * 100) / 4095;
+		    PWM_set_duty(brightness); // ШИМ
+
+		    // printf("Brightness: %d%%, Duty: %d\r\n", brightness, (999 * brightness) / 100);
+		    // printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
+		    // printf("\r");
+
+
+		    ADCSAR->IC = ADCSAR_IC_SEQIC0_Msk; // Сброс флага прерывания секвенсора 0
 	}
-
 	return 0;
 }
 
@@ -291,7 +343,7 @@ void TMR32_IRQHandler() // раз в 10 мс
 
 		// for(int i = 0; i < sizeof(buff); i++) { buff[i] = 0;}
 		memset(buff, 0, sizeof(buff));
-		sprintf(buff, "%d %s\r\n", (int)meows_barks_counter, flag_meows ? "meow \0\0" : "bark \0\0");
+		//sprintf(buff, "%d %s\r\n", (int)meows_barks_counter, flag_meows ? "meow \0\0" : "bark \0\0");
 		Send_buff(buff);
 	}
 
@@ -337,7 +389,7 @@ void TMR32_IRQHandler() // раз в 10 мс
 	if (last_led_update >= 30)
 	{
 		update_leds();
-		GPIOB->DATAOUTTGL = PB0_MSK;
+		// GPIOB->DATAOUTTGL = PB0_MSK;
 		last_led_update = 0;
 	}
 	else{last_led_update++;}
