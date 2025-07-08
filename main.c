@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <system_k1921vg015.h>
 #include "retarget.h"
+#include <string.h>
 
 #define CNT_SAMPLE 5
 #define UART1_BAUD  115200
@@ -11,7 +12,7 @@
 #define GPIOB_ALL_Msk  0xFFFF
 #define LEDS_MSK  0xFF00
 
-#define PB0_MSK   (1 << 0)  // фонарик 2
+#define PB0_MSK   (1 << 0)   // фонарик 2
 
 #define PA5_MSK   (1 << 5)   // фонарик
 #define PA7_MSK   (1 << 7)   // кнопка
@@ -25,6 +26,8 @@
 #define LED7_MSK  (1 << 15)  // PA15
 
 static uint32_t button_click_counter = 1;
+static uint32_t meows_barks_counter = 0;
+static uint32_t flag_meows = 1;
 
 char buff[120];
 
@@ -43,7 +46,7 @@ void SPI0_IRQHandler();
 void Send_buff(char* a)
 {
 	uint8_t i = 0;
-	while ((i < 120) && (a[i] != 0))
+	while ((i < 120) && (a[i] != '\0'))
 	{
 		retarget_put_char(a[i]);
 		i++;
@@ -199,15 +202,16 @@ void periph_init()
 	UART1_init();
 	retarget_init();
 
-	sprintf(buff,"K1921VG015 SYSCLK = %d MHz\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
-	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
-    sprintf(buff,"  PartNum = 0x%X\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
-    sprintf(buff,"  Start UART DMA\n\0"); Send_buff(buff);
+	sprintf(buff,"  K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
+	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
+    sprintf(buff,"  PartNum = 0x%X\r\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
+    sprintf(buff,"  Start UART DMA\r\n\0"); Send_buff(buff);
 
 }
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
 volatile uint32_t led_shift;
+volatile uint32_t cnt_tgl_meows;
 
 //-- Main ----------------------------------------------------------------------
 int main(void)
@@ -269,13 +273,28 @@ void update_leds()
 }
 
 //-- IRQ INTERRUPT HANDLERS ---------------------------------------------------------------
-// не проверяла на мк
-
-void TMR32_IRQHandler()
+void TMR32_IRQHandler() // раз в 10 мс
 {
 	static uint8_t d = 0;
 	static uint8_t last_button_state = 1;
 	static uint32_t last_led_update = 0;
+
+	if (cnt_tgl_meows < 100)
+	{
+		cnt_tgl_meows++;
+	}
+	else
+	{
+		flag_meows = (flag_meows == 0) ? 1 : 0;
+		meows_barks_counter++;
+		cnt_tgl_meows = 0;
+
+		// for(int i = 0; i < sizeof(buff); i++) { buff[i] = 0;}
+		memset(buff, 0, sizeof(buff));
+		sprintf(buff, "%d %s\r\n", (int)meows_barks_counter, flag_meows ? "meow \0\0" : "bark \0\0");
+		Send_buff(buff);
+	}
+
 
 	uint8_t x = (GPIOA->DATA & PA7_MSK) ? 0 : 1;
 	static float Ysm = 1000.0f;
