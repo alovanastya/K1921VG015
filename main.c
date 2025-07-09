@@ -54,35 +54,6 @@ void Send_buff(char* a)
 	}
 }
 
-void PWM_init(void)
-{
-    //Включение тактирования
-    RCU->CGCFGAPB |= (1 << 0);  //Включить TMR0 (бит 0)
-    RCU->RSTDISAPB |= (1 << 0); //Снять сброс TMR0
-
-    //Настройка PB0 как TMR0_CH0
-    GPIOB->ALTFUNCNUM &= ~(0x3 << (0*2)); //Сброс битов
-    GPIOB->ALTFUNCNUM |= (1 << (0*2));    //Альт. функция 1
-    GPIOB->ALTFUNCSET = (1 << 0);         //Включить для PB0
-    GPIOB->OUTENSET = (1 << 0);           //Включить вывод
-
-    //Настройка TMR0
-    TMR0->CTRL = 0;              //Сброс регистра
-    TMR0->CTRL |= (2 << 0);      //PWM mode (биты 0-1)
-    TMR0->CAPCOM[0].VAL = 999;   //Период 1000 тактов
-    TMR0->CAPCOM[1].VAL = 499;   //Начальная скважность 50%
-
-    //Включение таймера
-    TMR0->CTRL |= (1 << 4);      //Запуск (бит 4)
-}
-
-// Установка скважности
-void PWM_set_duty(uint8_t percent)
-{
-	if (percent > 100) percent = 100;
-    uint32_t duty = (999 * percent) / 100;
-    TMR0->CAPCOM[1].VAL = duty;
-}
 
 void BSP_led_init() {
     RCU->CGCFGAHB_bit.GPIOAEN = 1;
@@ -111,6 +82,8 @@ void adcsar_init()
   PMUSYS->ADCPWRCFG_bit.LDOEN = 1;
   PMUSYS->ADCPWRCFG_bit.LVLDIS = 0;
 
+  // ADCSAR->ACTL_bit.ISEL = 0;
+
   //Сбрасываем блок ADCSAR
   RCU->ADCSARCLKCFG_bit.RSTDIS = 0;
   RCU->RSTDISAPB_bit.ADCSAREN = 0;
@@ -128,8 +101,11 @@ void adcsar_init()
   //Настройка модуля ADCSAR
   //12бит и калибровка при включении
   ADCSAR->ACTL_bit.SELRES = ADCSAR_ACTL_SELRES_12bit;
+  //ADCSAR->ACTL = 0;
+  // ADCSAR->ACTL |= (3 << 4);  // источник опорного тока
   ADCSAR->ACTL_bit.CALEN = 1;
   ADCSAR->ACTL_bit.ADCEN = 1;
+  //ADCSAR->ACTL_bit.ISEL = 1;
 
   //Настройка секвенсора 0: CH0 - CH7
   ADCSAR->EMUX_bit.EM0 = ADCSAR_EMUX_EM0_SwReq;
@@ -176,6 +152,48 @@ void TMR32_init(uint32_t period)
 	PLIC_SetIrqHandler(Plic_Mach_Target, IsrVect_IRQ_TMR32, TMR32_IRQHandler);
 	PLIC_SetPriority(IsrVect_IRQ_TMR32, 0x1);
 	PLIC_IntEnable(Plic_Mach_Target, IsrVect_IRQ_TMR32);
+}
+
+void TMR1_PWN_init(uint16_t period)
+{
+  RCU->CGCFGAPB_bit.TMR1EN = 1;
+  RCU->RSTDISAPB_bit.TMR1EN = 1;
+
+  //Настраиваем альтернативную функцию для GPIOA.8 и GPIOA.9
+  RCU->CGCFGAHB_bit.GPIOAEN = 1;
+  //Включаем  GPIOA
+  RCU->RSTDISAHB_bit.GPIOAEN = 1;
+  // Выбираем льтернативную функцию №2 для GPIOA.8 и GPIOA.9
+  GPIOA->ALTFUNCNUM_bit.PIN8 = 2;
+  GPIOA->ALTFUNCNUM_bit.PIN9 = 2;
+  GPIOA->ALTFUNCSET = (1 << 8) | (1 << 9);
+
+  //Записываем значение периода в CAPCOM[0]
+  TMR1->CAPCOM[0].VAL = period-1;
+
+  //Настраиваем режим сравнения для CAPCOM[2] - управление выводом GPIOA.8
+  TMR1->CAPCOM[2].CTRL_bit.CAP = 0; // Режим сравнения
+  TMR1->CAPCOM[2].CTRL_bit.OUTMODE = 7; /* Выходной сигнал сбрасывается, когда таймер отсчитывает значение CAPCOM[n].VAL.
+  Он устанавливается, когда таймер отсчитывает значение CAPCOM[0].VAL.*/
+  TMR1->CAPCOM[2].VAL = (period >> 1) - 1;
+
+  //Настраиваем режим сравнения для CAPCOM[3] - управление выводом GPIOA.9
+  TMR1->CAPCOM[3].CTRL_bit.CAP = 0; // Режим сравнения
+  TMR1->CAPCOM[3].CTRL_bit.OUTMODE = 3; /* Выходной сигнал устанавливается, когда таймер отсчитывает значение CAPCOM[n].VAL.
+  Он сбрасывается, когда таймер отсчитывает значение CAPCOM[0].VAL.*/
+  TMR1->CAPCOM[3].VAL = (period >> 1) - 1;
+
+  TMR1->CTRL_bit.DIV = 3; // Делитель частоты на 8
+  //Выбираем режим счета от 0 до значения CAPCOM[0]
+  TMR1->CTRL_bit.MODE = TMR_CTRL_MODE_Up;
+
+  //Разрешаем прерывание по совпадению значения счетчика и CAPCOM[0]
+  TMR1->IM = 2;
+
+  // Настраиваем обработчик прерывания для TMR1
+  PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_TMR32, TMR32_IRQHandler);
+  PLIC_SetPriority   (IsrVect_IRQ_TMR32, 0x1);
+  PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_TMR32);
 }
 
 //  UART - Universal Asynchronous Receiver-Transmitter
@@ -243,19 +261,11 @@ void periph_init()
 	UART1_init();
 	retarget_init();
 	adcsar_init();
-	PWM_init();
-
 
 	sprintf(buff,"  K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
 	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
     sprintf(buff,"  PartNum = 0x%X\r\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
     sprintf(buff,"  Start UART DMA\r\n\0"); Send_buff(buff);
-
-
-    // sprintf(buff,"ADCSAR->ACTL = 0x%08X\n", ADCSAR->ACTL);Send_buff(buff);
-    // sprintf(buff,"ADCSAR->CAL = 0x%08X\n", ADCSAR->CAL);Send_buff(buff);
-    //sprintf(buff,"ADCSAR->EMUX = 0x%08X\n", ADCSAR->EMUX);Send_buff(buff);
-    //sprintf(buff,"ADCSAR->SEQ[0].SRQCTL = 0x%08X\n", ADCSAR->SEQ[0].SRQCTL);Send_buff(buff);
 }
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
@@ -268,6 +278,7 @@ int main(void)
 	uint32_t	i;
 	periph_init();
 	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
+	TMR1_PWN_init(SystemCoreClock>>8);
 	InterruptEnable();
 	led_shift = LED0_MSK;
 	 uint8_t brightness;
@@ -279,16 +290,19 @@ int main(void)
 		    while (!(ADCSAR->RIS_bit.SEQRIS0)); // Ожидание флага прерывания секвенсора 0
 		    int chn = 1;
 		    int ch_res = ADCSAR->SEQ[0].SFIFO;
+
 		    int curr_voltage_mV = (ch_res * 3300) / 4095;
-		    // на 2.5 показывает плохо дальше
+
+
+		    // на 2.5 В показывает плохо дальше
 		    // aref 2.77 в
 		    // 3.3 там 3.3
-		     brightness = (ch_res * 100) / 4095;
-		    PWM_set_duty(brightness); // ШИМ
+		    /*
+		     * Про выбор опорного напряжения в документации не нашла
+		     */
 
-		    // printf("Brightness: %d%%, Duty: %d\r\n", brightness, (999 * brightness) / 100);
-		    // printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
-		    // printf("\r");
+		    printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
+		    printf("\r");
 
 
 		    ADCSAR->IC = ADCSAR_IC_SEQIC0_Msk; // Сброс флага прерывания секвенсора 0
@@ -314,7 +328,6 @@ void update_leds()
 	case MODE_ALL_ON:
 		GPIOA->DATAOUTSET = LEDS_MSK;
 		break;
-
 	case MODE_ALL_OFF:
 		GPIOA->DATAOUTCLR = LEDS_MSK;
 		break;
@@ -331,22 +344,17 @@ void TMR32_IRQHandler() // раз в 10 мс
 	static uint8_t last_button_state = 1;
 	static uint32_t last_led_update = 0;
 
-	if (cnt_tgl_meows < 100)
-	{
-		cnt_tgl_meows++;
-	}
+	if (cnt_tgl_meows < 100){ cnt_tgl_meows++; }
 	else
 	{
 		flag_meows = (flag_meows == 0) ? 1 : 0;
 		meows_barks_counter++;
 		cnt_tgl_meows = 0;
-
-		// for(int i = 0; i < sizeof(buff); i++) { buff[i] = 0;}
 		memset(buff, 0, sizeof(buff));
+		// тут вывод со счетчиком каждую секунду
 		//sprintf(buff, "%d %s\r\n", (int)meows_barks_counter, flag_meows ? "meow \0\0" : "bark \0\0");
 		Send_buff(buff);
 	}
-
 
 	uint8_t x = (GPIOA->DATA & PA7_MSK) ? 0 : 1;
 	static float Ysm = 1000.0f;
