@@ -53,6 +53,7 @@ void Send_buff(char* a)
 	}
 }
 
+
 /*
 void BSP_led_init() {
     RCU->CGCFGAHB_bit.GPIOAEN = 1;
@@ -85,7 +86,125 @@ void BSP_led_init()
 	GPIOA->DATAOUTSET = LEDS_MSK;
 }
 
+//-- Peripheral init functions -------------------------------------------------
+/*
+ * PC4  CS
+ * PC5  CLK
+ * PC6  MOSI
+ * PC7  MISO
+ */
 
+void SPI1_IRQHandler()
+{
+	GPIOA->DATAOUTTGL = 0xFF00;
+	SPI1->ICR = 0x3;
+}
+
+void spi1_init()
+{
+	RCU->CGCFGAHB_bit.GPIOCEN = 1;  //Разрешение тактирования порта GPIOB
+	RCU->RSTDISAHB_bit.GPIOCEN = 1; //Вывод из состояния сброса порта GPIOB
+	RCU->CGCFGAHB_bit.SPI1EN = 1;  //Разрешение тактирования SPI0
+	RCU->RSTDISAHB_bit.SPI1EN = 1; //Вывод из состояния сброса SPI0
+	RCU->SPICLKCFG[1].SPICLKCFG_bit.CLKSEL = RCU_SPICLKCFG_CLKSEL_HSE; //Источник сигнала внешний кварц
+	RCU->SPICLKCFG[1].SPICLKCFG_bit.CLKEN = 1; 	//Разрешение тактирования
+	RCU->SPICLKCFG[1].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
+	SPI1->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
+	SPI1->CR0_bit.SCR = 4; //Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((4+1)*8)=400кГц
+	SPI1->CR0_bit.SPO = 0; //Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
+	SPI1->CR0_bit.SPH = 1; //Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
+	SPI1->CR0_bit.FRF = 0; //Выбор протокола обмена информацией 0-SPI
+	SPI1->CR0_bit.DSS = 7; //Размер слова данных 8 бит
+	SPI1->CR1_bit.MS = 0; //Режим работы - Мастер
+	GPIOC->ALTFUNCSET = GPIO_ALTFUNCSET_PIN4_Msk | GPIO_ALTFUNCSET_PIN5_Msk | GPIO_ALTFUNCSET_PIN6_Msk | GPIO_ALTFUNCSET_PIN7_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
+	GPIOC->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN4_AF1<<GPIO_ALTFUNCNUM_PIN4_Pos) | (GPIO_ALTFUNCNUM_PIN5_AF1<<GPIO_ALTFUNCNUM_PIN5_Pos) |
+						(GPIO_ALTFUNCNUM_PIN6_AF1<<GPIO_ALTFUNCNUM_PIN6_Pos) | (GPIO_ALTFUNCNUM_PIN7_AF1<<GPIO_ALTFUNCNUM_PIN7_Pos); //Выбор номера альтернативной функции
+	SPI1->IMSC = 0x1; //Разрешаем прерывания по переполнению приемного буфера
+	// Настраиваем обработчик прерывания для SPI0
+	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI1, SPI1_IRQHandler);
+	PLIC_SetPriority(IsrVect_IRQ_SPI1, 0x1);
+	PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_SPI1);
+
+	SPI1->CR1_bit.SSE = 1; //Разрешение работы приемопередатчика
+}
+
+void MR45V256_CS_Enable()
+{
+    GPIOC->DATAOUTCLR = (1 << 4); // PC4 - CS
+}
+
+void MR45V256_CS_Disable()
+{
+    GPIOC->DATAOUTSET = (1 << 4);
+}
+
+void MR45V256_WREN()
+{
+    MR45V256_CS_Enable();
+    // Transmit FIFO Not Ful
+    // TNF = 0 буфер полон
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x06; // WREN 0110
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+}
+
+void MR45V256_WRDI()
+{
+    MR45V256_CS_Enable();
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x04; // WRDI 100
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+}
+
+
+uint8_t MR45V256_RDSR()
+{
+    uint8_t status;
+    MR45V256_CS_Enable();
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x05; // RDSR 101
+    // Receive FIFO Not Empty
+    while (!(SPI1->SR & SPI_SR_RNE_Msk));
+    status = SPI1->DR;
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+    return status;
+}
+
+
+
+
+/*
+// Это как пример
+void spi0_init()
+{
+	RCU->CGCFGAHB_bit.GPIOBEN = 1;  //Разрешение тактирования порта GPIOB
+	RCU->RSTDISAHB_bit.GPIOBEN = 1; //Вывод из состояния сброса порта GPIOB
+	RCU->CGCFGAHB_bit.SPI0EN = 1;  //Разрешение тактирования SPI0
+	RCU->RSTDISAHB_bit.SPI0EN = 1; //Вывод из состояния сброса SPI0
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKSEL = RCU_SPICLKCFG_CLKSEL_HSE; //Источник сигнала внешний кварц
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKEN = 1; 	//Разрешение тактирования
+	RCU->SPICLKCFG[0].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
+	SPI0->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
+	SPI0->CR0_bit.SCR = 1; //Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((1+1)*8)=1МГц
+	SPI0->CR0_bit.SPO = 0; //Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
+	SPI0->CR0_bit.SPH = 1; //Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
+	SPI0->CR0_bit.FRF = 0; //Выбор протокола обмена информацией 0-SPI
+	SPI0->CR0_bit.DSS = 7; //Размер слова данных 8 бит
+	SPI0->CR1_bit.MS = 0; //Режим работы - Мастер
+	GPIOB->ALTFUNCSET = GPIO_ALTFUNCSET_PIN0_Msk | GPIO_ALTFUNCSET_PIN1_Msk | GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
+	GPIOB->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN0_AF1<<GPIO_ALTFUNCNUM_PIN0_Pos) | (GPIO_ALTFUNCNUM_PIN1_AF1<<GPIO_ALTFUNCNUM_PIN1_Pos) |
+						(GPIO_ALTFUNCNUM_PIN2_AF1<<GPIO_ALTFUNCNUM_PIN2_Pos) | (GPIO_ALTFUNCNUM_PIN3_AF1<<GPIO_ALTFUNCNUM_PIN3_Pos); //Выбор номера альтернативной функции
+	SPI0->IMSC = 0x1; //Разрешаем прерывания по переполнению приемного буфера
+	// Настраиваем обработчик прерывания для SPI0
+	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI0, SPI0_IRQHandler);
+	PLIC_SetPriority   (IsrVect_IRQ_SPI0, 0x1);
+	PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_SPI0);
+
+	SPI0->CR1_bit.SSE = 1; //Разрешение работы приемопередатчика
+}*/
 
 void adcsar_init()
 {
@@ -207,31 +326,18 @@ void TMR1_PWN_init(uint16_t period)
   PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_TMR32);
 }
 
-//  UART - Universal Asynchronous Receiver-Transmitter
 void UART1_init()
 {
-	// HSECLK_VAL - частота внешнего высокоскоростного генератора
-	// UART1_BAUD - желаемая скорость передачи
-	// стр 188
     uint32_t baud_icoef = HSECLK_VAL / (16 * UART1_BAUD);
     uint32_t baud_fcoef = ((HSECLK_VAL / (16.0f * RETARGET_UART_BAUD) - baud_icoef) * 64 + 0.5f);
 
-    // Настраиваем GPIO
     RCU->CGCFGAHB_bit.GPIOAEN = 1;  // включает такирование AHB
     RCU->RSTDISAHB_bit.GPIOAEN = 1; // снимает сброс
     RCU->CGCFGAPB_bit.UART1EN = 1;  // тактирование uart1
     RCU->RSTDISAPB_bit.UART1EN = 1; // снимает сброс с uart1
-
     GPIOA->ALTFUNCNUM_bit.PIN2 = 1;
     GPIOA->ALTFUNCNUM_bit.PIN3 = 1;
-
-    // ALTFUNCSET – активирует альтернативные функции для PA2 и PA3
     GPIOA->ALTFUNCSET = GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;
-
-    // Настраиваем UART1
-    // UARTCLKCFG - Регистры настройки тактирования UART
-    // CLKSEL - выбирает источник тактирования UART1
-    // HSE внешний генератор
     RCU->UARTCLKCFG[1].UARTCLKCFG_bit.CLKSEL = RCU_UARTCLKCFG_CLKSEL_HSE;
 
     // DIVEN - отключает дополнительный делитель частоты
@@ -243,23 +349,9 @@ void UART1_init()
 
     UART1->IBRD = baud_icoef; // записывасет дробную часть
 
-    // Fractional Baud Rate Divisor
     UART1->FBRD = baud_fcoef;
-
-    // Line Control Register High
-    // UART_LCRH_FEN_Msk включает FIFO (буфер для данных)
-    // 3 << UART_LCRH_WLEN_Pos – устанавливает 8 бит данных
     UART1->LCRH = UART_LCRH_FEN_Msk | (3 << UART_LCRH_WLEN_Pos);
-
-    //Interrupt FIFO Level Select
     UART1->IFLS = 0;
-
-    /*
-     Control Register
-     UART_CR_TXE_Msk разрешает передачу (TX)
-     UART_CR_RXE_Msk разрешает приём (RX)
-     UART_CR_UARTEN_Msk включает UART
-     */
     UART1->CR = UART_CR_TXE_Msk | UART_CR_RXE_Msk | UART_CR_UARTEN_Msk;
 }
 
@@ -272,6 +364,8 @@ void periph_init()
 	UART1_init();
 	retarget_init();
 	adcsar_init();
+	spi1_init();
+
 
 	sprintf(buff,"  K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
 	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
@@ -311,6 +405,11 @@ int main(void)
 		    printf("\r");
 
 		    ADCSAR->IC = ADCSAR_IC_SEQIC0_Msk; // Сброс флага прерывания секвенсора 0
+
+
+		    uint8_t status = MR45V256_RDSR();
+		    printf("status: 0x%02X\n\r", status);
+
 	}
 	return 0;
 }
@@ -405,8 +504,3 @@ void TMR32_IRQHandler() // раз в 10 мс
 	*/
 }
 
-void SPI0_IRQHandler()
-{
-	GPIOA->DATAOUTTGL = 0xFF00;
-	SPI0->ICR = 0x3;
-}
