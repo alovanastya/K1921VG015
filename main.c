@@ -14,7 +14,6 @@
 #define LEDS_MSK  0xFF00
 
 #define PB0_MSK   (1 << 0)   // фонарик 2
-
 #define PA5_MSK   (1 << 5)   // фонарик
 #define PA7_MSK   (1 << 7)   // кнопка
 #define LED0_MSK  (1 << 8)
@@ -54,7 +53,7 @@ void Send_buff(char* a)
 	}
 }
 
-
+/*
 void BSP_led_init() {
     RCU->CGCFGAHB_bit.GPIOAEN = 1;
     RCU->RSTDISAHB_bit.GPIOAEN = 1;
@@ -74,6 +73,18 @@ void BSP_led_init() {
 
     GPIOA->OUTENSET = PA5_MSK; // Включение вывода PA5 как выход
 }
+*/
+
+void BSP_led_init()
+{
+	//Разрешаем тактирование GPIOA
+	RCU->CGCFGAHB_bit.GPIOAEN = 1;
+	//Включаем  GPIOA
+	RCU->RSTDISAHB_bit.GPIOAEN = 1;
+    GPIOA->OUTENSET = LEDS_MSK;
+	GPIOA->DATAOUTSET = LEDS_MSK;
+}
+
 
 
 void adcsar_init()
@@ -275,13 +286,12 @@ volatile uint32_t cnt_tgl_meows;
 //-- Main ----------------------------------------------------------------------
 int main(void)
 {
-	uint32_t	i;
 	periph_init();
 	TMR32_init(500000); // 50 000 000 частота ядра, 500 000 10мс
-	TMR1_PWN_init(SystemCoreClock>>8);
+	TMR1_PWN_init(SystemCoreClock>>1);
 	InterruptEnable();
 	led_shift = LED0_MSK;
-	 uint8_t brightness;
+
 	while (1)
 	{
 		ADCSAR->SEQSYNC_bit.GSYNC = 1;
@@ -290,26 +300,20 @@ int main(void)
 		    while (!(ADCSAR->RIS_bit.SEQRIS0)); // Ожидание флага прерывания секвенсора 0
 		    int chn = 1;
 		    int ch_res = ADCSAR->SEQ[0].SFIFO;
-
 		    int curr_voltage_mV = (ch_res * 3300) / 4095;
-
-
-		    // на 2.5 В показывает плохо дальше
-		    // aref 2.77 в
-		    // 3.3 там 3.3
 		    /*
-		     * Про выбор опорного напряжения в документации не нашла
+		      на 2.5 В показывает плохо дальше
+		      aref 2.77 в
+		      3.3 там 3.3
+		      Про выбор опорного напряжения в документации не нашла
 		     */
-
 		    printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
 		    printf("\r");
-
 
 		    ADCSAR->IC = ADCSAR_IC_SEQIC0_Msk; // Сброс флага прерывания секвенсора 0
 	}
 	return 0;
 }
-
 
 void update_leds()
 {
@@ -340,6 +344,17 @@ void update_leds()
 //-- IRQ INTERRUPT HANDLERS ---------------------------------------------------------------
 void TMR32_IRQHandler() // раз в 10 мс
 {
+	GPIOA->DATAOUTTGL = led_shift;
+		led_shift = led_shift << 1;
+	    if(led_shift > LED7_MSK) {
+	      led_shift = LED2_MSK;
+	      // Изменяем скважность сигнала ШИМ
+	      TMR1->CAPCOM[2].VAL += 0x1000;
+	      TMR1->CAPCOM[3].VAL -= 0x1000;
+	    }
+	    //Сбрасываем флаг прерывания таймера
+	    TMR32->IC = 3;
+	/*
 	static uint8_t d = 0;
 	static uint8_t last_button_state = 1;
 	static uint32_t last_led_update = 0;
@@ -369,40 +384,25 @@ void TMR32_IRQHandler() // раз в 10 мс
 	static uint8_t button_state = 1;
 	static uint8_t prev_button_state = 1;
 
-	if (Ysm > 700)
-	{
-		button_state = 1;
-	}
-	else if (Ysm < 500)
-	{
-		button_state = 0;
-	}
-
+	if (Ysm > 700){	button_state = 1;}
+	else if (Ysm < 500){ button_state = 0; }
 
 	if (button_state == 0 && prev_button_state == 1)
 	{
-
-		if(button_click_counter < (MODES_COUNT - 1))
-		{
-			button_click_counter++;
-		}
-		else
-		{
-			button_click_counter = 1;
-		}
+		if(button_click_counter < (MODES_COUNT - 1))	{button_click_counter++; }
+		else{	button_click_counter = 1;}
 	}
 
 	prev_button_state = button_state;
-
 	if (last_led_update >= 30)
 	{
 		update_leds();
-		// GPIOB->DATAOUTTGL = PB0_MSK;
 		last_led_update = 0;
 	}
 	else{last_led_update++;}
 
 	TMR32->IC = 3;
+	*/
 }
 
 void SPI0_IRQHandler()
