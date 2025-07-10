@@ -96,7 +96,7 @@ void BSP_led_init()
 
 void SPI1_IRQHandler()
 {
-	GPIOA->DATAOUTTGL = 0xFF00;
+	// GPIOA->DATAOUTTGL = 0xFF00;
 	SPI1->ICR = 0x3;
 }
 
@@ -111,14 +111,15 @@ void spi1_init()
 	RCU->SPICLKCFG[1].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
 	SPI1->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
 	SPI1->CR0_bit.SCR = 4; //Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((4+1)*8)=400кГц
+
 	SPI1->CR0_bit.SPO = 0; //Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
 	SPI1->CR0_bit.SPH = 1; //Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
 	SPI1->CR0_bit.FRF = 0; //Выбор протокола обмена информацией 0-SPI
 	SPI1->CR0_bit.DSS = 7; //Размер слова данных 8 бит
 	SPI1->CR1_bit.MS = 0; //Режим работы - Мастер
 	GPIOC->ALTFUNCSET = GPIO_ALTFUNCSET_PIN4_Msk | GPIO_ALTFUNCSET_PIN5_Msk | GPIO_ALTFUNCSET_PIN6_Msk | GPIO_ALTFUNCSET_PIN7_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
-	GPIOC->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN4_AF1<<GPIO_ALTFUNCNUM_PIN4_Pos) | (GPIO_ALTFUNCNUM_PIN5_AF1<<GPIO_ALTFUNCNUM_PIN5_Pos) |
-						(GPIO_ALTFUNCNUM_PIN6_AF1<<GPIO_ALTFUNCNUM_PIN6_Pos) | (GPIO_ALTFUNCNUM_PIN7_AF1<<GPIO_ALTFUNCNUM_PIN7_Pos); //Выбор номера альтернативной функции
+	GPIOC->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN4_AF2<<GPIO_ALTFUNCNUM_PIN4_Pos) | (GPIO_ALTFUNCNUM_PIN5_AF2<<GPIO_ALTFUNCNUM_PIN5_Pos) |
+						(GPIO_ALTFUNCNUM_PIN6_AF2<<GPIO_ALTFUNCNUM_PIN6_Pos) | (GPIO_ALTFUNCNUM_PIN7_AF2<<GPIO_ALTFUNCNUM_PIN7_Pos); //Выбор номера альтернативной функции
 	SPI1->IMSC = 0x1; //Разрешаем прерывания по переполнению приемного буфера
 	// Настраиваем обработчик прерывания для SPI0
 	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI1, SPI1_IRQHandler);
@@ -158,7 +159,6 @@ void MR45V256_WRDI()
     MR45V256_CS_Disable();
 }
 
-
 uint8_t MR45V256_RDSR()
 {
     uint8_t status;
@@ -173,46 +173,87 @@ uint8_t MR45V256_RDSR()
     return status;
 }
 
-
-
-
-/*
-// Это как пример
-void spi0_init()
+void MR45V256_WRSR(uint8_t status)
 {
-	RCU->CGCFGAHB_bit.GPIOBEN = 1;  //Разрешение тактирования порта GPIOB
-	RCU->RSTDISAHB_bit.GPIOBEN = 1; //Вывод из состояния сброса порта GPIOB
-	RCU->CGCFGAHB_bit.SPI0EN = 1;  //Разрешение тактирования SPI0
-	RCU->RSTDISAHB_bit.SPI0EN = 1; //Вывод из состояния сброса SPI0
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKSEL = RCU_SPICLKCFG_CLKSEL_HSE; //Источник сигнала внешний кварц
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.CLKEN = 1; 	//Разрешение тактирования
-	RCU->SPICLKCFG[0].SPICLKCFG_bit.RSTDIS = 1; //Вывод из сброса
-	SPI0->CPSR_bit.CPSDVSR = 8;//Коэффициент деления первого делителя
-	SPI0->CR0_bit.SCR = 1; //Коэффициент деления второго делителя. Результирующий коэффициент SCK/((SCR+1)*CPSDVSR) 16/((1+1)*8)=1МГц
-	SPI0->CR0_bit.SPO = 0; //Полярность сигнала. В режиме ожидания линия в состоянии логического нуля.
-	SPI0->CR0_bit.SPH = 1; //Фаза сигнала. Выборка данных по заднему фронту синхросигнала, а установка по переднему
-	SPI0->CR0_bit.FRF = 0; //Выбор протокола обмена информацией 0-SPI
-	SPI0->CR0_bit.DSS = 7; //Размер слова данных 8 бит
-	SPI0->CR1_bit.MS = 0; //Режим работы - Мастер
-	GPIOB->ALTFUNCSET = GPIO_ALTFUNCSET_PIN0_Msk | GPIO_ALTFUNCSET_PIN1_Msk | GPIO_ALTFUNCSET_PIN2_Msk | GPIO_ALTFUNCSET_PIN3_Msk;//Переводим младшие 4 пина порта GPIOB в режим альтернативной функции
-	GPIOB->ALTFUNCNUM = (GPIO_ALTFUNCNUM_PIN0_AF1<<GPIO_ALTFUNCNUM_PIN0_Pos) | (GPIO_ALTFUNCNUM_PIN1_AF1<<GPIO_ALTFUNCNUM_PIN1_Pos) |
-						(GPIO_ALTFUNCNUM_PIN2_AF1<<GPIO_ALTFUNCNUM_PIN2_Pos) | (GPIO_ALTFUNCNUM_PIN3_AF1<<GPIO_ALTFUNCNUM_PIN3_Pos); //Выбор номера альтернативной функции
-	SPI0->IMSC = 0x1; //Разрешаем прерывания по переполнению приемного буфера
-	// Настраиваем обработчик прерывания для SPI0
-	PLIC_SetIrqHandler (Plic_Mach_Target, IsrVect_IRQ_SPI0, SPI0_IRQHandler);
-	PLIC_SetPriority   (IsrVect_IRQ_SPI0, 0x1);
-	PLIC_IntEnable     (Plic_Mach_Target, IsrVect_IRQ_SPI0);
+    MR45V256_WREN();
+    MR45V256_CS_Enable();
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x01; // WRSR 0001
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = status;
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+}
 
-	SPI0->CR1_bit.SSE = 1; //Разрешение работы приемопередатчика
-}*/
+
+void MR45V256_Write(uint32_t address, uint8_t *data, uint32_t len)
+{
+	MR45V256_WREN();
+
+	uint8_t status = MR45V256_RDSR();
+	if (!(status & 0x02))
+	{
+	    printf(" Write failed\r\n");
+	}
+
+    while (MR45V256_RDSR() & 0x01);
+    MR45V256_CS_Enable();
+
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x02; // WRITE
+
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = (address >> 16) & 0xFF;
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = (address >> 8) & 0xFF;
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = address & 0xFF;
+
+
+    for (uint32_t i = 0; i < len; i++)
+    {
+        while (!(SPI1->SR & SPI_SR_TNF_Msk));
+        SPI1->DR = data[i];
+    }
+
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+
+    while (MR45V256_RDSR() & 0x01);
+}
+
+void MR45V256_Read(uint32_t address, uint8_t *data, uint32_t len)
+{
+    MR45V256_CS_Enable();
+
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = 0x03; // READ
+
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = (address >> 16) & 0xFF;
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = (address >> 8) & 0xFF;
+    while (!(SPI1->SR & SPI_SR_TNF_Msk));
+    SPI1->DR = address & 0xFF;
+
+    for (uint32_t i = 0; i < len; i++)
+    {
+        while (!(SPI1->SR & SPI_SR_TNF_Msk));
+        SPI1->DR = 0x00;
+
+        while (!(SPI1->SR & SPI_SR_RNE_Msk));
+        data[i] = SPI1->DR;
+    }
+
+    while (SPI1->SR & SPI_SR_BSY_Msk);
+    MR45V256_CS_Disable();
+}
 
 void adcsar_init()
 {
-	// настройка питания ADCSAR
+  // настройка питания ADCSAR
   PMUSYS->ADCPWRCFG_bit.LDOEN = 1;
   PMUSYS->ADCPWRCFG_bit.LVLDIS = 0;
-
-  // ADCSAR->ACTL_bit.ISEL = 0;
 
   //Сбрасываем блок ADCSAR
   RCU->ADCSARCLKCFG_bit.RSTDIS = 0;
@@ -231,11 +272,8 @@ void adcsar_init()
   //Настройка модуля ADCSAR
   //12бит и калибровка при включении
   ADCSAR->ACTL_bit.SELRES = ADCSAR_ACTL_SELRES_12bit;
-  //ADCSAR->ACTL = 0;
-  // ADCSAR->ACTL |= (3 << 4);  // источник опорного тока
   ADCSAR->ACTL_bit.CALEN = 1;
   ADCSAR->ACTL_bit.ADCEN = 1;
-  //ADCSAR->ACTL_bit.ISEL = 1;
 
   //Настройка секвенсора 0: CH0 - CH7
   ADCSAR->EMUX_bit.EM0 = ADCSAR_EMUX_EM0_SwReq;
@@ -366,11 +404,12 @@ void periph_init()
 	adcsar_init();
 	spi1_init();
 
-
-	sprintf(buff,"  K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
-	sprintf(buff,"  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
-    sprintf(buff,"  PartNum = 0x%X\r\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
-    sprintf(buff,"  Start UART DMA\r\n\0"); Send_buff(buff);
+	sprintf(buff, "-------------------------------------------------------------------------------"); Send_buff(buff);
+	sprintf(buff, "   K1921VG015 SYSCLK = %d MHz\r\n\0",(int)(SystemCoreClock / 1E6)); 	Send_buff(buff);
+	sprintf(buff, "  UID[0] = 0x%X  UID[1] = 0x%X  UID[2] = 0x%X  UID[3] = 0x%X\r\n\0",PMUSYS->UID[0],PMUSYS->UID[1],PMUSYS->UID[2],PMUSYS->UID[3]); Send_buff(buff);
+    sprintf(buff, "  PartNum = 0x%X\r\n\0",(uint16_t)(PMUSYS->UID[3] >> 16)); Send_buff(buff);
+    sprintf(buff, "  Start UART DMA\r\n\0"); Send_buff(buff);
+    sprintf(buff, "-------------------------------------------------------------------------------\n"); Send_buff(buff);
 }
 
 //--- USER FUNCTIONS ----------------------------------------------------------------------
@@ -386,6 +425,30 @@ int main(void)
 	InterruptEnable();
 	led_shift = LED0_MSK;
 
+	/* uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
+	uint8_t read_data[4] = {0};
+
+	MR45V256_Write(0x000000, write_data, 4);
+	MR45V256_Read(0x000000, read_data, 4);
+
+	printf("   Read data: %02X %02X %02X %02X\r\n", read_data[0], read_data[1], read_data[2], read_data[3]);
+*/
+
+	printf("    Testing MR45V256...\r\n");
+	uint8_t test_byte = 0xA5;
+	uint8_t read_byte = 0;
+	MR45V256_Write(0x000000, &test_byte, 1);
+	MR45V256_Read(0x000000, &read_byte, 1);
+	printf("   Wrote 0x%02X, Read 0x%02X\r\n", test_byte, read_byte);
+
+	uint8_t test_data[4] = {0x01, 0x02, 0x03, 0x04};
+	uint8_t read_data[4] = {0};
+	MR45V256_Write(0x000100, test_data, 4);
+	MR45V256_Read(0x000100, read_data, 4);
+	printf("   Wrote %02X %02X %02X %02X, Read %02X %02X %02X %02X\r\n",
+	       test_data[0], test_data[1], test_data[2], test_data[3],
+	       read_data[0], read_data[1], read_data[2], read_data[3]);
+
 	while (1)
 	{
 		ADCSAR->SEQSYNC_bit.GSYNC = 1;
@@ -394,22 +457,13 @@ int main(void)
 		    while (!(ADCSAR->RIS_bit.SEQRIS0)); // Ожидание флага прерывания секвенсора 0
 		    int chn = 1;
 		    int ch_res = ADCSAR->SEQ[0].SFIFO;
-		    int curr_voltage_mV = (ch_res * 3300) / 4095;
-		    /*
-		      на 2.5 В показывает плохо дальше
-		      aref 2.77 в
-		      3.3 там 3.3
-		      Про выбор опорного напряжения в документации не нашла
-		     */
-		    printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
-		    printf("\r");
+
+		    //int curr_voltage_mV = (ch_res * 3300) / 4095;
+		    //printf("  CH%d=%d.%dV\r", chn, curr_voltage_mV / 1000, (curr_voltage_mV % 1000) / 100);
 
 		    ADCSAR->IC = ADCSAR_IC_SEQIC0_Msk; // Сброс флага прерывания секвенсора 0
-
-
 		    uint8_t status = MR45V256_RDSR();
-		    printf("status: 0x%02X\n\r", status);
-
+		    printf("   status: 0x%02X\r   ", status);
 	}
 	return 0;
 }
